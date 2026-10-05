@@ -1,35 +1,38 @@
 # Windows setup
 
-## Install the design workflow skill for Codex
+## Install Design Team for Codex
 
-Run these commands in PowerShell on the Windows PC where Codex is used. The first command clones the private source through your normal GitHub authentication; then the Skills CLI installs only this skill globally for Codex.
+Run these commands in PowerShell on the Windows PC where Codex is used. Clone through your normal GitHub authentication; this repository is private.
 
 ```powershell
 git clone https://github.com/ZestfulPulse/Design_Pattern_Lab.git "$env:USERPROFILE\projects\Design_Pattern_Lab"
 cd "$env:USERPROFILE\projects\Design_Pattern_Lab"
-npx skills add . --skill product-design-workflow --global --agent codex
+npx skills add . --skill design-team --global --agent codex
 ```
 
-This makes the skill available across projects for that Windows user. It does not install anything on the Mac mini.
+The Skills CLI supports choosing a single skill, global installation, and targeting Codex. The skill becomes available across projects for that Windows user; it does not install anything on the Mac mini. citeturn3search3
 
-## Update the skill
+## Update Design Team
 
-From the cloned repository, pull the latest version and rerun the install command:
+From the cloned repository:
 
 ```powershell
 git pull
-npx skills add . --skill product-design-workflow --global --agent codex
+npx skills add . --skill design-team --global --agent codex
 ```
 
-Keep the canonical copy in this GitHub repository. Do not independently edit copies in agent-specific skill directories.
+Keep the canonical skill in this repository. Avoid separately editing copies in agent-specific skill directories.
 
-## Use in a product repository
+## Use it during development
 
-1. Keep the app's code and product-specific design documents in its own GitHub repository.
-2. For a design task, invoke `product-design-workflow` and ask it to inspect that repository's existing design source of truth.
-3. Add only missing documents from `skills/product-design-workflow/templates/`.
-4. Keep approved product-specific decisions in that product's repository.
+In a product repository, say for example:
+
+> 디자인팀, 이 웹페이지를 Enough의 제품 철학에 맞춰 수정해줘. 현재 UX 문서와 디자인 토큰을 먼저 읽고, 필요한 시각 변경을 구현한 뒤 모바일과 데스크톱에서 확인해줘.
+
+Design Team will inspect the existing product source of truth, implement ordinary UI/UX changes within the request, verify what it can, and report evidence. Say “검토만 해줘” or “시안만 보여줘” when you want a read-only critique or options without implementation.
+
+Keep the app's product-specific documents in that app's own GitHub repository. Design Team uses the templates in `skills/design-team/templates/` only when the app lacks an equivalent authoritative document.
 
 ## Environment boundary
 
-The skill guides design work. It does not require local macOS development, Supabase access, Cloudflare credentials, or signing tools. Use the Mac mini only for signing tasks that require it.
+The skill guides design and front-end work. It does not require local macOS development, Supabase access, Cloudflare credentials, or signing tools. Use the Mac mini only for signing tasks that require it.
