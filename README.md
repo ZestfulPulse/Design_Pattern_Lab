@@ -1,32 +1,30 @@
 # ZestfulPulse Design Pattern Lab
 
-A reusable, product-first design workflow for ZestfulPulse apps and websites.
+A product-first **Design Team** workflow for ZestfulPulse apps and websites.
 
-This repository separates **how we design** from **what each product is**:
+## How it works
 
-- `skills/product-design-workflow/SKILL.md` defines the repeatable design process.
-- `skills/product-design-workflow/templates/` provides optional starting points for product-specific design records.
-- Each app's own GitHub repository remains the source of truth for its product philosophy, UX, visual system, and implementation decisions.
+- Invoke “디자인팀” or `$design-team` in Codex.
+- Design Team reads the target app's product philosophy and existing design rules, then improves the requested UX and visual implementation.
+- It checks the rendered result when tools are available and revises against the user's feedback.
+- Product-specific decisions stay in each app's GitHub repository. This repository contains the reusable skill and optional templates only.
 
-## Principles
+## Design authority
 
-1. Define the product's character and philosophy before choosing its visual style.
-2. Keep product-specific decisions in that product's repository.
-3. Read existing documentation before creating or changing design documents. Extend the current source of truth; do not create competing copies.
-4. Keep design work separate from implementation and deployment unless the user asks for implementation.
-5. Research real references when doing substantial visual work; adapt their useful traits rather than copying a screen.
-6. Use the lightest process that can answer the design question. Do not manufacture A/B/C options for a clear brief.
-7. Treat Supabase, Cloudflare, GitHub, and signing as implementation/deployment concerns, not design authorities.
+1. The product's approved philosophy and current source of truth.
+2. Existing routes, behavior, tokens, and components.
+3. Design research and platform-specific craft.
+4. Generic style suggestions.
+
+Design Team uses UI UX Pro Max ideas for broad system/stack guidance and Hallmark ideas for a focused web quality review. It synthesizes both through the product philosophy instead of running two competing design generators. See [design engine routing](skills/design-team/references/DESIGN_ENGINES.md).
 
 ## Install on Windows
 
-Install the one skill globally for Codex on the Windows development PC. See [Windows setup](docs/WINDOWS_SETUP.md) for the private-repository clone and update commands.
+Install the one Design Team skill globally for Codex on the Windows development PC. Follow [Windows setup](docs/WINDOWS_SETUP.md).
 
-## Product project layout
+## Product documents
 
-Use the templates only when the product repository lacks an equivalent authoritative document. A small project can start with `PRODUCT_FOUNDATION.md` and add other records as the design matures.
-
-Suggested locations (adapt to the repository's existing conventions):
+Use templates only when the product repository lacks equivalent authoritative documents. Do not create duplicate sources.
 
 ```text
 design/
@@ -37,4 +35,4 @@ design/
   IMPLEMENTATION_HANDOFF.md
 ```
 
-Do not copy the templates into an app automatically. Keep app-specific decisions with that app's source.
+Templates are under `skills/design-team/templates/`. Product-specific philosophy, design tokens, and decisions belong in the app's own GitHub repository.
