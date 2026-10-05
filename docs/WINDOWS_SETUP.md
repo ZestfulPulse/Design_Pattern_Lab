@@ -10,7 +10,7 @@ cd "$env:USERPROFILE\projects\Design_Pattern_Lab"
 npx skills add . --skill design-team --global --agent codex
 ```
 
-The Skills CLI supports choosing a single skill, global installation, and targeting Codex. The skill becomes available across projects for that Windows user; it does not install anything on the Mac mini. citeturn3search3
+The [Skills CLI](https://github.com/vercel-labs/skills) supports choosing a single skill, global installation, and targeting Codex. The skill becomes available across projects for that Windows user; it does not install anything on the Mac mini.
 
 ## Update Design Team
 
