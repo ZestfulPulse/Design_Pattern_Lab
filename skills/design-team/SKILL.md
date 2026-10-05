@@ -59,7 +59,7 @@ Choose the few changes with the highest user impact. Preserve working product be
 
 ### 3. Choose design guidance by platform
 
-Consult [design-engine routing](../references/DESIGN_ENGINES.md) for the bounded roles of UI UX Pro Max and Hallmark.
+Consult [design-engine routing](references/DESIGN_ENGINES.md) for the bounded roles of UI UX Pro Max and Hallmark.
 
 - For apps and websites, build or extend a product-specific design system from the product brief, current implementation, platform, and stack.
 - For web pages, additionally run an anti-generic-pattern and responsive-quality pass inspired by Hallmark.
