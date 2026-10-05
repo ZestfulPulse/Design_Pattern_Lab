@@ -5,7 +5,7 @@ A reusable, product-first design workflow for ZestfulPulse apps and websites.
 This repository separates **how we design** from **what each product is**:
 
 - `skills/product-design-workflow/SKILL.md` defines the repeatable design process.
-- `templates/` provides optional starting points for product-specific design records.
+- `skills/product-design-workflow/templates/` provides optional starting points for product-specific design records.
 - Each app's own GitHub repository remains the source of truth for its product philosophy, UX, visual system, and implementation decisions.
 
 ## Principles
@@ -18,19 +18,13 @@ This repository separates **how we design** from **what each product is**:
 6. Use the lightest process that can answer the design question. Do not manufacture A/B/C options for a clear brief.
 7. Treat Supabase, Cloudflare, GitHub, and signing as implementation/deployment concerns, not design authorities.
 
-## Use the skill
+## Install on Windows
 
-Install the single skill globally for Codex on the Windows development PC:
-
-```powershell
-npx skills add ZestfulPulse/Design_Pattern_Lab --skill product-design-workflow --global --agent codex
-```
-
-The Vercel Skills CLI supports installing one selected skill globally for Codex. See [Windows setup](docs/WINDOWS_SETUP.md).
+Install the one skill globally for Codex on the Windows development PC. See [Windows setup](docs/WINDOWS_SETUP.md) for the private-repository clone and update commands.
 
 ## Product project layout
 
-Use the templates only when the product repository lacks an equivalent authoritative document. A small project can start with `PRODUCT_FOUNDATION.md` and add the other records as the design matures.
+Use the templates only when the product repository lacks an equivalent authoritative document. A small project can start with `PRODUCT_FOUNDATION.md` and add other records as the design matures.
 
 Suggested locations (adapt to the repository's existing conventions):
 
@@ -43,4 +37,4 @@ design/
   IMPLEMENTATION_HANDOFF.md
 ```
 
-Do not copy this directory into an app automatically. Keep app-specific decisions with that app's source.
+Do not copy the templates into an app automatically. Keep app-specific decisions with that app's source.
