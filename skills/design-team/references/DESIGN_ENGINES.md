@@ -1,36 +1,36 @@
 # Design engine routing
 
-This file defines how Design Team uses ideas from upstream design repositories without installing multiple competing design authorities. Design Team stays the single entry point and the product repository remains the authority.
+This reference defines one coordinated design workflow. The product repository remains the authority; UI UX Pro Max and Hallmark contribute bounded craft guidance.
 
-## UI UX Pro Max — broad system and stack guidance
+## UI UX Pro Max — primary design-system engine
 
 Source: [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) (MIT).
 
-Use its design-system-first method when the task needs a new visual system or substantial redesign:
+Use UI UX Pro Max for product-specific visual-system and stack recommendations on substantial app or web design work:
 
-1. Identify product type, audience, product character, platform, and implementation stack from the brief and repository.
-2. Generate or derive a system for that specific context: layout pattern, visual style, semantic colors, typography, effects, and anti-patterns.
+1. Identify product type, audience, product character, platform, and actual implementation stack from the brief and repository.
+2. Generate or derive a design system for that context: layout pattern, style, semantic colors, typography, effects, and relevant anti-patterns.
 3. Use platform/stack guidance when implementation details matter.
 4. Compare each recommendation with the product foundation and existing tokens. Preserve aligned recommendations; adapt or reject conflicts.
 
-Do not apply a generic recommendation as a product decision. Keep product-specific visual tokens and page rules in the product repository. When the upstream skill or CLI is actually installed and available, use it for searches; otherwise perform this reasoning with repository evidence and available craft references. Never imply the upstream engine ran when it did not.
+The Design Team owns the final synthesis and implementation. UI UX Pro Max recommendations are inputs, not product decisions. Do not re-ask for information already available in the product documentation. For small UI fixes, preserve the existing design system and use only relevant searches.
 
-## Hallmark — web visual quality and anti-pattern review
+The Windows setup guide installs the full UI UX Pro Max engine globally for Codex. If it is absent in another environment, use the product repository and this workflow's design criteria; do not claim the full engine ran.
+
+## Hallmark — web quality review
 
 Source: [Nutlope/hallmark](https://github.com/Nutlope/hallmark) (MIT).
 
-Use its principles as an additional review pass for web pages:
+Use the selected Hallmark principles as a focused review pass for web pages:
 
 - avoid interchangeable hero/features/CTA page rhythms when the product calls for a distinct structure;
-- preserve existing project tokens and inspect the codebase before editing;
-- use clear type hierarchy, semantic color tokens, responsive layouts, and complete component states;
+- preserve current project tokens and inspect the codebase before editing;
+- use clear type hierarchy, semantic color roles, responsive layouts, and complete component states;
 - reject invented metrics, fake product chrome, inaccessible micro-text, and decorative effects without a product purpose;
-- test relevant narrow and wide viewports.
+- inspect relevant narrow and wide viewports.
 
-Hallmark is a web-focused quality lens here. Do not let a preset theme or layout catalog override the product philosophy. Do not ask for a full creative brief when the repository already answers it. Do not apply web page patterns to native app screens.
+The full Hallmark repository is not bundled with Design Pattern Lab. These checks are integrated into the Design Team workflow to keep one product-aware decision maker. Do not claim that Hallmark itself ran. Do not let a theme or macrostructure catalog override product philosophy, and do not apply web page patterns to native app screens.
 
 ## Combining guidance
 
-Do not run both sources as independent design generators or produce two competing systems. Use one product-specific direction. UI UX Pro Max contributes breadth and stack-aware system choices; Hallmark contributes a focused web quality check. The Design Team skill owns synthesis, implementation, and iteration.
-
-For a small UI fix, skip unnecessary catalog searches and use the existing design system plus the relevant quality checks.
+Use one product-specific direction. UI UX Pro Max contributes breadth and stack-aware design-system choices; Hallmark contributes a web quality check. The Design Team owns product interpretation, implementation, and iteration. Never generate or apply two competing design systems.
