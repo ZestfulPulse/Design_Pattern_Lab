@@ -1,6 +1,6 @@
 interface:
   display_name: "Product Design Workflow"
-  short_description: "Define product philosophy, UX, and visual rules before implementation."
+  short_description: "Set product philosophy, UX, and visual direction before coding."
   default_prompt: "Use $product-design-workflow to define this product's philosophy, UX, visual direction, and implementation handoff."
 
 policy:
