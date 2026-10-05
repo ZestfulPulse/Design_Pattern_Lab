@@ -1,0 +1,7 @@
+interface:
+  display_name: "Design Team"
+  short_description: "Improve app and web UI to match product philosophy."
+  default_prompt: "Use $design-team to inspect this product's philosophy, improve the requested UI, and verify the result."
+
+policy:
+  allow_implicit_invocation: true
