@@ -75,7 +75,7 @@ Define only the rules needed to make the product coherent:
 - Screen outlines with hierarchy, actions, content, states, and responsive/platform behavior.
 - Distinguish required behavior from visual suggestion.
 
-Use A/B/C directions only when the brief has meaningful unresolved visual alternatives. Make them structurally distinct, state the tradeoff, and wait for the user's selection before committing a major direction. For a clear direction or small fix, proceed without a presentation phase.
+Use A/B/C directions only when the brief has meaningful unresolved visual alternatives. Make them structurally distinct, state the tradeoff, and wait for the user's selection before committing a major direction. For a clear direction or small fix, proceed without a presentation phase. When Design Pattern Lab is used for prototypes, keep them isolated from the product source; do not edit production files. Pass only the user's selected direction into the implementation handoff.
 
 ### 6. Prepare an implementation handoff
 
