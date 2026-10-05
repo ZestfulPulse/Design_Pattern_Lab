@@ -16,7 +16,7 @@ A product-first **Design Team** workflow for ZestfulPulse apps and websites.
 3. Design research and platform-specific craft.
 4. Generic style suggestions.
 
-Design Team uses UI UX Pro Max ideas for broad system/stack guidance and Hallmark ideas for a focused web quality review. It synthesizes both through the product philosophy instead of running two competing design generators. See [design engine routing](skills/design-team/references/DESIGN_ENGINES.md).
+The Design Team workflow includes a concise synthesis of UI UX Pro Max system/stack guidance and Hallmark's web quality checks. It does not bundle either complete upstream repository. If their tools are available in the active Codex environment, Design Team may use them for those bounded roles; otherwise it applies the included guidance and verifies it does not claim an upstream tool ran. See [design engine routing](skills/design-team/references/DESIGN_ENGINES.md).
 
 ## Install on Windows
 
