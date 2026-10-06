@@ -21,6 +21,30 @@ If Design Team has real rendered evidence such as simulator screenshots, browser
 
 The structured harness is a stronger, machine-checkable path when available. It is not the only legitimate source of rendered evidence.
 
+## Review modes
+
+Structured evidence records how the rendered result was reviewed:
+
+- `review_mode: harness` — machine-oriented evidence path. Philosophy checks are expected when applicable. If no philosophy checks exist, the maximum verdict is `PASS_WITH_WARNING`.
+- `review_mode: human_render` — a person explicitly inspects real rendered captures. Philosophy checks may be absent, but the evidence must record the reviewer, environment, viewport, reviewed capture IDs, and reviewed areas.
+
+A `human_render` record does not bypass `unverified_areas`, fixture comparability, provenance, scope, or artifact-integrity rules.
+
+Example:
+
+```json
+{
+  "review_mode": "human_render",
+  "human_review": {
+    "reviewer": "design-team visual reviewer",
+    "environment": "iPhone simulator",
+    "viewport": "1206x2622",
+    "reviewed_capture_ids": ["after_top"],
+    "reviewed_areas": ["home hierarchy", "visible text clipping"]
+  }
+}
+```
+
 ## Structured evidence path
 
 When a product uses `.dpl/`, keep derived artifacts only:
@@ -51,6 +75,8 @@ The product's philosophy remains in the product's own authoritative document. DP
 7. A claimed external engine must have invocation proof in the run ledger.
 8. A changed file that matches a declared scope denylist fails unless an explicit exception exists.
 9. Referenced evidence artifacts must exist and match their recorded SHA-256 hashes.
+10. In `harness` mode, zero philosophy checks adds `NO_PHILOSOPHY_CHECKS` and caps the verdict at `PASS_WITH_WARNING`. This rule is intentionally relaxed for a complete `human_render` review record.
+11. When `compiled_doc_sha256` and `current_doc_sha256` differ, add `CHECKS_STALE` and cap the verdict at `PASS_WITH_WARNING`.
 
 ## Verdict Gate
 
