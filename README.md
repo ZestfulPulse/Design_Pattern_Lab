@@ -13,7 +13,7 @@
 
 Design Pattern Lab, or **DPL**, is not a component dump and not another giant style library.
 
-It is a product-first orchestration layer for Codex and other supported coding-agent workflows. DPL reads the active product, decides what kind of design help is actually needed, selectively routes to relevant specialists, implements the smallest coherent change, and verifies the rendered result.
+It is a product-first orchestration layer currently packaged and documented for **Codex**. The architecture is portable to other coding agents, but those integrations are not yet documented or verified. DPL reads the active product, decides what kind of design help is actually needed, selectively routes to relevant specialists, implements the smallest coherent change, and verifies the rendered result.
 
 ---
 
@@ -137,7 +137,8 @@ For a small hierarchy problem, DPL may use no external design engine at all. For
 
 **Product:** precision running analysis and coaching app  
 **Design intervention:** Home information hierarchy  
-**Result:** `PASS_WITH_WARNING`
+**Result:** `PASS_WITH_WARNING`  
+**Evidence warning:** the After screenshot confirms Goal is first, but does **not** visually prove the full Goal → Workout → Month sequence. The activity dataset also changed between captures.
 
 The product philosophy defined the intended order as:
 
@@ -371,6 +372,8 @@ A successful build does not prove a successful design.
 - Public case-study structure
 
 Future capabilities should be added only when they close a clearly identified gap without duplicating an existing one.
+
+**Current agent support:** Codex is the documented and verified installation target. Other coding-agent integrations are architectural possibilities, not current compatibility claims.
 
 ---
 
