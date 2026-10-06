@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ZestfulPulse/Design_Pattern_Lab/schemas/ledger.schema.json",
+  "title": "DPL Run Ledger",
+  "type": "object",
+  "required": ["events"],
+  "properties": {
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type"],
+        "properties": {
+          "t": {"type": "string"},
+          "type": {"enum": ["source_consulted", "engine_invoked", "engine_unavailable", "capability_run", "decision"]},
+          "name": {"type": "string"},
+          "invoked": {"type": "boolean"},
+          "proof": {"type": "object"},
+          "reason": {"type": "string"},
+          "id": {"type": "string"},
+          "summary": {"type": "string"}
+        }
+      }
+    }
+  }
+}
