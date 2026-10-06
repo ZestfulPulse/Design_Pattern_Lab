@@ -9,9 +9,22 @@ The active product repository remains the authority. The Design Team is the sing
 1. Read the active product first.
 2. Use the smallest number of specialist engines that materially improve the result.
 3. Do not call every tool by default.
-4. Never let a style source override product philosophy.
-5. Never claim an engine ran unless it actually ran.
-6. Resolve conflicts centrally in Design Team.
+4. Prefer a built-in DPL capability over adding another overlapping external skill.
+5. Never let a style source override product philosophy.
+6. Never claim an engine ran unless it actually ran.
+7. Resolve conflicts centrally in Design Team.
+
+## Built-in DPL capabilities
+
+DPL has five focused internal capabilities. They are part of Design Team and are not separately installed:
+
+- **Component State Auditor** — checks relevant interaction states, reflow, overflow, keyboard and touch completeness.
+- **Design System Ingestor** — classifies external design-system guidance as KEEP / ADAPT / REJECT against product truth.
+- **Interaction Physics** — evaluates causality, latency, interruptibility, easing/springs, optical feedback and reduced motion.
+- **Accessibility Gate** — checks applicable semantics, focus, contrast, reflow, targets and assistive-technology concerns.
+- **Visual Release Review** — inspects actual rendered evidence and reports PASS / PASS_WITH_WARNING / FAIL.
+
+See [DPL Core Capabilities](CORE_CAPABILITIES.md).
 
 ## DPL — orchestration and product-design synthesis
 
@@ -122,3 +135,7 @@ When specialist guidance conflicts:
 4. specialist preferences are discarded when they weaken product consistency.
 
 Never create multiple competing design systems inside one product.
+
+## Source transparency
+
+External inspirations and operating-principle references are documented in [Source Attribution](SOURCE_ATTRIBUTION.md). DPL should absorb narrowly useful principles rather than accumulate overlapping general-purpose design systems.
