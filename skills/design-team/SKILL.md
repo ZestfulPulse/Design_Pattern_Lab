@@ -58,6 +58,8 @@ Potential specialist sources include:
 - Hallmark-inspired web quality checks
 - Infographic tooling
 - Refero or other reference-research tools when available
+- Component Gallery for component-state and design-system comparison when relevant
+- 21st.dev for approved React/Tailwind implementation reference when relevant
 - Product-local design docs, tokens, screenshots, and implementation patterns
 
 Do not call every engine for every task. Route selectively.
@@ -131,7 +133,9 @@ Examples:
 - expressive visual direction → Huashu Design;
 - web quality and anti-generic review → Hallmark-inspired checks;
 - dense explanatory information or dashboards → Infographic tooling;
-- reference research → Refero or other available reference tools.
+- reference research → Refero or other available reference tools;
+- component-state comparison → Component Gallery when real design-system examples materially help;
+- approved React/Tailwind implementation → 21st.dev as an optional implementation reference, never as product authority.
 
 The Design Team owns synthesis. Never average conflicting design systems. Resolve conflicts against product philosophy.
 
