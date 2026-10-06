@@ -1,4 +1,5 @@
 import hashlib
+import json
 import os
 import tempfile
 import unittest
@@ -486,3 +487,42 @@ class CheckTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main(verbosity=2)
+
+
+class SchemaContractTests(unittest.TestCase):
+    def _load_schema(self, name):
+        path = os.path.join(
+            os.path.dirname(__file__),
+            "..",
+            "..",
+            "skills",
+            "design-team",
+            "schemas",
+            name,
+        )
+        with open(os.path.abspath(path), encoding="utf-8") as f:
+            return json.load(f)
+
+    def test_evidence_schema_covers_gate_fields(self):
+        schema = self._load_schema("evidence.schema.json")
+        self.assertTrue(vg.GATE_EVIDENCE_FIELDS.issubset(set(schema["properties"])))
+        self.assertIn("review_mode", schema["required"])
+        self.assertEqual(
+            set(schema["properties"]["review_mode"]["enum"]),
+            vg.REVIEW_MODES,
+        )
+
+    def test_ledger_schema_covers_gate_engine_provenance_fields(self):
+        schema = self._load_schema("ledger.schema.json")
+        event = schema["properties"]["events"]["items"]
+        props = set(event["properties"])
+        self.assertTrue({"type", "name", "invoked", "proof"}.issubset(props))
+        self.assertIn("engine_invoked", event["properties"]["type"]["enum"])
+
+    def test_philosophy_schema_covers_check_runner_contract(self):
+        schema = self._load_schema("philosophy-checks.schema.json")
+        self.assertTrue({"version", "source", "checks"}.issubset(schema["properties"]))
+        item = schema["properties"]["checks"]["items"]
+        props = set(item["properties"])
+        self.assertTrue({"id", "kind", "scope", "assert", "severity"}.issubset(props))
+        self.assertEqual(set(item["properties"]["kind"]["enum"]), cr.KINDS)
