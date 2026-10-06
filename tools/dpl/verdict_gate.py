@@ -18,6 +18,12 @@ RANK = {"FAIL": 0, "NOT_VERIFIED": 1, "PASS_WITH_WARNING": 2, "PASS": 3}
 EXIT = {"PASS": 0, "PASS_WITH_WARNING": 10, "FAIL": 20, "NOT_VERIFIED": 30}
 EXIT_INVALID = 2
 CHECK_STATUSES = {"pass", "fail", "unverifiable", "judged"}
+REVIEW_MODES = {"harness", "human_render"}
+GATE_EVIDENCE_FIELDS = {
+    "schema", "review_mode", "human_review", "product", "baseline", "philosophy",
+    "fixture", "captures", "a11y_dumps", "expected_checks", "checks",
+    "unverified_areas", "build_checks", "claims", "scope", "declared_verdict",
+}
 
 
 class InvalidEvidence(Exception):
@@ -67,6 +73,16 @@ def compute(evidence, ledger, base_dir):
     _require(evidence.get("schema") == "dpl.evidence/1", "unsupported evidence schema")
     artifacts = _load_artifacts(evidence, base_dir)
     checks = evidence.get("checks", [])
+    review_mode = evidence.get("review_mode", "harness")
+    _require(review_mode in REVIEW_MODES, "invalid review_mode")
+
+    if review_mode == "human_render":
+        review = evidence.get("human_review") or {}
+        for key in ("reviewer", "environment", "viewport", "reviewed_capture_ids", "reviewed_areas"):
+            _require(review.get(key), "human_render requires human_review.%s" % key)
+        known_capture_ids = {item.get("id") for item in evidence.get("captures", [])}
+        for ref in review.get("reviewed_capture_ids", []):
+            _require(ref in known_capture_ids, "human_review cites unknown capture '%s'" % ref)
 
     for check in checks:
         _require(
@@ -98,6 +114,27 @@ def compute(evidence, ledger, base_dir):
         )
         lower("NOT_VERIFIED")
     else:
+        # R10: zero philosophy checks is only a warning for harness mode.
+        # Human-render review may still PASS when its required review record is complete.
+        if review_mode == "harness" and not checks:
+            add(
+                "NO_PHILOSOPHY_CHECKS",
+                "warn",
+                "harness review has no philosophy checks; visual evidence exists but product-philosophy compliance is not machine-checked",
+            )
+            lower("PASS_WITH_WARNING")
+
+        philosophy = evidence.get("philosophy") or {}
+        compiled_hash = philosophy.get("compiled_doc_sha256")
+        current_hash = philosophy.get("current_doc_sha256")
+        if compiled_hash and current_hash and compiled_hash != current_hash:
+            add(
+                "CHECKS_STALE",
+                "warn",
+                "philosophy checks were compiled from a different source document hash",
+            )
+            lower("PASS_WITH_WARNING")
+
         for check in checks:
             cid = check.get("id")
             status = check["status"]
