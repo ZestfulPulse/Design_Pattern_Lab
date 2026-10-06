@@ -1,6 +1,7 @@
 # Showcase 01 — Legs of Steel
 
 **Case status:** `PASS_WITH_WARNING`<br>
+**Unresolved evidence warning:** the After capture confirms Goal is first, but does not visually prove the full Goal → Workout → Month order; the Before/After activity datasets also differ.<br>
 **Viewport:** iPhone 17 Pro · iOS 26.5 · 1206 × 2622 px
 
 ## Product intent
@@ -67,7 +68,7 @@ No external design engine was run for the original LoS change. DPL did not drive
 
 The following sources are available in the Design Team routing inventory. Availability is separate from actual use in this case.
 
-- [DPL](https://github.com/ZestfulPulse/Design_Pattern_Lab) — orchestration and synthesis; **not used to make the LoS design change**. This repository has no `LICENSE` file in the checked-out tree.
+- [DPL](https://github.com/ZestfulPulse/Design_Pattern_Lab) — orchestration and synthesis; **not used to make the LoS design change**. DPL is released under the repository's MIT License.
 - [Huashu Design](https://github.com/alchaincyf/huashu-design) — creative visual direction; **not used**. The upstream repository declares [MIT](https://github.com/alchaincyf/huashu-design/blob/master/LICENSE).
 - [UI UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) — searchable UI patterns and stack guidance; **not used**. The upstream repository declares [MIT](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/LICENSE).
 - [Hallmark](https://github.com/Nutlope/hallmark) — focused web quality review; **not used**. The upstream repository declares [MIT](https://github.com/Nutlope/hallmark/blob/main/LICENSE); its web guidance was not applied to this native iOS screen.
@@ -93,7 +94,6 @@ No external reference screenshots, logos, or copied UI assets are included in th
 - The After capture's visible card sequence does not match the current source ordering after the Goal card: Month appears next, while the source places Workout next. Do not present the screenshot as visual proof that Workout is second until this discrepancy is independently resolved.
 - Workout and safety details are not visible in these captures; their content and the accessibility tree were not verified.
 - No tests or accessibility-tree audit were run.
-- The Design Pattern Lab repository has not been made public as part of this work.
 
 ## Result
 
