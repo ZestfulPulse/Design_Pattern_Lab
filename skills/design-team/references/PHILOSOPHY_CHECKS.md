@@ -38,3 +38,19 @@ If the product philosophy is silent on a decision that materially affects the de
 Open assumptions may guide exploration but should not become blocker-level philosophy checks until approved or promoted into the product's own source of truth.
 
 See `templates/ASSUMPTIONS.yaml`.
+
+## Freshness
+
+Structured evidence should carry both the hash recorded when the checks were compiled and the current authoritative document hash:
+
+```json
+{
+  "philosophy": {
+    "source_doc": "docs/product-design.md",
+    "compiled_doc_sha256": "...",
+    "current_doc_sha256": "..."
+  }
+}
+```
+
+If the two hashes differ, the verdict gate records `CHECKS_STALE` and caps the result at `PASS_WITH_WARNING`. A stale check set may still be useful as a warning signal, but it must not support an unqualified `PASS`.
