@@ -1,118 +1,381 @@
-# ZestfulPulse Design Pattern Lab
+# Design Pattern Lab
 
-A global product-first **Design Team** workflow for ZestfulPulse apps and websites.
+> **A global design command center for AI coding agents.**  
+> 제품 철학을 먼저 읽고, 필요한 디자인 지식만 골라 쓰고, 실제 화면으로 검증하는 전역 디자인 총괄팀.
 
-## Core idea
-
-The user should only need one call:
+<p align="center">
+  <strong>One command. One design team. Product truth first.</strong>
+</p>
 
 ```text
-디자인팀, 이 화면을 제품 철학에 맞춰 수정해줘
+디자인팀, 이 화면을 제품 철학에 맞춰 수정해줘.
 ```
 
-Design Team is the global front door. It inspects the active product repository, selects only useful design sources, makes one product-specific decision, implements it, verifies the rendered result, and iterates from feedback.
+Design Pattern Lab, or **DPL**, is not a component dump and not another giant style library.
+
+It is a product-first orchestration layer for Codex and other supported coding-agent workflows. DPL reads the active product, decides what kind of design help is actually needed, selectively routes to relevant specialists, implements the smallest coherent change, and verifies the rendered result.
+
+---
+
+## Why DPL exists
+
+AI-generated products often start to look alike when the model is given lots of components but no clear design authority.
+
+DPL reverses that order.
+
+```text
+Generic style library
+        ↓
+      product
+```
+
+becomes:
+
+```text
+Product philosophy
+        ↓
+Current UX / tokens / behavior
+        ↓
+Design Team
+        ↓
+Only the design knowledge actually needed
+        ↓
+Implementation
+        ↓
+Rendered evidence
+```
+
+**The product decides the design. The library does not.**
+
+---
+
+## How it works
 
 ```text
 User
   ↓
-Design Team
+"디자인팀"
   ↓
-Product philosophy + selected specialist sources
+Inspect active product
   ↓
-One coherent product direction
+Find the actual design problem
   ↓
-Implementation in the active product repository
+Choose built-in capabilities + optional specialist sources
+  ↓
+Synthesize one direction
+  ↓
+Implement in the active repository
+  ↓
+Visual Release Review
+  ↓
+PASS / PASS_WITH_WARNING / FAIL
 ```
 
-Using several engines is not the goal. Product truth and sound source selection matter more than the number of tools involved.
+The user should not have to choose between five overlapping design agents.
 
-## Environment model
+**Design Team is the front door.** Specialist tools are contributors, not competing decision makers.
 
-Design Team is environment-agnostic. It can run from Codex on Windows, from Codex on a Mac mini reached through SSH, or in another supported environment that can access the active product repository. The active Codex session and product repository define where implementation happens. Signing-specific work remains on macOS.
+---
 
-## Design authority
+## Five focused capabilities
 
-1. The product's approved philosophy and current source of truth.
-2. Existing routes, behavior, tokens, components, and content.
-3. Design Team synthesis.
-4. Specialist design engines and references.
-5. Generic style defaults.
+DPL deliberately keeps its internal capability set small.
 
-Product truth always wins over a design catalog.
-
-## DPL core capabilities
-
-DPL deliberately keeps the internal skill set small. These five capabilities cover the gaps that broad style libraries usually miss:
-
-| Capability | Purpose |
+| Capability | What it does |
 |---|---|
-| **Component State Auditor** | Complete relevant UI states, responsive behavior, overflow, keyboard and touch behavior |
-| **Design System Ingestor** | Absorb external `DESIGN.md` or style systems through KEEP / ADAPT / REJECT instead of copying them wholesale |
-| **Interaction Physics** | Make motion explain causality, direct manipulation and feedback rather than decorate the screen |
-| **Accessibility Gate** | Treat semantics, focus, contrast, reflow, targets and reduced motion as release quality |
-| **Visual Release Review** | Inspect the rendered result and report PASS / PASS_WITH_WARNING / FAIL with evidence |
+| **Component State Auditor** | Checks relevant default, focus, loading, error, empty, overflow, responsive, keyboard and touch states |
+| **Design System Ingestor** | Reads external `DESIGN.md` or style systems and classifies guidance as **KEEP / ADAPT / REJECT** |
+| **Interaction Physics** | Makes motion explain causality, continuity, direct manipulation and feedback instead of decorating the screen |
+| **Accessibility Gate** | Reviews semantics, focus, contrast, reflow, target size, reduced motion and platform accessibility concerns |
+| **Visual Release Review** | Inspects the actual rendered result and reports **PASS / PASS_WITH_WARNING / FAIL** with evidence |
 
-These are built into Design Team. They are not five more skills the user has to install or invoke.
+These are built into Design Team. They are **not five more skills to install or invoke**.
 
-See [DPL core capabilities](skills/design-team/references/CORE_CAPABILITIES.md).
+→ [Read the core capability spec](skills/design-team/references/CORE_CAPABILITIES.md)
 
-## External design sources and specialist routing
+---
 
-Design Team may selectively consult these sources when they materially help the product task. The list describes available options; it does not mean every source was used in any particular project or showcase.
+## Product truth wins
 
-| Source | Origin | Role in Design Team | License / access |
-|---|---|---|---|
-| DPL | [This repository](https://github.com/ZestfulPulse/Design_Pattern_Lab) | Orchestration and synthesis, when the DPL toolset is available in the active environment | Internal ZestfulPulse project; no `LICENSE` file is present in this checkout. |
-| Huashu Design | [alchaincyf/huashu-design](https://github.com/alchaincyf/huashu-design) | Creative direction, high fidelity concepts, and visual exploration | Upstream declares [MIT](https://github.com/alchaincyf/huashu-design/blob/master/LICENSE). Follow its license when using its software or assets. |
-| UI UX Pro Max | [nextlevelbuilder/ui-ux-pro-max-skill](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) | Searchable UI patterns and stack-aware design-system guidance | Upstream declares [MIT](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/main/LICENSE). Follow its license when using its software or data. |
-| Hallmark | [Nutlope/hallmark](https://github.com/Nutlope/hallmark) | Focused web quality review; its web macrostructure guidance does not apply to native app screens | Upstream declares [MIT](https://github.com/Nutlope/hallmark/blob/main/LICENSE). DPL may also use its own bounded Hallmark-inspired checklist; do not claim the Hallmark tool ran unless it did. |
-| Infographic | [dataprofessor/infographic](https://github.com/dataprofessor/infographic) | Information-visualization examples for dense comparisons, sequences, or quantitative content | No `LICENSE` file was found in the checked upstream checkout; terms are unconfirmed. |
-| Refero | [refero.design](https://refero.design/) | Research into real product screens, UI patterns, and visual references | Subscription/authentication gated in the current DPL source boundary. Treat as research-only; do not copy or redistribute screenshots, logos, or proprietary copy. |
+DPL uses this authority order:
 
-These sources are not bundled into this repository by this table. Check the upstream license and service terms before any use that copies or redistributes their code, data, screenshots, or other assets. “Available” does not mean “used.”
+1. User instruction
+2. Approved product philosophy and decisions
+3. Current routes, behavior, tokens, components and content
+4. Design Team synthesis
+5. Specialist design engines and references
+6. Generic design defaults
 
-See [Design engine routing](skills/design-team/references/DESIGN_ENGINES.md) for selection rules and [Source attribution](skills/design-team/references/SOURCE_ATTRIBUTION.md) for the broader reference and inspiration inventory. Availability never implies that a source was used in a specific showcase.
+A mature product should not be restyled just because a new design library was discovered.
 
-## Showcase
+When an external design system is useful, DPL translates it into the current product rather than replacing the product with it.
 
-### 01 — Legs of Steel
+---
 
-**Product type:** Precision running analysis and coaching app<br>
-**Design intervention:** Home information hierarchy<br>
-**Before:** 이번 달 → 오늘의 워크아웃 → 목표까지<br>
-**After (source order):** 목표까지 → 오늘의 워크아웃 → 이번 달<br>
-**Design sources actually used:** Product-local philosophy + existing tokens + Design Team rules<br>
+## Specialist routing
+
+DPL can selectively consult external tools and references when they materially improve the task.
+
+| Source | Role |
+|---|---|
+| **Huashu Design** | Expressive visual direction and concept exploration |
+| **UI UX Pro Max** | Design-system and stack-aware guidance |
+| **Hallmark-inspired checks** | Web quality and anti-generic review |
+| **Infographic tooling** | Dense information, comparison and process visualization |
+| **Refero** | Real-product reference research when available |
+| **Product-local design docs** | Highest-value source when the product already has a defined philosophy |
+
+Using several engines is **not** the goal.
+
+For a small hierarchy problem, DPL may use no external design engine at all. For a larger redesign, it may combine several. The Design Team owns the final synthesis.
+
+→ [Design engine routing](skills/design-team/references/DESIGN_ENGINES.md)
+
+---
+
+## Showcase 01 · Legs of Steel
+
+**Product:** precision running analysis and coaching app  
+**Design intervention:** Home information hierarchy  
 **Result:** `PASS_WITH_WARNING`
 
-[View case study](showcase/01-legs-of-steel/README.md)
-
-The After screenshot visibly shows the monthly card after the goal card and does not show the workout card between them. The source order is documented in the case study, along with this unresolved evidence limitation.
-
-This is not a case study about using many design engines. Design Team prioritized the product document and existing design system, then changed one information-order decision without unnecessary external style input. The case shows that Design Team's value also comes from knowing when a narrow product-led intervention is enough.
-
-## Installation
-
-Install the single `design-team` skill globally in every environment where Codex will directly edit product repositories.
-
-Windows instructions are in [Windows setup](docs/WINDOWS_SETUP.md). Mac and SSH-hosted Codex instructions are in [Mac / SSH setup](docs/MAC_SETUP.md).
-
-Specialist engines may remain separate global tools. Design Team discovers and selects them when available and relevant.
-
-## Product documents
-
-Product-specific philosophy, design tokens, and approved decisions remain inside each product repository. Use templates only when the product repository lacks equivalent authoritative documents.
+The product philosophy defined the intended order as:
 
 ```text
-design/
-  PRODUCT_FOUNDATION.md
-  EXPERIENCE_SPEC.md
-  VISUAL_SYSTEM.md
-  DECISION_LOG.md
-  IMPLEMENTATION_HANDOFF.md
+Goal gap
+→ Today's training and safety
+→ Supporting statistics
 ```
 
-Templates are under `skills/design-team/templates/`. Do not create duplicate sources of truth.
+The previous Home hierarchy was:
 
-## Completion baseline
+```text
+Monthly stats
+→ Today's workout
+→ Goal progress
+```
 
-The current DPL baseline is intentionally compact: one global Design Team, five built-in capabilities, selective specialist routing, explicit source attribution, rendered-evidence verification, and public case-study structure. Future additions should be accepted only when they close a clearly identified gap without duplicating an existing capability.
+The design pass moved goal progress to the first position while preserving the existing visual system, business logic and data flow.
+
+<table>
+  <tr>
+    <th width="50%">Before</th>
+    <th width="50%">After</th>
+  </tr>
+  <tr>
+    <td><img src="showcase/01-legs-of-steel/before.png" alt="Legs of Steel Home before Design Team hierarchy change"></td>
+    <td><img src="showcase/01-legs-of-steel/after.png" alt="Legs of Steel Home after Design Team hierarchy change"></td>
+  </tr>
+</table>
+
+### What this case proves
+
+This is intentionally **not** a showcase about throwing many design engines at a screen.
+
+The actual sources used were:
+
+- LoS product philosophy
+- existing LoS design tokens
+- Design Team's product-first and rendered-evidence rules
+
+DPL, Huashu, UI UX Pro Max, Hallmark and Refero were **not used** to make the original LoS change.
+
+That restraint is part of the system.
+
+→ [Read the full Legs of Steel case study](showcase/01-legs-of-steel/README.md)
+
+---
+
+## Use it
+
+In any product repository where Design Team is installed globally:
+
+```text
+디자인팀, 이 화면을 제품 철학에 맞춰 수정해줘.
+```
+
+More specific requests are also fine:
+
+```text
+디자인팀, 현재 정보 구조는 유지하고
+이 화면이 정밀한 분석 도구처럼 느껴지도록 개선해줘.
+기능과 데이터 흐름은 바꾸지 말고 실제 렌더까지 검증해줘.
+```
+
+Or ask for review only:
+
+```text
+디자인팀, 구현은 하지 말고 이 화면의 UX 문제만 검토해줘.
+```
+
+---
+
+## Install
+
+### Windows
+
+```powershell
+$repoPath = "$env:USERPROFILE\projects\Design_Pattern_Lab"
+
+if (Test-Path $repoPath) {
+  Set-Location $repoPath
+  git pull --ff-only
+} else {
+  git clone https://github.com/ZestfulPulse/Design_Pattern_Lab.git $repoPath
+  Set-Location $repoPath
+}
+
+npx skills add . --skill design-team --global --agent codex
+```
+
+→ [Windows setup](docs/WINDOWS_SETUP.md)
+
+### Mac / SSH host
+
+```bash
+repo_path="$HOME/projects/Design_Pattern_Lab"
+
+if [ -d "$repo_path/.git" ]; then
+  cd "$repo_path"
+  git pull --ff-only
+else
+  git clone https://github.com/ZestfulPulse/Design_Pattern_Lab.git "$repo_path"
+  cd "$repo_path"
+fi
+
+npx skills add . --skill design-team --global --agent codex
+```
+
+→ [Mac / SSH setup](docs/MAC_SETUP.md)
+
+If Codex edits a Windows-local product, invoke Design Team from that Windows session.
+
+If Windows is only the control surface and the product repository lives on a Mac mini reached through SSH, invoke Design Team from the Mac Codex session.
+
+**Same team. Same rules. Different workbench.**
+
+---
+
+## Optional specialist engine
+
+UI UX Pro Max can be installed separately and used when its guidance is actually relevant:
+
+```bash
+npm install -g ui-ux-pro-max-cli
+uipro init --ai universal --global
+```
+
+DPL does not require every specialist tool to be installed.
+
+---
+
+## Repository structure
+
+```text
+Design_Pattern_Lab/
+├─ README.md
+├─ LICENSE
+├─ docs/
+│  ├─ WINDOWS_SETUP.md
+│  └─ MAC_SETUP.md
+├─ showcase/
+│  └─ 01-legs-of-steel/
+└─ skills/
+   └─ design-team/
+      ├─ SKILL.md
+      ├─ agents/
+      ├─ references/
+      │  ├─ CORE_CAPABILITIES.md
+      │  ├─ DESIGN_ENGINES.md
+      │  └─ SOURCE_ATTRIBUTION.md
+      └─ templates/
+```
+
+Product-specific philosophy, tokens and approved decisions remain in each product repository. DPL should not create a second source of truth.
+
+---
+
+## External sources & attribution
+
+DPL does not claim ownership of the external design systems, libraries or reference projects it learns from or routes to.
+
+External sources are classified as:
+
+- **Tool / engine** — actually invoked when installed and useful
+- **Reference** — consulted for patterns or principles
+- **Inspiration** — informed a DPL capability without bundling the upstream project
+
+Examples include Component Gallery, DESIGNmd, Refero, Huashu Design, UI UX Pro Max, Hallmark, Emil Kowalski's design skills, Addy Osmani's web-quality skills, Impeccable, shadcn/ui and Anime.js.
+
+**Available does not mean used.** Every showcase must list only the sources actually used.
+
+→ [Source attribution and inspiration](skills/design-team/references/SOURCE_ATTRIBUTION.md)
+
+---
+
+## Design boundaries
+
+DPL is allowed to improve presentation and interaction within the user's requested scope.
+
+It must not silently change:
+
+- backend contracts
+- authentication
+- business logic
+- data structures
+- routes
+- dependencies
+- deployment configuration
+- secrets
+
+It also must not claim:
+
+- that an external engine ran when it did not
+- that accessibility passed without evidence
+- that visual QA passed because build or lint passed
+- that an external project's license applies to DPL itself
+
+---
+
+## Design philosophy
+
+DPL is deliberately opinionated about a few things:
+
+**Use fewer sources, better.**  
+More design engines do not automatically produce better design.
+
+**Preserve product identity.**  
+An external style guide is input, not authority.
+
+**Motion should explain something.**  
+If removing an animation does not reduce understanding, it may be decoration.
+
+**Accessibility is release quality.**  
+Not an optional polish pass.
+
+**Rendered evidence beats declarations.**  
+A successful build does not prove a successful design.
+
+---
+
+## Status
+
+**DPL v1 baseline**
+
+- One global Design Team
+- Five built-in capabilities
+- Selective specialist routing
+- Explicit source attribution
+- Cross-platform Windows / Mac SSH workflow
+- Rendered-evidence verification
+- Public case-study structure
+
+Future capabilities should be added only when they close a clearly identified gap without duplicating an existing one.
+
+---
+
+## License
+
+Design Pattern Lab is released under the [MIT License](LICENSE).
+
+External tools, repositories, services and assets remain subject to their own licenses and terms.
