@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ZestfulPulse/Design_Pattern_Lab/schemas/philosophy-checks.schema.json",
+  "title": "DPL Philosophy Checks",
+  "type": "object",
+  "required": ["version", "source", "checks"],
+  "properties": {
+    "version": {"const": 1},
+    "source": {
+      "type": "object",
+      "required": ["doc", "doc_sha256"],
+      "properties": {
+        "doc": {"type": "string"},
+        "doc_sha256": {"type": "string"}
+      }
+    },
+    "roles": {"type": "object"},
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "source_ref", "principle", "kind", "scope", "severity"],
+        "properties": {
+          "id": {"type": "string"},
+          "source_ref": {"type": "string"},
+          "principle": {"type": "string"},
+          "kind": {"enum": ["order", "first_viewport", "presence", "absence", "judgment"]},
+          "scope": {"type": "object"},
+          "assert": {"type": "object"},
+          "severity": {"enum": ["blocker", "warning"]}
+        }
+      }
+    }
+  }
+}
