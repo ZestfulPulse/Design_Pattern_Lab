@@ -2,13 +2,13 @@
 
 ## Install Design Team for Codex
 
-Run these commands in PowerShell on the Windows PC where Codex is used. Clone through your normal GitHub authentication; this repository is private.
+Run these commands in PowerShell on the Windows PC where Codex is used. The repository is public, so cloning does not require repository access credentials.
 
 ```powershell
 $repoPath = "$env:USERPROFILE\projects\Design_Pattern_Lab"
 if (Test-Path $repoPath) {
   Set-Location $repoPath
-  git pull
+  git pull --ff-only
 } else {
   git clone https://github.com/ZestfulPulse/Design_Pattern_Lab.git $repoPath
   Set-Location $repoPath
@@ -39,7 +39,7 @@ After Design Pattern Lab changes:
 
 ```powershell
 Set-Location "$env:USERPROFILE\projects\Design_Pattern_Lab"
-git pull
+git pull --ff-only
 npx skills add . --skill design-team --global --agent codex
 ```
 
@@ -54,7 +54,7 @@ uipro update --global
 
 In a product repository, say for example:
 
-> 디자인팀, 이 웹페이지를 Enough의 제품 철학에 맞춰 수정해줘. 현재 UX 문서와 디자인 토큰을 먼저 읽고, 필요한 시각 변경을 구현한 뒤 모바일과 데스크톱에서 확인해줘.
+> 디자인팀, 이 웹페이지를 <product>의 제품 철학에 맞춰 수정해줘. 현재 UX 문서와 디자인 토큰을 먼저 읽고, 필요한 시각 변경을 구현한 뒤 모바일과 데스크톱에서 확인해줘.
 
 Design Team inspects the product source of truth, implements ordinary UI/UX changes within the request, verifies what it can, and reports evidence. Say “검토만 해줘” or “시안만 보여줘” when you want a read-only critique or options without implementation.
 
