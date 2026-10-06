@@ -25,6 +25,14 @@ Availability does not mean usage. A showcase must list only the sources actually
 | shadcn/ui | Implementation primitives for compatible web stacks | Implementation library only, not a DPL design authority |
 | Anime.js | Motion implementation option for compatible web projects | Implementation library only, not a DPL design authority |
 
+## Internal verification proposal provenance
+
+The structured evidence/verdict work was informed by a **user-supplied DPL design proposal and reference prototype (2026-10-06)**. DPL adopted the evidence-contract, philosophy-check, run-ledger, assumption-register, and verdict-gate ideas selectively rather than treating the proposal as a new user-facing skill.
+
+The integrated verifier code was reviewed, adapted, and extended in this repository. In particular, DPL keeps manual rendered evidence as a valid verification path and fixes a combined-condition verdict edge case so provenance/scope failures can still produce `FAIL` when render evidence is absent.
+
+This attribution records design provenance; it does not claim an upstream external software license for the supplied prototype.
+
 ## Existing specialist sources
 
 DPL may also route to the specialist sources documented in [DESIGN_ENGINES.md](DESIGN_ENGINES.md), including Huashu Design, UI UX Pro Max, Hallmark-inspired checks, Infographic tooling, and Refero when available.
