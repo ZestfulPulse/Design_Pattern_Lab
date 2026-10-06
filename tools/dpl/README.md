@@ -31,3 +31,7 @@ python3 -m unittest test_dpl
 There is no production web/iOS/Android capture adapter in DPL yet. Do not claim these tools captured a real UI unless an actual adapter or explicit product-specific capture process produced the artifacts.
 
 Manual rendered evidence inspected by Design Team remains valid evidence. The structured tools are an optional stronger verification path, not a replacement for human visual review.
+
+## Provenance
+
+These tools were adapted from a user-supplied DPL verification prototype dated 2026-10-06, then reviewed and modified for DPL's public baseline. The integrated version adds a regression case for the interaction between missing render evidence and false engine-use claims, and preserves manual rendered review as a valid evidence path.
