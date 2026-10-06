@@ -1,5 +1,7 @@
 # Design Pattern Lab
 
+<p align="right"><a href="README_KO.md">한국어</a> · <strong>English</strong></p>
+
 > **A global design command center for AI coding agents.**  
 > 제품 철학을 먼저 읽고, 필요한 디자인 지식만 골라 쓰고, 실제 화면으로 검증하는 전역 디자인 총괄팀.
 
