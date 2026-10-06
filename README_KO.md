@@ -152,6 +152,8 @@ DPL은 작업에 실제 도움이 될 때만 외부 도구와 레퍼런스를 �
 | **Hallmark-inspired checks** | 웹 품질과 획일적인 AI UI 패턴 점검 |
 | **Infographic tooling** | 밀도 높은 정보, 비교, 프로세스 시각화 |
 | **Refero** | 사용 가능할 때 실제 제품 UI 레퍼런스 조사 |
+| **Component Gallery** | 컴포넌트 상태, 의미 구조, 성숙한 디자인 시스템 사례 비교 |
+| **21st.dev** | 디자인 방향이 승인된 뒤 React/Tailwind 구현 참고에 선택적으로 사용 |
 | **제품 내부 디자인 문서** | 제품 철학이 이미 정의되어 있다면 가장 중요한 소스 |
 
 여러 엔진을 많이 쓰는 것이 목표가 아닙니다.
@@ -352,7 +354,7 @@ DPL은 참고하거나 라우팅하는 외부 디자인 시스템, 라이브러�
 - **Reference**: 패턴이나 원칙을 참고
 - **Inspiration**: 상류 프로젝트를 통째로 포함하지 않고 DPL 능력 설계에 영향을 준 소스
 
-예시는 Component Gallery, DESIGNmd, Refero, Huashu Design, UI UX Pro Max, Hallmark, Emil Kowalski의 design skills, Addy Osmani의 web-quality skills, Impeccable, shadcn/ui, Anime.js 등입니다.
+예시는 Component Gallery, 21st.dev, DESIGNmd, Refero, Huashu Design, UI UX Pro Max, Hallmark, Emil Kowalski의 design skills, Addy Osmani의 web-quality skills, Impeccable, shadcn/ui, Anime.js 등입니다.
 
 **사용 가능하다는 것과 실제 사용했다는 것은 다릅니다.** 각 Showcase는 실제 사용한 소스만 명시해야 합니다.
 
