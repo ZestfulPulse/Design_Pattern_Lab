@@ -1,0 +1,36 @@
+version: 1
+source:
+  doc: docs/marathon-design-v1.0.21.md
+  doc_sha256: "<sha256 of the doc at compile time>"
+roles:
+  goal_progress:   {ios: "dpl.goal_progress",   web: "[data-dpl-role=goal_progress]"}
+  today_workout:   {ios: "dpl.today_workout",   web: "[data-dpl-role=today_workout]"}
+  monthly_summary: {ios: "dpl.monthly_summary", web: "[data-dpl-role=monthly_summary]"}
+checks:
+  - id: PH-13.1-ORDER-HOME
+    source_ref: "§13.1"
+    principle: "Goal gap -> today's training and safety -> supporting statistics"
+    kind: order
+    scope: {screen: home}
+    assert: {order: [goal_progress, today_workout, monthly_summary]}
+    severity: blocker
+  - id: PH-13.1-GOAL-FIRST-VIEWPORT
+    source_ref: "§13.1"
+    principle: "The goal gap must be readable without scrolling"
+    kind: first_viewport
+    scope: {screen: home}
+    assert: {role: goal_progress, min_visible_ratio: 1.0}
+    severity: blocker
+  - id: PH-13.1-WORKOUT-VISIBLE
+    source_ref: "§13.1"
+    principle: "Today's workout should start within the first viewport"
+    kind: first_viewport
+    scope: {screen: home}
+    assert: {role: today_workout, min_visible_ratio: 0.3}
+    severity: warning
+  - id: PH-FEEL-ANALYSIS-TOOL
+    source_ref: "§1"
+    principle: "Feels like a precise analysis tool"
+    kind: judgment
+    scope: {screen: home}
+    severity: warning
