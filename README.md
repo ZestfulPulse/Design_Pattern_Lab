@@ -40,6 +40,22 @@ Design Team is environment-agnostic. It can run from Codex on Windows, from Code
 
 Product truth always wins over a design catalog.
 
+## DPL core capabilities
+
+DPL deliberately keeps the internal skill set small. These five capabilities cover the gaps that broad style libraries usually miss:
+
+| Capability | Purpose |
+|---|---|
+| **Component State Auditor** | Complete relevant UI states, responsive behavior, overflow, keyboard and touch behavior |
+| **Design System Ingestor** | Absorb external `DESIGN.md` or style systems through KEEP / ADAPT / REJECT instead of copying them wholesale |
+| **Interaction Physics** | Make motion explain causality, direct manipulation and feedback rather than decorate the screen |
+| **Accessibility Gate** | Treat semantics, focus, contrast, reflow, targets and reduced motion as release quality |
+| **Visual Release Review** | Inspect the rendered result and report PASS / PASS_WITH_WARNING / FAIL with evidence |
+
+These are built into Design Team. They are not five more skills the user has to install or invoke.
+
+See [DPL core capabilities](skills/design-team/references/CORE_CAPABILITIES.md).
+
 ## External design sources and specialist routing
 
 Design Team may selectively consult these sources when they materially help the product task. The list describes available options; it does not mean every source was used in any particular project or showcase.
@@ -55,7 +71,7 @@ Design Team may selectively consult these sources when they materially help the 
 
 These sources are not bundled into this repository by this table. Check the upstream license and service terms before any use that copies or redistributes their code, data, screenshots, or other assets. “Available” does not mean “used.”
 
-See [Design engine routing](skills/design-team/references/DESIGN_ENGINES.md) for selection rules. The Refero research-only boundary is documented in the local DPL source inventory; current availability and service terms must be checked before each use.
+See [Design engine routing](skills/design-team/references/DESIGN_ENGINES.md) for selection rules and [Source attribution](skills/design-team/references/SOURCE_ATTRIBUTION.md) for the broader reference and inspiration inventory. Availability never implies that a source was used in a specific showcase.
 
 ## Showcase
 
@@ -96,3 +112,7 @@ design/
 ```
 
 Templates are under `skills/design-team/templates/`. Do not create duplicate sources of truth.
+
+## Completion baseline
+
+The current DPL baseline is intentionally compact: one global Design Team, five built-in capabilities, selective specialist routing, explicit source attribution, rendered-evidence verification, and public case-study structure. Future additions should be accepted only when they close a clearly identified gap without duplicating an existing capability.
