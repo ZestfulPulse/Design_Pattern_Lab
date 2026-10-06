@@ -69,3 +69,33 @@ The skill guides design and front-end work in the environment that actually owns
 - macOS remains required for signing-specific work, but Mac mini is not limited to signing. It may also be the active product-development host.
 
 Supabase, Cloudflare, backend, deployment, security, routes, package dependencies, and data contracts remain outside an ordinary design request unless explicitly included.
+
+## Windows / Mac parity
+
+Windows and Mac must use the same GitHub source of truth: `ZestfulPulse/Design_Pattern_Lab`.
+
+The expected parity contract is:
+
+- same `design-team` skill source and instructions;
+- same design-engine routing rules;
+- same product-first authority order;
+- same evidence-based verification rules;
+- environment-specific tooling only where required by the active product.
+
+After any Design Pattern Lab change, refresh the Windows installation with:
+
+```powershell
+Set-Location "$env:USERPROFILE\projects\Design_Pattern_Lab"
+git pull --ff-only
+npx skills add . --skill design-team --global --agent codex
+```
+
+Then verify both Design Team and UI UX Pro Max:
+
+```powershell
+Get-ChildItem "$env:USERPROFILE\.agents\skills" -Directory | Select-Object -ExpandProperty Name
+where.exe uipro
+uipro --version
+```
+
+A product edited locally on Windows should invoke Design Team from that Windows Codex session. A product edited on the Mac through SSH should invoke Design Team from the Mac Codex session. The user-facing command remains the same in both environments: `디자인팀`.
