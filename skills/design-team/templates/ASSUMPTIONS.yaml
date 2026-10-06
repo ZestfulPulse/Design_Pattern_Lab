@@ -1,0 +1,8 @@
+# Copy into <product-repo>/.dpl/assumptions.yaml only when material assumptions are needed.
+- id: A-001
+  statement: ""
+  basis: ""
+  made_in_run: ""
+  status: open # open | approved | rejected
+  affects_checks: []
+  promote_to: ""
