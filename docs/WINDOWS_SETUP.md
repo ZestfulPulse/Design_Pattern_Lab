@@ -62,4 +62,10 @@ Keep product-specific documents in the app's own GitHub repository. Design Team 
 
 ## Environment boundary
 
-The skill guides design and front-end work. It does not require local macOS development, Supabase access, Cloudflare credentials, or signing tools. Use the Mac mini only for signing tasks that require it.
+The skill guides design and front-end work in the environment that actually owns the active product repository and Codex session.
+
+- If Codex edits a Windows-local repository, use the Windows global Design Team installation.
+- If Windows is only the control surface and Codex runs on a Mac mini through SSH, install and invoke Design Team on that Mac user as well.
+- macOS remains required for signing-specific work, but Mac mini is not limited to signing. It may also be the active product-development host.
+
+Supabase, Cloudflare, backend, deployment, security, routes, package dependencies, and data contracts remain outside an ordinary design request unless explicitly included.
