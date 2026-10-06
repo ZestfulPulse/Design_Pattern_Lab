@@ -123,7 +123,8 @@ A release review result must distinguish:
 
 - **PASS** — requested visual scope verified with sufficient evidence.
 - **PASS_WITH_WARNING** — main goal verified, but relevant evidence or coverage is incomplete.
-- **FAIL** — requested design goal is not achieved or a regression is visible.
+- **FAIL** — requested design goal is not achieved, a required check fails, or a material provenance/scope violation is established.
+- **NOT_VERIFIED** — rendered evidence is insufficient to judge the visual result.
 
 Never mark PASS because build or lint passed. Visual QA requires rendered evidence.
 
