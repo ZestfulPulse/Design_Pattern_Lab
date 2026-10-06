@@ -144,6 +144,8 @@ DPL can selectively consult external tools and references when they materially i
 | **Hallmark-inspired checks** | Web quality and anti-generic review |
 | **Infographic tooling** | Dense information, comparison and process visualization |
 | **Refero** | Real-product reference research when available |
+| **Component Gallery** | Component-state, semantics and mature design-system comparison |
+| **21st.dev** | Optional React/Tailwind implementation reference after design direction is approved |
 | **Product-local design docs** | Highest-value source when the product already has a defined philosophy |
 
 Using several engines is **not** the goal.
@@ -327,7 +329,7 @@ External sources are classified as:
 - **Reference** — consulted for patterns or principles
 - **Inspiration** — informed a DPL capability without bundling the upstream project
 
-Examples include Component Gallery, DESIGNmd, Refero, Huashu Design, UI UX Pro Max, Hallmark, Emil Kowalski's design skills, Addy Osmani's web-quality skills, Impeccable, shadcn/ui and Anime.js.
+Examples include Component Gallery, 21st.dev, DESIGNmd, Refero, Huashu Design, UI UX Pro Max, Hallmark, Emil Kowalski's design skills, Addy Osmani's web-quality skills, Impeccable, shadcn/ui and Anime.js.
 
 **Available does not mean used.** Every showcase must list only the sources actually used.
 
