@@ -100,6 +100,35 @@ Use when the design problem is primarily about:
 
 Do not turn ordinary product screens into posters. Use infographic logic only where information density benefits from it.
 
+## Component and implementation references
+
+These sources help Design Team inspect real component patterns or implementation options. They are references, not product-design authorities.
+
+### Component Gallery
+
+Use Component Gallery selectively when Component State Auditor needs stronger real-world comparison for:
+
+- relevant interaction states;
+- component naming and semantics;
+- accessibility/usage guidance;
+- established design-system patterns;
+- platform or implementation differences.
+
+Do not copy a component merely because another design system includes it. Product-local behavior and platform conventions remain authoritative.
+
+### 21st.dev
+
+Use 21st.dev as an optional implementation reference for compatible React/Tailwind web work when Design Team needs:
+
+- concrete component candidates;
+- implementation patterns that can accelerate an approved direction;
+- examples of AI-assisted interface implementation;
+- a bridge from an already-decided design direction to working UI code.
+
+Do **not** use 21st.dev as product philosophy, as a wholesale design-system replacement, or as permission to add dependencies without explicit scope. Treat any retrieved component code under its applicable upstream terms.
+
+Neither source needs to be installed or consulted for ordinary work. Availability does not imply use.
+
 ## Reference-research tools
 
 Use Refero or other available research tools when a substantial redesign benefits from real product references.
@@ -120,10 +149,11 @@ Reference research should answer a concrete design question, such as:
 | Web landing redesign | DPL built-in capabilities + UI UX Pro Max + Hallmark |
 | Strong visual/art direction | DPL built-in capabilities + Huashu |
 | Analytics/dashboard redesign | DPL built-in capabilities + UI UX Pro Max + Infographic |
-| Small component fix | Product-local system first |
+| Small component fix | Product-local system first; Component Gallery only when state/pattern comparison materially helps |
 | Native app screen | DPL built-in capabilities + UI UX Pro Max, no Hallmark macrostructure |
 | Brand-heavy marketing page | DPL built-in capabilities + Huashu + Hallmark |
 | Dense explanatory page | DPL built-in capabilities + Infographic + Hallmark |
+| React/Tailwind component implementation | Product-local system first + 21st.dev when concrete implementation reference is useful |
 
 ## Conflict resolution
 
