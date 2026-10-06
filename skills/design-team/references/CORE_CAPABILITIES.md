@@ -28,7 +28,7 @@ Check only states relevant to the component:
 
 Do not invent states that the product does not need. Prefer the product's existing component behavior and platform conventions.
 
-Reference inspiration may include Component Gallery and established design systems, but product-local behavior remains authoritative.
+Reference inspiration may include Component Gallery and established design systems. Use Component Gallery for concrete comparison of relevant states, semantics, accessibility guidance, and mature component patterns when that comparison materially improves the audit. Product-local behavior and platform conventions remain authoritative.
 
 ## 2. Design System Ingestor
 
