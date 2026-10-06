@@ -1,0 +1,13 @@
+version: 1
+source:
+  doc: docs/<product-design-source>.md
+  doc_sha256: ""
+roles: {}
+checks:
+  - id: PH-EXAMPLE
+    source_ref: ""
+    principle: ""
+    kind: judgment # order | first_viewport | presence | absence | judgment
+    scope:
+      screen: ""
+    severity: warning # blocker | warning
