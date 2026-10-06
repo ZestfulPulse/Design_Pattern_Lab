@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ZestfulPulse/Design_Pattern_Lab/schemas/evidence.schema.json",
+  "title": "DPL Evidence",
+  "type": "object",
+  "required": ["schema", "captures", "checks", "unverified_areas"],
+  "properties": {
+    "schema": {"const": "dpl.evidence/1"},
+    "run_id": {"type": "string"},
+    "product": {"type": "object"},
+    "baseline": {"type": "object"},
+    "environment": {"type": "object"},
+    "fixture": {"type": "object"},
+    "captures": {"type": "array", "items": {"$ref": "#/$defs/artifact"}},
+    "a11y_dumps": {"type": "array", "items": {"$ref": "#/$defs/artifact"}},
+    "expected_checks": {"type": "array", "items": {"type": "string"}},
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "status"],
+        "properties": {
+          "id": {"type": "string"},
+          "kind": {"type": "string"},
+          "status": {"enum": ["pass", "fail", "unverifiable", "judged"]},
+          "severity": {"enum": ["blocker", "warning"]},
+          "evidence": {"type": "array", "items": {"type": "string"}},
+          "detail": {"type": "string"}
+        }
+      }
+    },
+    "unverified_areas": {"type": "array", "items": {"type": "object"}},
+    "build_checks": {"type": "object"},
+    "claims": {"type": "object"},
+    "scope": {"type": "object"},
+    "declared_verdict": {"enum": ["PASS", "PASS_WITH_WARNING", "FAIL", "NOT_VERIFIED"]}
+  },
+  "$defs": {
+    "artifact": {
+      "type": "object",
+      "required": ["id", "path", "sha256"],
+      "properties": {
+        "id": {"type": "string"},
+        "path": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[a-fA-F0-9]{64}$"}
+      }
+    }
+  }
+}
