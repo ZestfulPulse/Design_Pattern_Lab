@@ -14,7 +14,7 @@ Availability does not mean usage. A showcase must list only the sources actually
 
 | Source | Role in DPL | Relationship |
 |---|---|---|
-| Component Gallery | Component-state comparison and completeness | Inspiration for Component State Auditor |
+| Component Gallery | Component-state comparison, naming, accessibility guidance, and real design-system examples | Reference + inspiration for Component State Auditor; not bundled |
 | DESIGNmd | Machine-readable external design-system input | Inspiration for Design System Ingestor |
 | Refero / Refero Styles | Real-product reference research | Optional research source; not bundled |
 | emilkowalski/skills | Interaction detail, motion, direct-manipulation thinking | Inspiration for Interaction Physics |
@@ -22,6 +22,7 @@ Availability does not mean usage. A showcase must list only the sources actually
 | Superfuture/design-review | Rendered design review and release-check workflow | Inspiration for Visual Release Review |
 | jakubkrehel/skills | Evidence-first interface review and smallest-effective-fix thinking | Operating-principle reference |
 | pbakaus/impeccable | Responsive/adaptation and systematic UI review ideas | Operating-principle reference |
+| 21st.dev | React/Tailwind component discovery and implementation reference | Optional implementation reference; never a product-philosophy authority and never bundled wholesale |
 | shadcn/ui | Implementation primitives for compatible web stacks | Implementation library only, not a DPL design authority |
 | Anime.js | Motion implementation option for compatible web projects | Implementation library only, not a DPL design authority |
 
