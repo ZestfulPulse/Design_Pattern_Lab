@@ -68,7 +68,7 @@ Implement in the active repository
   ↓
 Visual Release Review
   ↓
-PASS / PASS_WITH_WARNING / FAIL
+PASS / PASS_WITH_WARNING / FAIL / NOT_VERIFIED
 ```
 
 The user should not have to choose between five overlapping design agents.
@@ -87,11 +87,28 @@ DPL deliberately keeps its internal capability set small.
 | **Design System Ingestor** | Reads external `DESIGN.md` or style systems and classifies guidance as **KEEP / ADAPT / REJECT** |
 | **Interaction Physics** | Makes motion explain causality, continuity, direct manipulation and feedback instead of decorating the screen |
 | **Accessibility Gate** | Reviews semantics, focus, contrast, reflow, target size, reduced motion and platform accessibility concerns |
-| **Visual Release Review** | Inspects the actual rendered result and reports **PASS / PASS_WITH_WARNING / FAIL** with evidence |
+| **Visual Release Review** | Inspects the actual rendered result and reports **PASS / PASS_WITH_WARNING / FAIL / NOT_VERIFIED** with evidence |
 
 These are built into Design Team. They are **not five more skills to install or invoke**.
 
 → [Read the core capability spec](skills/design-team/references/CORE_CAPABILITIES.md)
+
+---
+
+## Evidence that can push back
+
+DPL can now use an optional structured verification path that turns parts of the product philosophy into checks, records rendered evidence, tracks which engines actually ran, and computes the strongest verdict the evidence supports.
+
+The important distinction is simple:
+
+- **human-rendered evidence still counts** — real browser/simulator/device output inspected by Design Team remains valid;
+- **structured verification is stronger when available** — it can catch overclaims, incomparable Before/After data, missing evidence, false engine-use claims, and scope violations;
+- **NOT_VERIFIED** means there is not enough rendered evidence to judge the visual result. It does not mean a verification tool was merely unavailable.
+
+Internal tools live under `tools/dpl/`. They are part of Design Team, not new user-facing skills.
+
+→ [Evidence and verdict contract](skills/design-team/references/EVIDENCE_AND_VERDICT.md)  
+→ [Philosophy checks guide](skills/design-team/references/PHILOSOPHY_CHECKS.md)
 
 ---
 
@@ -369,6 +386,7 @@ A successful build does not prove a successful design.
 - Explicit source attribution
 - Cross-platform Windows / Mac SSH workflow
 - Rendered-evidence verification
+- Optional machine-checkable verdict gate and run provenance
 - Public case-study structure
 
 Future capabilities should be added only when they close a clearly identified gap without duplicating an existing one.
