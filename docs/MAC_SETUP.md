@@ -22,7 +22,7 @@ A pre-existing `design-team` skill should be reviewed before reinstalling. Other
 
 ## Install or update Design Team
 
-Clone through the normal GitHub authentication for this private repository:
+The repository is public, so a normal HTTPS clone does not require repository access credentials:
 
 ```bash
 repo_path="$HOME/projects/Design_Pattern_Lab"
@@ -94,7 +94,7 @@ Do not duplicate or relocate specialist repositories merely to install Design Te
 Example:
 
 ```bash
-ssh jarvis
+ssh <host>
 cd ~/projects/<product-repository>
 codex
 ```
