@@ -117,11 +117,11 @@ Check:
 
 Choose the few changes with the highest user impact.
 
-### 3. Route to specialists
+### 3. Route to specialists and core capabilities
 
-Consult [Design engine routing](references/DESIGN_ENGINES.md).
+Consult [Design engine routing](references/DESIGN_ENGINES.md) and [DPL core capabilities](references/CORE_CAPABILITIES.md).
 
-Select only engines relevant to the task.
+Select only engines and built-in capabilities relevant to the task. The five DPL core capabilities are internal decision modules, not separate user-facing skills. Do not run all of them by default.
 
 Examples:
 
@@ -161,13 +161,13 @@ For data-heavy products, make data hierarchy more legible rather than merely dec
 
 ### 6. Verify
 
-Run relevant lint, build, typecheck, tests, preview, or device checks.
+Use **Visual Release Review** for meaningful design implementation and **Accessibility Gate** when the changed surface warrants it. Run relevant lint, build, typecheck, tests, preview, or device checks.
 
 For web, inspect at least one wide and one narrow viewport when possible.
 For native/mobile, inspect available simulator/device screenshots or rendered output.
 For interaction work, verify focus, tap/drag targets, loading/empty/error states, and motion behavior relevant to the changed area.
 
-Never state visual QA passed without rendered evidence.
+Never state visual QA passed without rendered evidence. Build success is not visual QA. Use PASS / PASS_WITH_WARNING / FAIL when a design verification result is useful, and state unverified areas explicitly.
 
 ### 7. Iterate
 
