@@ -21,6 +21,7 @@ def make_run(mutate=None, ledger=None):
 
     evidence = {
         "schema": "dpl.evidence/1",
+        "review_mode": "harness",
         "product": {"head": "abc123", "dirty": False},
         "baseline": {"ref": "3a1cf16"},
         "fixture": {
@@ -258,6 +259,74 @@ class GateTests(unittest.TestCase):
     def test_unknown_artifact_ref_is_invalid(self):
         with self.assertRaises(vg.InvalidEvidence):
             gate(lambda e: e["checks"][0].update(evidence=["nope"]))
+
+    def test_harness_without_philosophy_checks_warns(self):
+        result = gate(lambda e: e.update(checks=[], expected_checks=[]))
+        self.assertEqual(result["computed"], "PASS_WITH_WARNING")
+        self.assertIn("NO_PHILOSOPHY_CHECKS", codes(result))
+
+    def test_human_render_without_philosophy_checks_can_pass(self):
+        def mutate(e):
+            e.update(
+                review_mode="human_render",
+                checks=[],
+                expected_checks=[],
+                human_review={
+                    "reviewer": "design-team visual reviewer",
+                    "environment": "iPhone simulator",
+                    "viewport": "1206x2622",
+                    "reviewed_capture_ids": ["after_top"],
+                    "reviewed_areas": ["home hierarchy", "visible text clipping"],
+                },
+            )
+        result = gate(mutate)
+        self.assertEqual(result["computed"], "PASS")
+        self.assertNotIn("NO_PHILOSOPHY_CHECKS", codes(result))
+
+    def test_human_render_requires_minimum_review_record(self):
+        with self.assertRaises(vg.InvalidEvidence):
+            gate(lambda e: e.update(review_mode="human_render", checks=[], human_review={}))
+
+    def test_stale_philosophy_checks_warn(self):
+        result = gate(
+            lambda e: e.update(
+                philosophy={
+                    "source_doc": "docs/design.md",
+                    "compiled_doc_sha256": "old",
+                    "current_doc_sha256": "new",
+                }
+            )
+        )
+        self.assertEqual(result["computed"], "PASS_WITH_WARNING")
+        self.assertIn("CHECKS_STALE", codes(result))
+
+    def test_fresh_philosophy_checks_do_not_warn(self):
+        result = gate(
+            lambda e: e.update(
+                philosophy={
+                    "source_doc": "docs/design.md",
+                    "compiled_doc_sha256": "same",
+                    "current_doc_sha256": "same",
+                }
+            )
+        )
+        self.assertEqual(result["computed"], "PASS")
+        self.assertNotIn("CHECKS_STALE", codes(result))
+
+    def test_gate_fields_exist_in_evidence_schema(self):
+        schema_path = os.path.join(
+            os.path.dirname(__file__),
+            "..",
+            "..",
+            "skills",
+            "design-team",
+            "schemas",
+            "evidence.schema.json",
+        )
+        with open(os.path.abspath(schema_path), encoding="utf-8") as f:
+            schema = __import__("json").load(f)
+        self.assertTrue(vg.GATE_EVIDENCE_FIELDS.issubset(set(schema["properties"])))
+        self.assertIn("review_mode", schema["required"])
 
 
 def dump(elements, complete, viewport_h=2622):
