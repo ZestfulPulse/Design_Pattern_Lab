@@ -97,7 +97,9 @@ Determine:
 
 Reuse authoritative product documents. Do not create parallel design truth.
 
-If product philosophy is not documented, infer conservatively from the user's request and existing product behavior. Mark assumptions.
+If `.dpl/philosophy.checks.yaml` exists, treat it as a derived verification contract, not as product truth. Compare its recorded source-document hash with the current authoritative document when the structured verifier supports that check. If rules are missing and machine-checkable philosophy would materially improve verification, propose a small rule list. Creating or materially changing interpretive rules requires one approval of that rule list; future runs do not require repeated approval.
+
+If product philosophy is not documented, infer conservatively from the user's request and existing product behavior. Mark material assumptions. When an assumption affects a durable design rule, record it in `.dpl/assumptions.yaml` if the product uses DPL structured verification.
 
 ### 2. Diagnose the experience
 
@@ -169,6 +171,10 @@ For interaction work, verify focus, tap/drag targets, loading/empty/error states
 
 Never state visual QA passed without rendered evidence. Build success is not visual QA. Use PASS / PASS_WITH_WARNING / FAIL when a design verification result is useful, and state unverified areas explicitly.
 
+`NOT_VERIFIED` is reserved for visual work that lacks rendered evidence sufficient to judge the result. Tool absence alone does not force `NOT_VERIFIED`: real simulator/device/browser captures inspected by Design Team remain valid rendered evidence.
+
+When structured DPL evidence is available, consult [Evidence and verdict contract](references/EVIDENCE_AND_VERDICT.md). Run `tools/dpl/verdict_gate.py` when applicable and never report a verdict higher than its computed verdict. If the gate reports `overclaim: true`, include that fact and preserve the gate reasons without softening them.
+
 ### 7. Iterate
 
 Treat user feedback as the next design pass.
@@ -186,4 +192,6 @@ Report concisely:
 - specialist engines actually used;
 - exact files changed;
 - checks and viewport/device sizes actually inspected;
+- computed verdict when the structured gate was used;
+- overclaim flag and gate reasons when present;
 - anything still unverified.
