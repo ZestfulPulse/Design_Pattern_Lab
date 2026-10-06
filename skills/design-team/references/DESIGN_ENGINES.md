@@ -26,20 +26,20 @@ DPL has five focused internal capabilities. They are part of Design Team and are
 
 See [DPL Core Capabilities](CORE_CAPABILITIES.md).
 
-## DPL — orchestration and product-design synthesis
+## DPL — this repository's built-in orchestration layer
 
-Role: broad product-design orchestration when a local DPL toolset is available.
+**DPL means Design Pattern Lab itself**, specifically the Design Team workflow plus the five built-in capabilities documented in [CORE_CAPABILITIES.md](CORE_CAPABILITIES.md). It is not a separate hidden toolset and does not require another DPL installation.
 
-Typical use:
+Its role is to:
 
-- deciding which specialist design sources are relevant;
-- reconciling multiple design references;
-- converting product philosophy into a coherent visual/UX direction;
-- maintaining consistency across screens and platforms.
+- decide which specialist design sources are relevant;
+- reconcile multiple references against product truth;
+- convert product philosophy into one coherent visual/UX direction;
+- apply the five built-in capabilities when relevant;
+- maintain consistency across screens and platforms;
+- require rendered evidence before declaring visual completion.
 
-DPL should not compete with Design Team. Treat DPL as an internal orchestration source under Design Team.
-
-If DPL is unavailable in the active environment, continue with other available sources and product-local evidence.
+When a routing example says **DPL + UI UX Pro Max**, it means **Design Team using DPL's built-in orchestration/capabilities, with UI UX Pro Max as an optional specialist input**.
 
 ## Huashu Design — expressive visual direction
 
@@ -116,14 +116,14 @@ Reference research should answer a concrete design question, such as:
 
 | Task | Primary sources |
 |---|---|
-| App-wide redesign | DPL + UI UX Pro Max |
-| Web landing redesign | DPL + UI UX Pro Max + Hallmark |
-| Strong visual/art direction | DPL + Huashu |
-| Analytics/dashboard redesign | DPL + UI UX Pro Max + Infographic |
+| App-wide redesign | DPL built-in capabilities + UI UX Pro Max |
+| Web landing redesign | DPL built-in capabilities + UI UX Pro Max + Hallmark |
+| Strong visual/art direction | DPL built-in capabilities + Huashu |
+| Analytics/dashboard redesign | DPL built-in capabilities + UI UX Pro Max + Infographic |
 | Small component fix | Product-local system first |
-| Native app screen | DPL + UI UX Pro Max, no Hallmark macrostructure |
-| Brand-heavy marketing page | DPL + Huashu + Hallmark |
-| Dense explanatory page | DPL + Infographic + Hallmark |
+| Native app screen | DPL built-in capabilities + UI UX Pro Max, no Hallmark macrostructure |
+| Brand-heavy marketing page | DPL built-in capabilities + Huashu + Hallmark |
+| Dense explanatory page | DPL built-in capabilities + Infographic + Hallmark |
 
 ## Conflict resolution
 
