@@ -69,7 +69,7 @@ Install the single `design-team` skill globally in every environment where Codex
 
 Windows instructions are in [Windows setup](docs/WINDOWS_SETUP.md).
 
-For Mac/SSH workflows, install the same global Design Team skill in the Mac user environment that actually runs Codex.
+Mac and SSH-hosted Codex instructions are in [Mac / SSH setup](docs/MAC_SETUP.md).
 
 Specialist engines may remain separate global tools. Design Team discovers and uses them when available.
 
