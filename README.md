@@ -101,9 +101,11 @@ DPL can now use an optional structured verification path that turns parts of the
 
 The important distinction is simple:
 
-- **human-rendered evidence still counts** — real browser/simulator/device output inspected by Design Team remains valid;
+- **human-rendered evidence still counts** — real browser/simulator/device output inspected by Design Team remains valid and can be recorded as `review_mode: human_render` with reviewer, environment, viewport, reviewed capture IDs, reviewed areas, and any unverified areas;
 - **structured verification is stronger when available** — it can catch overclaims, incomparable Before/After data, missing evidence, false engine-use claims, and scope violations;
 - **NOT_VERIFIED** means there is not enough rendered evidence to judge the visual result. It does not mean a verification tool was merely unavailable.
+- **Harness mode without philosophy checks** is capped at `PASS_WITH_WARNING` (`NO_PHILOSOPHY_CHECKS`), while a complete `human_render` review can still reach `PASS`.
+- **Stale philosophy checks** are detected through source-document hashes and cap the result at `PASS_WITH_WARNING` (`CHECKS_STALE`).
 
 Internal tools live under `tools/dpl/`. They are part of Design Team, not new user-facing skills.
 
