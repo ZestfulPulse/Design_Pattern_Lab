@@ -287,6 +287,7 @@ If Windows is only the control surface and the product repository lives on a Mac
 DPL uses `visual-inspiration-research` as the default reference-research replacement for Refero. It does not require a Refero subscription.
 
 ```bash
+npx skills remove refero-design --global --agent codex -y
 npx skills add https://github.com/Eldergenix/Codex-Design --skill visual-inspiration-research --global --agent codex
 ```
 
