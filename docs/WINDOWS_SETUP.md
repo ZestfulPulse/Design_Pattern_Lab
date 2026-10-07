@@ -18,6 +18,16 @@ npx skills add . --skill design-team --global --agent codex
 
 The Skills CLI supports selecting a single skill, global installation, and targeting Codex. Design Team becomes available across projects for that Windows user. See the [Skills CLI](https://github.com/vercel-labs/skills).
 
+## Install visual-inspiration-research
+
+This is DPL's default reference-research replacement for Refero and does not require a Refero subscription.
+
+```powershell
+npx skills add https://github.com/Eldergenix/Codex-Design --skill visual-inspiration-research --global --agent codex
+```
+
+Use public/free sources by default. Paid or partly paid galleries named by the upstream skill remain optional.
+
 ## Install the full UI UX Pro Max design engine
 
 This adds its searchable design system and stack guidance globally for Codex. The upstream CLI supports a universal agent-standard installation for all projects:
@@ -90,7 +100,7 @@ git pull --ff-only
 npx skills add . --skill design-team --global --agent codex
 ```
 
-Then verify both Design Team and UI UX Pro Max:
+Then verify Design Team, visual-inspiration-research, and UI UX Pro Max:
 
 ```powershell
 Get-ChildItem "$env:USERPROFILE\.agents\skills" -Directory | Select-Object -ExpandProperty Name
