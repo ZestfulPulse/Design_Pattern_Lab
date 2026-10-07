@@ -129,9 +129,23 @@ Do **not** use 21st.dev as product philosophy, as a wholesale design-system repl
 
 Neither source needs to be installed or consulted for ordinary work. Availability does not imply use.
 
-## Reference-research tools
+## Visual Inspiration Research — reference research without a paid dependency
 
-Use Refero or other available research tools when a substantial redesign benefits from real product references.
+Source: [Eldergenix/Codex-Design / visual-inspiration-research](https://github.com/Eldergenix/Codex-Design/tree/main/skills/visual-inspiration-research) (MIT).
+
+Use this skill when a substantial redesign benefits from real visual references before implementation.
+
+DPL uses it as the default replacement for Refero's reference-research role.
+
+Rules:
+
+- search by product category, platform, and concrete UI pattern;
+- prefer publicly accessible sources and official component documentation;
+- use references for hierarchy, composition, density, motion, interaction patterns, and visual direction;
+- synthesize several references instead of cloning one distinctive layout;
+- capture conclusions in DPL's own words and keep product philosophy authoritative;
+- do not require a paid source to complete ordinary reference research;
+- if the upstream skill mentions a paid or partly paid gallery, skip it unless the user already has access.
 
 Prefer several relevant traits from real products over copying one design wholesale.
 
@@ -146,12 +160,12 @@ Reference research should answer a concrete design question, such as:
 | Task | Primary sources |
 |---|---|
 | App-wide redesign | DPL built-in capabilities + UI UX Pro Max |
-| Web landing redesign | DPL built-in capabilities + UI UX Pro Max + Hallmark |
+| Web landing redesign | DPL built-in capabilities + visual-inspiration-research + UI UX Pro Max + Hallmark |
 | Strong visual/art direction | DPL built-in capabilities + Huashu |
 | Analytics/dashboard redesign | DPL built-in capabilities + UI UX Pro Max + Infographic |
 | Small component fix | Product-local system first; Component Gallery only when state/pattern comparison materially helps |
 | Native app screen | DPL built-in capabilities + UI UX Pro Max, no Hallmark macrostructure |
-| Brand-heavy marketing page | DPL built-in capabilities + Huashu + Hallmark |
+| Brand-heavy marketing page | DPL built-in capabilities + visual-inspiration-research + Huashu + Hallmark |
 | Dense explanatory page | DPL built-in capabilities + Infographic + Hallmark |
 | React/Tailwind component implementation | Product-local system first + 21st.dev when concrete implementation reference is useful |
 
