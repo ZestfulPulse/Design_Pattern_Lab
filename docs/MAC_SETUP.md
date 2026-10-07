@@ -50,6 +50,16 @@ Expected entry:
 ~/.agents/skills/design-team/SKILL.md
 ```
 
+## visual-inspiration-research
+
+Install the free/public reference-research specialist used by DPL in place of Refero:
+
+```bash
+npx skills add https://github.com/Eldergenix/Codex-Design --skill visual-inspiration-research --global --agent codex
+```
+
+Use public/free sources by default. Paid or partly paid galleries mentioned upstream are optional, not DPL dependencies.
+
 ## UI UX Pro Max
 
 If `uipro` is not already available on the Mac user that runs Codex:
@@ -80,6 +90,7 @@ Design Team
 DPL orchestration
   ├─ Huashu Design
   ├─ UI UX Pro Max
+  ├─ visual-inspiration-research
   ├─ Hallmark-inspired checks
   ├─ Infographic tooling
   └─ other available design references
