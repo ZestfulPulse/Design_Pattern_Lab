@@ -55,10 +55,11 @@ Expected entry:
 Install the free/public reference-research specialist used by DPL in place of Refero:
 
 ```bash
+npx skills remove refero-design --global --agent codex -y
 npx skills add https://github.com/Eldergenix/Codex-Design --skill visual-inspiration-research --global --agent codex
 ```
 
-Use public/free sources by default. Paid or partly paid galleries mentioned upstream are optional, not DPL dependencies.
+If `refero-design` is not installed, the remove command may simply report that there is nothing to remove. Use public/free sources by default. Paid or partly paid galleries mentioned upstream are optional, not DPL dependencies.
 
 ## UI UX Pro Max
 
