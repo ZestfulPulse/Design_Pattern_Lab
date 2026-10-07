@@ -16,7 +16,7 @@ Availability does not mean usage. A showcase must list only the sources actually
 |---|---|---|
 | Component Gallery | Component-state comparison, naming, accessibility guidance, and real design-system examples | Reference + inspiration for Component State Auditor; not bundled |
 | DESIGNmd | Machine-readable external design-system input | Inspiration for Design System Ingestor |
-| Refero / Refero Styles | Real-product reference research | Optional research source; not bundled |
+| visual-inspiration-research (Eldergenix/Codex-Design) | Reference-first visual research across public galleries and component sources | Optional specialist skill; MIT; preferred replacement for paid Refero research |
 | emilkowalski/skills | Interaction detail, motion, direct-manipulation thinking | Inspiration for Interaction Physics |
 | addyosmani/web-quality-skills | Accessibility and web-quality review concepts | Inspiration for Accessibility Gate |
 | Superfuture/design-review | Rendered design review and release-check workflow | Inspiration for Visual Release Review |
@@ -36,7 +36,7 @@ This attribution records design provenance; it does not claim an upstream extern
 
 ## Existing specialist sources
 
-DPL may also route to the specialist sources documented in [DESIGN_ENGINES.md](DESIGN_ENGINES.md), including Huashu Design, UI UX Pro Max, Hallmark-inspired checks, Infographic tooling, and Refero when available.
+DPL may also route to the specialist sources documented in [DESIGN_ENGINES.md](DESIGN_ENGINES.md), including Huashu Design, UI UX Pro Max, Hallmark-inspired checks, Infographic tooling, and visual-inspiration-research.
 
 ## Boundaries
 
