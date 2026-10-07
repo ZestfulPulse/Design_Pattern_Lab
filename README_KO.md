@@ -295,6 +295,7 @@ Windows가 단순 제어 화면이고 실제 제품 저장소가 SSH로 접속�
 DPL은 Refero의 유료 레퍼런스 조사 역할을 `visual-inspiration-research`로 교체합니다. Refero 구독은 필요하지 않습니다.
 
 ```bash
+npx skills remove refero-design --global --agent codex -y
 npx skills add https://github.com/Eldergenix/Codex-Design --skill visual-inspiration-research --global --agent codex
 ```
 
