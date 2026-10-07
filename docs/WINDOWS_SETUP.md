@@ -23,10 +23,11 @@ The Skills CLI supports selecting a single skill, global installation, and targe
 This is DPL's default reference-research replacement for Refero and does not require a Refero subscription.
 
 ```powershell
+npx skills remove refero-design --global --agent codex -y
 npx skills add https://github.com/Eldergenix/Codex-Design --skill visual-inspiration-research --global --agent codex
 ```
 
-Use public/free sources by default. Paid or partly paid galleries named by the upstream skill remain optional.
+If `refero-design` is not installed, the remove command may simply report that there is nothing to remove. Use public/free sources by default. Paid or partly paid galleries named by the upstream skill remain optional.
 
 ## Install the full UI UX Pro Max design engine
 
