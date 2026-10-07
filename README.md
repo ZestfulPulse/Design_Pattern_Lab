@@ -143,7 +143,7 @@ DPL can selectively consult external tools and references when they materially i
 | **UI UX Pro Max** | Design-system and stack-aware guidance |
 | **Hallmark-inspired checks** | Web quality and anti-generic review |
 | **Infographic tooling** | Dense information, comparison and process visualization |
-| **Refero** | Real-product reference research when available |
+| **visual-inspiration-research** | Free/public visual-reference research before substantial redesign work |
 | **Component Gallery** | Component-state, semantics and mature design-system comparison |
 | **21st.dev** | Optional React/Tailwind implementation reference after design direction is approved |
 | **Product-local design docs** | Highest-value source when the product already has a defined philosophy |
@@ -280,7 +280,19 @@ If Windows is only the control surface and the product repository lives on a Mac
 
 ---
 
-## Optional specialist engine
+## Optional specialist engines
+
+### Visual inspiration research skill
+
+DPL uses `visual-inspiration-research` as the default reference-research replacement for Refero. It does not require a Refero subscription.
+
+```bash
+npx skills add https://github.com/Eldergenix/Codex-Design --skill visual-inspiration-research --global --agent codex
+```
+
+DPL should prefer publicly accessible reference sources. Paid or partly paid galleries mentioned by the upstream skill are optional and must not become a dependency.
+
+### UI UX Pro Max
 
 UI UX Pro Max can be installed separately and used when its guidance is actually relevant:
 
@@ -329,7 +341,7 @@ External sources are classified as:
 - **Reference** — consulted for patterns or principles
 - **Inspiration** — informed a DPL capability without bundling the upstream project
 
-Examples include Component Gallery, 21st.dev, DESIGNmd, Refero, Huashu Design, UI UX Pro Max, Hallmark, Emil Kowalski's design skills, Addy Osmani's web-quality skills, Impeccable, shadcn/ui and Anime.js.
+Examples include Component Gallery, 21st.dev, DESIGNmd, visual-inspiration-research, Huashu Design, UI UX Pro Max, Hallmark, Emil Kowalski's design skills, Addy Osmani's web-quality skills, Impeccable, shadcn/ui and Anime.js.
 
 **Available does not mean used.** Every showcase must list only the sources actually used.
 
