@@ -24,6 +24,10 @@ Availability does not mean usage. A showcase must list only the sources actually
 | pbakaus/impeccable | Responsive/adaptation and systematic UI review ideas | Operating-principle reference |
 | 21st.dev | React/Tailwind component discovery and implementation reference | Optional implementation reference; never a product-philosophy authority and never bundled wholesale |
 | MengTo/Skills | Runnable web layout, visual-language, motion, proof, capture, and originality workflows with demos | Optional specialist pack; MIT; linked/installed selectively, not bundled |
+| ZHUOLIN0928/swiftui-interface-design-skill | SwiftUI correctness, interaction stability, adaptive layout, accessibility, motion validation | Optional installed specialist; MIT |
+| flatoy/swift-ui-design | Distinctive SwiftUI visual direction, reusable tokens, materials, motion | Optional installed specialist; MIT |
+| barbaramartina/swiftuicatalog | SwiftUI controls, layouts, containers, modifiers, accessibility examples | Reference-only; MIT |
+| Apple Human Interface Guidelines | Official Apple-platform design authority | Official reference; Apple content remains Apple's |
 | shadcn/ui | Implementation primitives for compatible web stacks | Implementation library only, not a DPL design authority |
 | Anime.js | Motion implementation option for compatible web projects | Implementation library only, not a DPL design authority |
 
@@ -46,3 +50,9 @@ DPL may also route to the specialist sources documented in [DESIGN_ENGINES.md](D
 - Do not claim an upstream tool ran unless it actually ran.
 - Do not claim an upstream project's license applies to DPL itself.
 - Product-local philosophy, tokens, behavior, and approved decisions remain higher authority than every external source.
+
+
+## Reviewed but not installed by default
+
+- **dickwu/apple-design-skill** — useful HIG-oriented review skill, but the inspected repository did not expose a standalone project LICENSE file; its README states that reproduced HIG text belongs to Apple Inc. DPL therefore does not auto-install it.
+- **twostraws/SwiftUI-Agent-Skill** — strong MIT SwiftUI skill, kept as a comparison candidate because its core correctness role overlaps with `design-swiftui-interfaces`.
