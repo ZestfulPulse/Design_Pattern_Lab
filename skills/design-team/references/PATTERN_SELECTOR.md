@@ -71,16 +71,19 @@ Pattern Selector answers **"which references are worth reading?"**, not **"what 
 
 ## Source metadata
 
-The initial catalog lives at:
+Platform catalogs live at:
 
 ```text
 skills/design-team/patterns/web-patterns.json
+skills/design-team/patterns/native-patterns.json
 ```
 
 Add new pattern metadata only after the source has been inspected.
 
 Do not add a source merely because it is visually attractive. Every entry needs a bounded role, best-fit product types, traits, and avoid conditions.
 
-## Native expansion
+## Native routing
 
-The schema deliberately supports `platform: ios`, `android`, and `mobile`. Native entries should be added only after a dedicated Native Pattern Pack is selected and reviewed.
+For Apple-platform work, use `native-patterns.json`. Native profiles may use platform-specific traits such as `native_fidelity`, `interaction_rigor`, `accessibility`, `adaptability`, `visual_expression`, `motion_intensity`, and `information_density`.
+
+The selector treats `mobile` patterns as compatible with `ios` and `android`, but native platform authority still comes from the applicable platform guidance, not the score.
