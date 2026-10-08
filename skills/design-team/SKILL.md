@@ -67,6 +67,7 @@ Potential specialist sources include:
 - Component Gallery for component-state and design-system comparison when relevant
 - 21st.dev for approved React/Tailwind implementation reference when relevant
 - MengTo Web Pattern Pack for concrete web layout, visual-language, motion, proof, and capture patterns after product direction is set
+- Native / SwiftUI Pattern Pack for Apple-platform structure, state correctness, adaptive layout, accessibility, and native visual direction
 - Product-local design docs, tokens, screenshots, and implementation patterns
 
 Do not call every engine for every task. Route selectively.
@@ -188,7 +189,8 @@ Examples:
 - reference research → visual-inspiration-research using accessible public sources;
 - component-state comparison → Component Gallery when real design-system examples materially help;
 - approved React/Tailwind implementation → 21st.dev as an optional implementation reference, never as product authority;
-- concrete web composition or interaction implementation → consult the curated [MengTo Web Pattern Pack](references/MENGTO_WEB_PATTERNS.md) only after one product-specific direction is established.
+- concrete web composition or interaction implementation → consult the curated [MengTo Web Pattern Pack](references/MENGTO_WEB_PATTERNS.md) only after one product-specific direction is established;
+- iOS/iPadOS/macOS SwiftUI work → consult [Native / SwiftUI Pattern Pack](references/NATIVE_SWIFTUI_PATTERNS.md); establish Apple-native structure/correctness before visual styling.
 
 The Design Team owns synthesis. Never average conflicting design systems. Resolve conflicts against product philosophy.
 
