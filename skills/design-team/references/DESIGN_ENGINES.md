@@ -129,6 +129,29 @@ Do **not** use 21st.dev as product philosophy, as a wholesale design-system repl
 
 Neither source needs to be installed or consulted for ordinary work. Availability does not imply use.
 
+## MengTo Web Pattern Pack — concrete web implementation patterns
+
+Source: [MengTo/Skills](https://github.com/MengTo/Skills) (MIT).
+
+Use the curated DPL subset when the product direction is already decided and the remaining problem is how to implement a strong web layout, visual language, motion treatment, proof structure, or reliable full-page capture.
+
+The pack is **not** a design authority. Never choose a MengTo demo first and then bend the product around it.
+
+DPL currently routes to a curated subset covering:
+
+- direction specification;
+- landing-page composition;
+- high-bar marketing art direction;
+- several layout and visual-language patterns;
+- scroll storytelling;
+- SaaS proof/conversion composition;
+- stitched full-page capture;
+- reference-originality audit.
+
+Use the smallest relevant subset and adapt it to the product's own tokens, content, behavior, and platform constraints.
+
+→ [MengTo Web Pattern Pack](MENGTO_WEB_PATTERNS.md)
+
 ## Visual Inspiration Research — reference research without a paid dependency
 
 Source: [Eldergenix/Codex-Design / visual-inspiration-research](https://github.com/Eldergenix/Codex-Design/tree/main/skills/visual-inspiration-research) (MIT).
@@ -160,12 +183,12 @@ Reference research should answer a concrete design question, such as:
 | Task | Primary sources |
 |---|---|
 | App-wide redesign | DPL built-in capabilities + UI UX Pro Max |
-| Web landing redesign | DPL built-in capabilities + visual-inspiration-research + UI UX Pro Max + Hallmark |
+| Web landing redesign | DPL built-in capabilities + visual-inspiration-research + one relevant MengTo web pattern + UI UX Pro Max + Hallmark |
 | Strong visual/art direction | DPL built-in capabilities + Huashu |
 | Analytics/dashboard redesign | DPL built-in capabilities + UI UX Pro Max + Infographic |
 | Small component fix | Product-local system first; Component Gallery only when state/pattern comparison materially helps |
 | Native app screen | DPL built-in capabilities + UI UX Pro Max, no Hallmark macrostructure |
-| Brand-heavy marketing page | DPL built-in capabilities + visual-inspiration-research + Huashu + Hallmark |
+| Brand-heavy marketing page | DPL built-in capabilities + visual-inspiration-research + Huashu + one relevant MengTo web pattern + Hallmark |
 | Dense explanatory page | DPL built-in capabilities + Infographic + Hallmark |
 | React/Tailwind component implementation | Product-local system first + 21st.dev when concrete implementation reference is useful |
 
