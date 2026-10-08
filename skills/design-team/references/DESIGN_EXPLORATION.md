@@ -15,6 +15,14 @@ Its purpose is to prevent premature convergence on the first plausible visual di
 
 The Design Team may reduce the count when product truth already determines the direction. Record why exploration was skipped or narrowed.
 
+## Philosophy input
+
+Exploration must start from the Product Intent Contract when one exists.
+
+Each direction should reference the principle IDs it emphasizes and must respect every applicable `must` / `avoid` constraint. A direction that scores well aesthetically but violates a must principle is not a viable candidate.
+
+When two directions trade off competing principles, record that tension explicitly rather than hiding it in an average score.
+
 ## Direction contract
 
 Each direction must differ structurally, not just by accent color.
