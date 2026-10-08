@@ -143,3 +143,15 @@ Do not run all five by default.
 Capabilities may be combined when the task genuinely spans several concerns.
 
 The Design Team owns final synthesis. These capabilities do not override product philosophy, approved product decisions, or platform constraints.
+
+
+## Orchestration modules above the five capabilities
+
+The five capabilities above remain focused QA/decision capabilities. DPL also has two P0 orchestration modules that operate earlier in the workflow:
+
+- **Design Exploration Board** — explores multiple structurally different directions when the work is new, major, or brand-defining.
+- **Pattern Selector** — ranks already-inspected implementation patterns so Design Team reads the smallest relevant subset.
+
+They are not counted as additional user-facing skills and they do not replace the five core capabilities.
+
+See [Design Exploration Board](DESIGN_EXPLORATION.md) and [Pattern Selector](PATTERN_SELECTOR.md).
