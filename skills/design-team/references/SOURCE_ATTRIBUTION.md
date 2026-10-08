@@ -23,6 +23,7 @@ Availability does not mean usage. A showcase must list only the sources actually
 | jakubkrehel/skills | Evidence-first interface review and smallest-effective-fix thinking | Operating-principle reference |
 | pbakaus/impeccable | Responsive/adaptation and systematic UI review ideas | Operating-principle reference |
 | 21st.dev | React/Tailwind component discovery and implementation reference | Optional implementation reference; never a product-philosophy authority and never bundled wholesale |
+| MengTo/Skills | Runnable web layout, visual-language, motion, proof, capture, and originality workflows with demos | Optional specialist pack; MIT; linked/installed selectively, not bundled |
 | shadcn/ui | Implementation primitives for compatible web stacks | Implementation library only, not a DPL design authority |
 | Anime.js | Motion implementation option for compatible web projects | Implementation library only, not a DPL design authority |
 
@@ -36,7 +37,7 @@ This attribution records design provenance; it does not claim an upstream extern
 
 ## Existing specialist sources
 
-DPL may also route to the specialist sources documented in [DESIGN_ENGINES.md](DESIGN_ENGINES.md), including Huashu Design, UI UX Pro Max, Hallmark-inspired checks, Infographic tooling, and visual-inspiration-research.
+DPL may also route to the specialist sources documented in [DESIGN_ENGINES.md](DESIGN_ENGINES.md), including Huashu Design, UI UX Pro Max, Hallmark-inspired checks, Infographic tooling, visual-inspiration-research, and the curated MengTo Web Pattern Pack.
 
 ## Boundaries
 
