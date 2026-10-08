@@ -146,6 +146,7 @@ DPL can selectively consult external tools and references when they materially i
 | **visual-inspiration-research** | Free/public visual-reference research before substantial redesign work |
 | **Component Gallery** | Component-state, semantics and mature design-system comparison |
 | **21st.dev** | Optional React/Tailwind implementation reference after design direction is approved |
+| **MengTo Web Pattern Pack** | Curated runnable web layout, visual-style, motion, proof, and capture patterns used only after product direction is set |
 | **Product-local design docs** | Highest-value source when the product already has a defined philosophy |
 
 Using several engines is **not** the goal.
@@ -293,6 +294,28 @@ npx skills add https://github.com/Eldergenix/Codex-Design --skill visual-inspira
 
 DPL should prefer publicly accessible reference sources. Paid or partly paid galleries mentioned by the upstream skill are optional and must not become a dependency.
 
+### MengTo Web Pattern Pack
+
+DPL can selectively route to a curated subset of [MengTo/Skills](https://github.com/MengTo/Skills) for concrete web implementation patterns. The upstream repository is MIT licensed.
+
+Install the curated pack:
+
+**Windows**
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\install-mengto-pack.ps1
+```
+
+**Mac / Linux**
+
+```bash
+bash scripts/install-mengto-pack.sh
+```
+
+The pack is never allowed to override product philosophy. DPL chooses one direction first, then selects the smallest relevant pattern.
+
+→ [MengTo Web Pattern Pack routing](skills/design-team/references/MENGTO_WEB_PATTERNS.md)
+
 ### UI UX Pro Max
 
 UI UX Pro Max can be installed separately and used when its guidance is actually relevant:
@@ -342,7 +365,7 @@ External sources are classified as:
 - **Reference** — consulted for patterns or principles
 - **Inspiration** — informed a DPL capability without bundling the upstream project
 
-Examples include Component Gallery, 21st.dev, DESIGNmd, visual-inspiration-research, Huashu Design, UI UX Pro Max, Hallmark, Emil Kowalski's design skills, Addy Osmani's web-quality skills, Impeccable, shadcn/ui and Anime.js.
+Examples include Component Gallery, 21st.dev, MengTo/Skills, DESIGNmd, visual-inspiration-research, Huashu Design, UI UX Pro Max, Hallmark, Emil Kowalski's design skills, Addy Osmani's web-quality skills, Impeccable, shadcn/ui and Anime.js.
 
 **Available does not mean used.** Every showcase must list only the sources actually used.
 
