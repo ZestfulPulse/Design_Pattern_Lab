@@ -1,0 +1,38 @@
+# Copy into <product-repo>/.dpl/product-intent.yaml when structured philosophy translation is useful.
+version: 1
+product:
+  name: ""
+  platform: web
+  product_type: ""
+  audience: ""
+  job_to_be_done: ""
+  identity_statement: ""
+  success_definition: ""
+source_docs:
+  - path: ""
+    sha256: ""
+principles:
+  - id: P-01
+    statement: ""
+    source_ref: ""
+    provenance: explicit # explicit | inferred | approved_assumption
+    strength: must # must | prefer | avoid
+    implications:
+      structure: []
+      visual: []
+      interaction: []
+      content: []
+tensions: []
+must_preserve: []
+pattern_profile:
+  platform: web
+  product_type: ""
+  needs: []
+  traits:
+    precision: 0
+    minimal: 0
+    editorial: 0
+    playful: 0
+    warmth: 0
+    motion: 0
+decisions: []
