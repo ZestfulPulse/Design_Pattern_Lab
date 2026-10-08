@@ -73,6 +73,18 @@ bash scripts/install-mengto-pack.sh
 
 The pack installs only the curated skills listed in `skills/design-team/references/MENGTO_WEB_PATTERNS.md`, not all upstream skills.
 
+## Native / SwiftUI Pattern Pack
+
+Install the curated Apple-platform specialists:
+
+```bash
+cd ~/projects/Design_Pattern_Lab
+git pull --ff-only
+bash scripts/install-native-pack.sh
+```
+
+This installs `design-swiftui-interfaces` and `swift-ui-design` globally for Codex. SwiftUI Catalog is reference-only.
+
 ## UI UX Pro Max
 
 If `uipro` is not already available on the Mac user that runs Codex:
@@ -105,6 +117,7 @@ DPL orchestration
   ├─ UI UX Pro Max
   ├─ visual-inspiration-research
   ├─ MengTo Web Pattern Pack
+  ├─ Native / SwiftUI Pattern Pack
   ├─ Hallmark-inspired checks
   ├─ Infographic tooling
   └─ other available design references
