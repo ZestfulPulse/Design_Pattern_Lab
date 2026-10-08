@@ -1,5 +1,7 @@
 # Philosophy Checks
 
+Philosophy Checks are the verification layer. For substantial design work, derive them from the same authoritative sources used by the [Philosophy-to-Design Contract](PHILOSOPHY_TO_DESIGN.md), so creation and verification do not drift apart.
+
 DPL can translate a small subset of product philosophy into machine-checkable rules.
 
 The goal is not to turn taste into pseudo-math. Only objectively testable claims should become automatic checks.
