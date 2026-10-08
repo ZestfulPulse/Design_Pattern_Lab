@@ -147,11 +147,12 @@ The Design Team owns final synthesis. These capabilities do not override product
 
 ## Orchestration modules above the five capabilities
 
-The five capabilities above remain focused QA/decision capabilities. DPL also has two P0 orchestration modules that operate earlier in the workflow:
+The five capabilities above remain focused QA/decision capabilities. DPL also has three P0 orchestration modules that operate earlier in the workflow:
 
+- **Philosophy-to-Design Contract** — translates product philosophy into traceable structure, visual, interaction, and content implications before design choices are made.
 - **Design Exploration Board** — explores multiple structurally different directions when the work is new, major, or brand-defining.
 - **Pattern Selector** — ranks already-inspected implementation patterns so Design Team reads the smallest relevant subset.
 
 They are not counted as additional user-facing skills and they do not replace the five core capabilities.
 
-See [Design Exploration Board](DESIGN_EXPLORATION.md) and [Pattern Selector](PATTERN_SELECTOR.md).
+See [Philosophy-to-Design Contract](PHILOSOPHY_TO_DESIGN.md), [Design Exploration Board](DESIGN_EXPLORATION.md), and [Pattern Selector](PATTERN_SELECTOR.md).
