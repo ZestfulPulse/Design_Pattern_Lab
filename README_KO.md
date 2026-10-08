@@ -154,6 +154,7 @@ DPL은 작업에 실제 도움이 될 때만 외부 도구와 레퍼런스를 �
 | **visual-inspiration-research** | 대규모 디자인 변경 전 무료·공개 비주얼 레퍼런스를 조사 |
 | **Component Gallery** | 컴포넌트 상태, 의미 구조, 성숙한 디자인 시스템 사례 비교 |
 | **21st.dev** | 디자인 방향이 승인된 뒤 React/Tailwind 구현 참고에 선택적으로 사용 |
+| **MengTo Web Pattern Pack** | 제품 방향 결정 후에만 사용하는 웹 레이아웃·시각 스타일·모션·증거·캡처 구현 패턴 묶음 |
 | **제품 내부 디자인 문서** | 제품 철학이 이미 정의되어 있다면 가장 중요한 소스 |
 
 여러 엔진을 많이 쓰는 것이 목표가 아닙니다.
@@ -301,6 +302,28 @@ npx skills add https://github.com/Eldergenix/Codex-Design --skill visual-inspira
 
 기본적으로 무료·공개 접근 가능한 레퍼런스 소스를 우선합니다. 상류 스킬이 유료 또는 부분 유료 갤러리를 언급하더라도 사용자가 이미 접근권을 가진 경우가 아니면 DPL의 필수 경로로 사용하지 않습니다.
 
+### MengTo Web Pattern Pack
+
+DPL은 [MengTo/Skills](https://github.com/MengTo/Skills)에서 웹 구현에 직접 도움이 되는 스킬만 골라 선택적으로 사용할 수 있습니다. 상류 저장소는 MIT 라이선스입니다.
+
+선별 패키지 설치:
+
+**Windows**
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\install-mengto-pack.ps1
+```
+
+**Mac / Linux**
+
+```bash
+bash scripts/install-mengto-pack.sh
+```
+
+이 패키지는 제품 철학을 결정하는 권한이 없습니다. DPL이 먼저 제품 방향을 하나로 정한 뒤, 필요한 구현 패턴만 최소한으로 선택합니다.
+
+→ [MengTo Web Pattern Pack 라우팅](skills/design-team/references/MENGTO_WEB_PATTERNS.md)
+
 ### UI UX Pro Max
 
 UI UX Pro Max는 필요할 때 별도로 설치해 사용할 수 있습니다.
@@ -367,7 +390,7 @@ DPL은 참고하거나 라우팅하는 외부 디자인 시스템, 라이브러�
 - **Reference**: 패턴이나 원칙을 참고
 - **Inspiration**: 상류 프로젝트를 통째로 포함하지 않고 DPL 능력 설계에 영향을 준 소스
 
-예시는 Component Gallery, 21st.dev, DESIGNmd, visual-inspiration-research, Huashu Design, UI UX Pro Max, Hallmark, Emil Kowalski의 design skills, Addy Osmani의 web-quality skills, Impeccable, shadcn/ui, Anime.js 등입니다.
+예시는 Component Gallery, 21st.dev, MengTo/Skills, DESIGNmd, visual-inspiration-research, Huashu Design, UI UX Pro Max, Hallmark, Emil Kowalski의 design skills, Addy Osmani의 web-quality skills, Impeccable, shadcn/ui, Anime.js 등입니다.
 
 **사용 가능하다는 것과 실제 사용했다는 것은 다릅니다.** 각 Showcase는 실제 사용한 소스만 명시해야 합니다.
 
