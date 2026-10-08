@@ -7,7 +7,9 @@ These tools are internal helpers for **Design Team**. They are not separate user
 - `verdict_gate.py` — computes the maximum verdict supported by structured evidence.
 - `checks_runner.py` — evaluates `order`, `first_viewport`, `presence`, `absence`, and `judgment` philosophy checks against normalized layout/accessibility dumps.
 - `philosophy.checks.sample.yaml` — example rule set based on the public Legs of Steel showcase concept.
+- `pattern_selector.py` — deterministically ranks inspected implementation patterns against a small product profile.
 - `test_dpl.py` — unit tests for gate and check-runner behavior.
+- `test_pattern_selector.py` — unit tests for Pattern Selector behavior.
 
 ## Requirements
 
@@ -23,7 +25,7 @@ python3 -m pip install -r tools/dpl/requirements.txt
 
 ```bash
 cd tools/dpl
-python3 -m unittest test_dpl
+python3 -m unittest discover -p 'test_*.py'
 ```
 
 ## Current boundary
