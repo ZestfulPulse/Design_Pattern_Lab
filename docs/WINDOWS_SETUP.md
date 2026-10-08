@@ -43,6 +43,18 @@ powershell -ExecutionPolicy Bypass -File .\scripts\install-mengto-pack.ps1
 
 The pack installs only the curated skills listed in `skills/design-team/references/MENGTO_WEB_PATTERNS.md`, not all upstream skills.
 
+## Install Native / SwiftUI Pattern Pack
+
+For Apple-platform work, install the curated SwiftUI specialists:
+
+```powershell
+Set-Location "$env:USERPROFILE\projects\Design_Pattern_Lab"
+git pull --ff-only
+powershell -ExecutionPolicy Bypass -File .\scripts\install-native-pack.ps1
+```
+
+This installs `design-swiftui-interfaces` and `swift-ui-design` globally for Codex. SwiftUI Catalog is reference-only.
+
 ## Install the full UI UX Pro Max design engine
 
 This adds its searchable design system and stack guidance globally for Codex. The upstream CLI supports a universal agent-standard installation for all projects:
@@ -115,7 +127,7 @@ git pull --ff-only
 npx skills add . --skill design-team --global --agent codex
 ```
 
-Then verify Design Team, visual-inspiration-research, the MengTo Web Pattern Pack, and UI UX Pro Max:
+Then verify Design Team, visual-inspiration-research, the MengTo Web Pattern Pack, the Native / SwiftUI Pattern Pack, and UI UX Pro Max:
 
 ```powershell
 Get-ChildItem "$env:USERPROFILE\.agents\skills" -Directory | Select-Object -ExpandProperty Name
