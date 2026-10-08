@@ -129,6 +129,27 @@ Do **not** use 21st.dev as product philosophy, as a wholesale design-system repl
 
 Neither source needs to be installed or consulted for ordinary work. Availability does not imply use.
 
+## Native / SwiftUI Pattern Pack — Apple-native structure and implementation
+
+For iOS, iPadOS, macOS, and SwiftUI work, use [Native / SwiftUI Pattern Pack](NATIVE_SWIFTUI_PATTERNS.md).
+
+Authority order:
+
+1. product philosophy;
+2. current product behavior, tokens, deployment target, and platform constraints;
+3. Apple official HIG / SDK documentation;
+4. DPL Product Intent Contract;
+5. installed Native specialists;
+6. general visual defaults.
+
+The curated pack uses:
+
+- `design-swiftui-interfaces` for state stability, navigation, gestures, adaptive layout, accessibility, motion, and runtime validation;
+- `swift-ui-design` only when stronger visual direction, tokens, materials, or atmosphere are useful;
+- `swiftuicatalog` as a component/reference catalog, not as a design authority.
+
+Do not apply Web Pattern Pack macrostructure to native app surfaces.
+
 ## MengTo Web Pattern Pack — concrete web implementation patterns
 
 Source: [MengTo/Skills](https://github.com/MengTo/Skills) (MIT).
@@ -187,7 +208,7 @@ Reference research should answer a concrete design question, such as:
 | Strong visual/art direction | DPL built-in capabilities + Huashu |
 | Analytics/dashboard redesign | DPL built-in capabilities + UI UX Pro Max + Infographic |
 | Small component fix | Product-local system first; Component Gallery only when state/pattern comparison materially helps |
-| Native app screen | DPL built-in capabilities + UI UX Pro Max, no Hallmark macrostructure |
+| Native app screen | DPL built-in capabilities + Native / SwiftUI Pattern Pack + UI UX Pro Max when useful, no Hallmark macrostructure |
 | Brand-heavy marketing page | DPL built-in capabilities + visual-inspiration-research + Huashu + one relevant MengTo web pattern + Hallmark |
 | Dense explanatory page | DPL built-in capabilities + Infographic + Hallmark |
 | React/Tailwind component implementation | Product-local system first + 21st.dev when concrete implementation reference is useful |
