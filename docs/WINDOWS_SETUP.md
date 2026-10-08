@@ -29,6 +29,20 @@ npx skills add https://github.com/Eldergenix/Codex-Design --skill visual-inspira
 
 If `refero-design` is not installed, the remove command may simply report that there is nothing to remove. Use public/free sources by default. Paid or partly paid galleries named by the upstream skill remain optional.
 
+## Install MengTo Web Pattern Pack
+
+DPL uses a curated subset of MengTo/Skills as an optional implementation-pattern library after product direction is decided.
+
+From the DPL repository:
+
+```powershell
+Set-Location "$env:USERPROFILE\projects\Design_Pattern_Lab"
+git pull --ff-only
+powershell -ExecutionPolicy Bypass -File .\scripts\install-mengto-pack.ps1
+```
+
+The pack installs only the curated skills listed in `skills/design-team/references/MENGTO_WEB_PATTERNS.md`, not all upstream skills.
+
 ## Install the full UI UX Pro Max design engine
 
 This adds its searchable design system and stack guidance globally for Codex. The upstream CLI supports a universal agent-standard installation for all projects:
@@ -101,7 +115,7 @@ git pull --ff-only
 npx skills add . --skill design-team --global --agent codex
 ```
 
-Then verify Design Team, visual-inspiration-research, and UI UX Pro Max:
+Then verify Design Team, visual-inspiration-research, the MengTo Web Pattern Pack, and UI UX Pro Max:
 
 ```powershell
 Get-ChildItem "$env:USERPROFILE\.agents\skills" -Directory | Select-Object -ExpandProperty Name
