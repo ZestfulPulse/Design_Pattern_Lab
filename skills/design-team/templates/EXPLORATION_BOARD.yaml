@@ -1,0 +1,35 @@
+# Copy into <product-repo>/.dpl/exploration-board.yaml when exploration is material.
+version: 1
+task:
+  tier: new_screen # minor | new_screen | major_redesign | brand_defining
+  product: ""
+  surface: ""
+  goal: ""
+product_truth:
+  source_docs: []
+  must_preserve: []
+directions:
+  - id: A
+    thesis: ""
+    philosophy_fit: ""
+    hierarchy: ""
+    typography: ""
+    color_material: ""
+    layout_composition: ""
+    interaction_motion: ""
+    candidate_patterns: []
+    strengths: []
+    risks: []
+    implementation_cost: medium # low | medium | high
+    scores:
+      philosophy_fit: 0
+      task_clarity: 0
+      differentiation: 0
+      accessibility_risk: 0
+      implementation_cost: 0
+      maintainability: 0
+selection:
+  selected: ""
+  rationale: ""
+  rejected: []
+  user_choice_required: false
