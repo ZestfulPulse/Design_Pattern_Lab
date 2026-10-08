@@ -1,0 +1,18 @@
+{
+  "schema": "dpl.showcase-fixture/1",
+  "product": "Legs of Steel",
+  "surface": "Home",
+  "dataset": {
+    "monthly_distance_km": 24.0,
+    "activity_count": 5,
+    "monthly_duration": "2h 41m",
+    "goal": "Sub-4 marathon",
+    "projection": "4:12:00",
+    "goal_gap_minutes": 12,
+    "today_workout": "Easy aerobic 45 min",
+    "safety_status": "Normal"
+  },
+  "before_order": ["monthly_summary", "today_training", "goal_progress"],
+  "after_order": ["goal_gap", "today_training_and_safety", "supporting_statistics"],
+  "note": "The exact same fixture values are used by both controlled vector renders."
+}
