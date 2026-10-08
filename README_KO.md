@@ -347,6 +347,37 @@ npx skills add https://github.com/Eldergenix/Codex-Design --skill visual-inspira
 
 기본적으로 무료·공개 접근 가능한 레퍼런스 소스를 우선합니다. 상류 스킬이 유료 또는 부분 유료 갤러리를 언급하더라도 사용자가 이미 접근권을 가진 경우가 아니면 DPL의 필수 경로로 사용하지 않습니다.
 
+### Native / SwiftUI Pattern Pack
+
+Apple 플랫폼 작업은 웹 패턴을 재활용하지 않고 별도의 Native Pack으로 처리합니다.
+
+```text
+Product Intent
+→ Apple HIG / SDK 제약
+→ Native Pattern Selector
+→ SwiftUI 구조·상태·제스처 안정성
+→ 필요할 때만 시각 방향 강화
+→ 시뮬레이터/실기기 검증
+```
+
+선별 전문 스킬 설치:
+
+**Windows**
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\install-native-pack.ps1
+```
+
+**Mac / Linux**
+
+```bash
+bash scripts/install-native-pack.sh
+```
+
+전역 설치 대상은 `design-swiftui-interfaces`와 `swift-ui-design`입니다. SwiftUI Catalog는 reference-only로 사용합니다.
+
+→ [Native / SwiftUI Pattern Pack](skills/design-team/references/NATIVE_SWIFTUI_PATTERNS.md)
+
 ### MengTo Web Pattern Pack
 
 DPL은 [MengTo/Skills](https://github.com/MengTo/Skills)에서 웹 구현에 직접 도움이 되는 스킬만 골라 선택적으로 사용할 수 있습니다. 상류 저장소는 MIT 라이선스입니다.
