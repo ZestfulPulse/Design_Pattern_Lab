@@ -19,6 +19,20 @@ def catalog():
         return json.load(f)
 
 
+def native_catalog():
+    path = os.path.join(
+        os.path.dirname(__file__),
+        "..",
+        "..",
+        "skills",
+        "design-team",
+        "patterns",
+        "native-patterns.json",
+    )
+    with open(os.path.abspath(path), encoding="utf-8") as f:
+        return json.load(f)
+
+
 class PatternSelectorTests(unittest.TestCase):
     def test_platform_mismatch_rejected(self):
         profile = {
@@ -65,6 +79,43 @@ class PatternSelectorTests(unittest.TestCase):
             scores["build-awwwards-quality-sites"],
             scores["landing-page"],
         )
+
+    def test_ios_native_profile_prefers_correctness_and_hig(self):
+        profile = {
+            "platform": "ios",
+            "product_type": "fitness",
+            "needs": ["swiftui", "state_stability", "adaptive_layout", "accessibility"],
+            "traits": {
+                "native_fidelity": 5,
+                "interaction_rigor": 5,
+                "accessibility": 5,
+                "adaptability": 5,
+                "visual_expression": 2,
+                "motion_intensity": 2,
+                "information_density": 3,
+            },
+        }
+        ids = [x["id"] for x in ps.rank_patterns(profile, native_catalog(), 3)]
+        self.assertIn("design-swiftui-interfaces", ids)
+        self.assertIn("apple-hig", ids)
+
+    def test_native_visual_expression_can_surface_visual_specialist(self):
+        profile = {
+            "platform": "ios",
+            "product_type": "consumer_app",
+            "needs": ["swiftui", "visual_direction", "tokens", "distinctive_ui"],
+            "traits": {
+                "native_fidelity": 4,
+                "interaction_rigor": 3,
+                "accessibility": 4,
+                "adaptability": 4,
+                "visual_expression": 5,
+                "motion_intensity": 4,
+                "information_density": 2,
+            },
+        }
+        ids = [x["id"] for x in ps.rank_patterns(profile, native_catalog(), 2)]
+        self.assertIn("swift-ui-design", ids)
 
     def test_catalog_schema_required(self):
         with self.assertRaises(ValueError):
