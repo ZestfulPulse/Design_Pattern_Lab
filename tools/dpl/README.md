@@ -7,9 +7,11 @@ These tools are internal helpers for **Design Team**. They are not separate user
 - `verdict_gate.py` — computes the maximum verdict supported by structured evidence.
 - `checks_runner.py` — evaluates `order`, `first_viewport`, `presence`, `absence`, and `judgment` philosophy checks against normalized layout/accessibility dumps.
 - `philosophy.checks.sample.yaml` — example rule set based on the public Legs of Steel showcase concept.
+- `intent_guard.py` — validates the Philosophy-to-Design Product Intent Contract and emits the downstream Pattern Selector profile.
 - `pattern_selector.py` — deterministically ranks inspected implementation patterns against a small product profile.
 - `test_dpl.py` — unit tests for gate and check-runner behavior.
 - `test_pattern_selector.py` — unit tests for Pattern Selector behavior.
+- `test_intent_guard.py` — unit tests for Product Intent traceability and profile generation.
 
 ## Requirements
 
