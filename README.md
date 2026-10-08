@@ -194,6 +194,7 @@ DPL can selectively consult external tools and references when they materially i
 | **Component Gallery** | Component-state, semantics and mature design-system comparison |
 | **21st.dev** | Optional React/Tailwind implementation reference after design direction is approved |
 | **MengTo Web Pattern Pack** | Curated runnable web layout, visual-style, motion, proof, and capture patterns used only after product direction is set |
+| **Native / SwiftUI Pattern Pack** | Apple HIG authority + SwiftUI correctness, adaptive layout, accessibility, and native visual-direction routing |
 | **Product-local design docs** | Highest-value source when the product already has a defined philosophy |
 
 Using several engines is **not** the goal.
@@ -204,58 +205,66 @@ For a small hierarchy problem, DPL may use no external design engine at all. For
 
 ---
 
-## Showcase 01 · Legs of Steel
+## Showcase 02 · Legs of Steel · Controlled Native Study
 
-**Product:** precision running analysis and coaching app  
-**Design intervention:** Home information hierarchy  
-**Result:** `PASS_WITH_WARNING`  
-**Evidence warning:** the After screenshot confirms Goal is first, but does **not** visually prove the full Goal → Workout → Month sequence. The activity dataset also changed between captures.
-
-The product philosophy defined the intended order as:
+**Purpose:** demonstrate the current DPL pipeline with identical Before/After data and fully visible hierarchy.  
+**Result:** `PASS` for the controlled showcase scope.  
+**Important:** these are deterministic vector fixtures, not production-app screenshots.
 
 ```text
-Goal gap
-→ Today's training and safety
-→ Supporting statistics
+Product philosophy
+→ Philosophy-to-Design Contract
+→ Design Exploration Board
+→ Native Pattern Selector
+→ goal-led native hierarchy
+→ controlled rendered evidence
 ```
 
-The previous Home hierarchy was:
+The same fixture is used on both sides:
 
-```text
-Monthly stats
-→ Today's workout
-→ Goal progress
-```
-
-The design pass moved goal progress to the first position while preserving the existing visual system, business logic and data flow.
+- 24.0 km
+- 5 activities
+- 2h 41m
+- Sub-4 marathon goal
+- 4:12:00 projection
+- 12-minute goal gap
+- Easy aerobic 45 min
+- Safety status: Normal
 
 <table>
   <tr>
-    <th width="50%">Before</th>
-    <th width="50%">After</th>
+    <th width="50%">Before · summary-first</th>
+    <th width="50%">After · product-intent driven</th>
   </tr>
   <tr>
-    <td><img src="showcase/01-legs-of-steel/before.png" alt="Legs of Steel Home before Design Team hierarchy change"></td>
-    <td><img src="showcase/01-legs-of-steel/after.png" alt="Legs of Steel Home after Design Team hierarchy change"></td>
+    <td><img src="showcase/02-legs-of-steel-controlled-native/before.svg" alt="Controlled before fixture with monthly summary first"></td>
+    <td><img src="showcase/02-legs-of-steel-controlled-native/after.svg" alt="Controlled after fixture with goal gap first, training and safety second, supporting statistics last"></td>
   </tr>
 </table>
 
-### What this case proves
+The design decision is traceable to explicit principles:
 
-This is intentionally **not** a showcase about throwing many design engines at a screen.
+```text
+P-01  Goal gap before supporting statistics
+P-02  Today's training and safety stay together
+        ↓
+D-01  Goal gap becomes the first card
+D-02  Training + safety become one coaching unit
+D-03  Monthly totals move to supporting statistics
+```
 
-The actual sources used were:
+This showcase fixes the two main evidence weaknesses of the historical case: **the data no longer drifts**, and **the complete intended hierarchy is visible**.
 
-- LoS product philosophy
-- existing LoS design tokens
-- Design Team's product-first and rendered-evidence rules
+→ [Read Showcase 02](showcase/02-legs-of-steel-controlled-native/README.md)
 
-DPL, Huashu, UI UX Pro Max, Hallmark and Refero were **not used** to make the original LoS change.
+### Historical Showcase 01
 
-That restraint is part of the system.
+[Showcase 01](showcase/01-legs-of-steel/README.md) remains available as the original simulator-based evidence case. It is intentionally preserved with its `PASS_WITH_WARNING` verdict because the Before/After datasets differed and the After viewport did not visually prove the complete Goal → Workout → Month order.
 
-→ [Read the full Legs of Steel case study](showcase/01-legs-of-steel/README.md)
+Keeping both cases is deliberate:
 
+- **Showcase 01:** real historical app evidence with known limitations.
+- **Showcase 02:** controlled, reproducible DPL reasoning and hierarchy evidence with identical data.
 ---
 
 ## Use it
@@ -417,15 +426,28 @@ Design_Pattern_Lab/
 │  ├─ WINDOWS_SETUP.md
 │  └─ MAC_SETUP.md
 ├─ showcase/
-│  └─ 01-legs-of-steel/
+│  ├─ 01-legs-of-steel/
+│  └─ 02-legs-of-steel-controlled-native/
+├─ tools/dpl/
+│  ├─ intent_guard.py
+│  ├─ pattern_selector.py
+│  ├─ verdict_gate.py
+│  └─ checks_runner.py
 └─ skills/
    └─ design-team/
       ├─ SKILL.md
       ├─ agents/
+      ├─ patterns/
+      │  ├─ web-patterns.json
+      │  └─ native-patterns.json
       ├─ references/
-      │  ├─ CORE_CAPABILITIES.md
-      │  ├─ DESIGN_ENGINES.md
-      │  └─ SOURCE_ATTRIBUTION.md
+      │  ├─ PHILOSOPHY_TO_DESIGN.md
+      │  ├─ DESIGN_EXPLORATION.md
+      │  ├─ PATTERN_SELECTOR.md
+      │  ├─ NATIVE_SWIFTUI_PATTERNS.md
+      │  ├─ MENGTO_WEB_PATTERNS.md
+      │  └─ CORE_CAPABILITIES.md
+      ├─ schemas/
       └─ templates/
 ```
 
