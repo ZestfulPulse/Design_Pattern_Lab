@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="430" height="932" viewBox="0 0 430 932">
+<rect width="430" height="932" rx="42" fill="#0b0d10"/>
+<rect x="14" y="14" width="402" height="904" rx="34" fill="#11151a" stroke="#2b3138"/>
+<text x="34" y="58" fill="#f4f6f8" font-family="Arial,Helvetica,sans-serif" font-size="16" font-weight="700">LEGS OF STEEL</text>
+<text x="34" y="82" fill="#8b949e" font-family="Arial,Helvetica,sans-serif" font-size="12">Home · controlled fixture · same data</text>
+
+<rect x="28" y="112" width="374" height="166" rx="22" fill="#171c22" stroke="#303741"/>
+<text x="48" y="145" fill="#9ea7b1" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">THIS MONTH</text>
+<text x="48" y="190" fill="#f6f8fa" font-family="Arial,Helvetica,sans-serif" font-size="38" font-weight="700">24.0 km</text>
+<text x="48" y="220" fill="#88929d" font-family="Arial,Helvetica,sans-serif" font-size="13">5 activities · 2h 41m</text>
+<line x1="48" y1="244" x2="376" y2="244" stroke="#2b3138"/>
+<text x="48" y="263" fill="#7f8994" font-family="Arial,Helvetica,sans-serif" font-size="11">Retrospective summary leads the scan.</text>
+
+<rect x="28" y="298" width="374" height="214" rx="22" fill="#171c22" stroke="#303741"/>
+<text x="48" y="332" fill="#9ea7b1" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">TODAY'S WORKOUT</text>
+<text x="48" y="371" fill="#f6f8fa" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="700">Easy aerobic 45 min</text>
+<text x="48" y="401" fill="#c1c7ce" font-family="Arial,Helvetica,sans-serif" font-size="13">Keep effort conversational. Finish relaxed.</text>
+<rect x="48" y="429" width="135" height="36" rx="18" fill="#222933"/>
+<text x="67" y="452" fill="#c9d1d9" font-family="Arial,Helvetica,sans-serif" font-size="12">Safety · Normal</text>
+<text x="48" y="490" fill="#7f8994" font-family="Arial,Helvetica,sans-serif" font-size="11">Actionable guidance appears second.</text>
+
+<rect x="28" y="532" width="374" height="212" rx="22" fill="#171c22" stroke="#303741"/>
+<text x="48" y="566" fill="#9ea7b1" font-family="Arial,Helvetica,sans-serif" font-size="12" font-weight="700">GOAL PROGRESS</text>
+<text x="48" y="604" fill="#f6f8fa" font-family="Arial,Helvetica,sans-serif" font-size="26" font-weight="700">Sub-4 marathon</text>
+<text x="48" y="633" fill="#c1c7ce" font-family="Arial,Helvetica,sans-serif" font-size="13">Current projection · 4:12:00</text>
+<rect x="48" y="660" width="328" height="10" rx="5" fill="#2b3138"/>
+<rect x="48" y="660" width="222" height="10" rx="5" fill="#d6dce3"/>
+<text x="48" y="701" fill="#f6f8fa" font-family="Arial,Helvetica,sans-serif" font-size="18" font-weight="700">12 min gap</text>
+<text x="48" y="727" fill="#7f8994" font-family="Arial,Helvetica,sans-serif" font-size="11">The product's core coaching question arrives last.</text>
+
+<text x="34" y="805" fill="#6f7882" font-family="Arial,Helvetica,sans-serif" font-size="11">BEFORE · generic summary-first hierarchy</text>
+<text x="34" y="830" fill="#6f7882" font-family="Arial,Helvetica,sans-serif" font-size="11">Fixture: 24.0 km · 5 activities · 4:12 projection</text>
+</svg>
