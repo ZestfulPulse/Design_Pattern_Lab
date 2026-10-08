@@ -39,6 +39,8 @@ Design Team
   ↓
 Inspect active product + product philosophy
   ↓
+Translate philosophy into a traceable Product Intent Contract
+  ↓
 Explore materially different directions when the change tier warrants it
   ↓
 Rank relevant implementation patterns
@@ -73,8 +75,9 @@ Never claim that a specialist repository, CLI, skill, or agent ran unless it is 
 
 ## P0 orchestration modules
 
-Two internal modules strengthen design creation before implementation:
+Three internal modules strengthen design creation before implementation:
 
+- **Philosophy-to-Design Contract** — translates product philosophy into traceable structure, visual, interaction, and content implications before design choices are made. See [Philosophy-to-Design Contract](references/PHILOSOPHY_TO_DESIGN.md).
 - **Design Exploration Board** — prevents premature convergence by generating 2–3 structurally different directions for new, major, or brand-defining work. Minor repairs skip it by default. See [Design Exploration Board](references/DESIGN_EXPLORATION.md).
 - **Pattern Selector** — ranks inspected implementation patterns against platform, product type, needs, and product traits. It only narrows which references are worth reading; it never overrides product truth. See [Pattern Selector](references/PATTERN_SELECTOR.md).
 
@@ -117,7 +120,27 @@ If `.dpl/philosophy.checks.yaml` exists, treat it as a derived verification cont
 
 If product philosophy is not documented, infer conservatively from the user's request and existing product behavior. Mark material assumptions. When an assumption affects a durable design rule, record it in `.dpl/assumptions.yaml` if the product uses DPL structured verification.
 
-### 2. Diagnose the experience
+### 2. Translate philosophy into design intent
+
+For substantial or identity-sensitive work, consult [Philosophy-to-Design Contract](references/PHILOSOPHY_TO_DESIGN.md).
+
+Translate authoritative product sources into a small, traceable contract:
+
+- product identity, audience, job-to-be-done, and success definition;
+- explicit principles with source references;
+- inferred principles clearly marked as inferred;
+- structure implications;
+- visual-language implications;
+- interaction implications;
+- content implications;
+- tensions and must-preserve constraints;
+- a derived Pattern Selector profile.
+
+Do not turn vague adjectives directly into fashionable styles. Every meaningful design decision should either trace to a principle ID or be explicitly justified as user instruction, platform convention, or usability repair.
+
+When the product uses structured DPL artifacts, store this as `.dpl/product-intent.yaml` and validate it with `tools/dpl/intent_guard.py`.
+
+### 3. Diagnose the experience
 
 Check:
 
@@ -135,7 +158,7 @@ Check:
 
 Choose the few changes with the highest user impact.
 
-### 3. Explore when the change tier warrants it
+### 4. Explore when the change tier warrants it
 
 Consult [Design Exploration Board](references/DESIGN_EXPLORATION.md).
 
@@ -146,7 +169,7 @@ Consult [Design Exploration Board](references/DESIGN_EXPLORATION.md).
 
 Directions must differ structurally, not just by color or decoration. If product truth already determines the direction, record why exploration was narrowed or skipped.
 
-### 4. Rank patterns and route to specialists
+### 5. Rank patterns and route to specialists
 
 When implementation-pattern libraries are relevant, consult [Pattern Selector](references/PATTERN_SELECTOR.md). Build a small product profile and use `tools/dpl/pattern_selector.py` when deterministic ranking will materially reduce source sprawl.
 
@@ -169,7 +192,7 @@ Examples:
 
 The Design Team owns synthesis. Never average conflicting design systems. Resolve conflicts against product philosophy.
 
-### 5. Set one direction
+### 6. Set one direction
 
 Before editing, form one concise direction covering:
 
@@ -183,7 +206,7 @@ Before editing, form one concise direction covering:
 
 Offer alternatives only when materially different product directions remain unresolved.
 
-### 6. Implement
+### 7. Implement
 
 Modify the smallest coherent set of files needed.
 
@@ -195,7 +218,7 @@ For web, preserve responsive behavior.
 For native/mobile, respect platform conventions and actual device constraints.
 For data-heavy products, make data hierarchy more legible rather than merely decorative.
 
-### 7. Verify
+### 8. Verify
 
 Use **Visual Release Review** for meaningful design implementation and **Accessibility Gate** when the changed surface warrants it. Run relevant lint, build, typecheck, tests, preview, or device checks.
 
@@ -209,7 +232,7 @@ Never state visual QA passed without rendered evidence. Build success is not vis
 
 When structured DPL evidence is available, consult [Evidence and verdict contract](references/EVIDENCE_AND_VERDICT.md). Run `tools/dpl/verdict_gate.py` when applicable and never report a verdict higher than its computed verdict. If the gate reports `overclaim: true`, include that fact and preserve the gate reasons without softening them.
 
-### 8. Iterate
+### 9. Iterate
 
 Treat user feedback as the next design pass.
 
