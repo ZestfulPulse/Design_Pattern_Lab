@@ -83,6 +83,22 @@ PASS / PASS_WITH_WARNING / FAIL / NOT_VERIFIED
 
 ---
 
+## 첫 번째 답으로 바로 수렴하지 않습니다
+
+큰 디자인 작업에서는 이제 첫 번째 그럴듯한 안을 바로 구현하지 않고, 작업 규모에 따라 구조적으로 다른 방향을 먼저 탐색할 수 있습니다.
+
+- 작은 수정 → 기본적으로 탐색 생략
+- 신규 화면 → 2개 방향
+- 대규모 리디자인 → 3개 방향
+- 브랜드를 정의하는 작업 → 3개 방향 + 필요 시 가벼운 프로토타입
+
+또한 **Pattern Selector**가 플랫폼, 제품 유형, 필요한 기능, 제품 특성을 기준으로 이미 검토된 패턴들을 점수화합니다. 이 점수는 읽어볼 후보를 줄이는 용도이며 제품 정체성을 결정하지 않습니다.
+
+→ [Design Exploration Board](skills/design-team/references/DESIGN_EXPLORATION.md)  
+→ [Pattern Selector](skills/design-team/references/PATTERN_SELECTOR.md)
+
+---
+
 ## 5개의 핵심 내장 능력
 
 DPL은 내부 능력을 의도적으로 작고 명확하게 유지합니다.
@@ -448,6 +464,7 @@ DPL은 몇 가지 원칙에 대해서는 분명한 입장을 가집니다.
 **DPL v1 기준선**
 
 - 하나의 전역 Design Team
+- P0 제작/오케스트레이션 모듈 2개: Design Exploration Board + Pattern Selector
 - 5개의 내장 핵심 능력
 - 선택적 전문 소스 라우팅
 - 명시적인 출처 관리
