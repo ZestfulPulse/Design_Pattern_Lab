@@ -1,0 +1,164 @@
+{
+  "schema": "dpl.pattern-catalog/1",
+  "patterns": [
+    {
+      "id": "apple-hig",
+      "source": "Apple Human Interface Guidelines",
+      "relationship": "official_reference",
+      "platforms": [
+        "ios",
+        "ipad",
+        "macos",
+        "apple",
+        "mobile"
+      ],
+      "product_types": [
+        "consumer_app",
+        "productivity",
+        "fitness",
+        "health",
+        "creator",
+        "developer_tool",
+        "data_product",
+        "utility"
+      ],
+      "needs": [
+        "native_structure",
+        "navigation",
+        "accessibility",
+        "platform_conventions",
+        "adaptive_layout"
+      ],
+      "traits": {
+        "native_fidelity": 5,
+        "interaction_rigor": 5,
+        "accessibility": 5,
+        "adaptability": 5,
+        "visual_expression": 3,
+        "motion_intensity": 2,
+        "information_density": 3
+      },
+      "avoid": []
+    },
+    {
+      "id": "design-swiftui-interfaces",
+      "source": "ZHUOLIN0928/swiftui-interface-design-skill",
+      "relationship": "installed_skill",
+      "platforms": [
+        "ios",
+        "ipad",
+        "macos",
+        "apple",
+        "mobile"
+      ],
+      "product_types": [
+        "consumer_app",
+        "productivity",
+        "fitness",
+        "health",
+        "creator",
+        "developer_tool",
+        "data_product",
+        "utility"
+      ],
+      "needs": [
+        "swiftui",
+        "state_stability",
+        "gesture",
+        "navigation",
+        "adaptive_layout",
+        "accessibility",
+        "motion",
+        "runtime_validation"
+      ],
+      "traits": {
+        "native_fidelity": 5,
+        "interaction_rigor": 5,
+        "accessibility": 5,
+        "adaptability": 5,
+        "visual_expression": 3,
+        "motion_intensity": 3,
+        "information_density": 3
+      },
+      "avoid": []
+    },
+    {
+      "id": "swift-ui-design",
+      "source": "flatoy/swift-ui-design",
+      "relationship": "installed_skill",
+      "platforms": [
+        "ios",
+        "ipad",
+        "apple",
+        "mobile"
+      ],
+      "product_types": [
+        "consumer_app",
+        "fitness",
+        "health",
+        "creator",
+        "lifestyle",
+        "productivity"
+      ],
+      "needs": [
+        "swiftui",
+        "visual_direction",
+        "tokens",
+        "materials",
+        "distinctive_ui",
+        "motion"
+      ],
+      "traits": {
+        "native_fidelity": 4,
+        "interaction_rigor": 3,
+        "accessibility": 4,
+        "adaptability": 4,
+        "visual_expression": 5,
+        "motion_intensity": 4,
+        "information_density": 2
+      },
+      "avoid": [
+        "strict_utilitarian"
+      ]
+    },
+    {
+      "id": "swiftuicatalog",
+      "source": "barbaramartina/swiftuicatalog",
+      "relationship": "reference_only",
+      "platforms": [
+        "ios",
+        "ipad",
+        "apple",
+        "mobile"
+      ],
+      "product_types": [
+        "consumer_app",
+        "productivity",
+        "fitness",
+        "health",
+        "creator",
+        "developer_tool",
+        "data_product",
+        "utility"
+      ],
+      "needs": [
+        "component_reference",
+        "controls",
+        "layouts",
+        "containers",
+        "modifiers",
+        "accessibility_examples"
+      ],
+      "traits": {
+        "native_fidelity": 5,
+        "interaction_rigor": 3,
+        "accessibility": 4,
+        "adaptability": 4,
+        "visual_expression": 2,
+        "motion_intensity": 1,
+        "information_density": 3
+      },
+      "avoid": []
+    }
+  ]
+}
