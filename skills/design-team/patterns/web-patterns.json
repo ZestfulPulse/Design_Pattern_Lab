@@ -1,0 +1,378 @@
+{
+  "schema": "dpl.pattern-catalog/1",
+  "patterns": [
+    {
+      "id": "design-first-ui-prompting",
+      "source": "MengTo/Skills",
+      "platforms": [
+        "web",
+        "mobile"
+      ],
+      "product_types": [
+        "marketing",
+        "consumer_app",
+        "developer_tool",
+        "saas",
+        "portfolio"
+      ],
+      "needs": [
+        "direction_spec",
+        "constraint_definition"
+      ],
+      "traits": {
+        "precision": 4,
+        "minimal": 4,
+        "editorial": 3,
+        "playful": 2,
+        "warmth": 2,
+        "motion": 1
+      },
+      "avoid": []
+    },
+    {
+      "id": "landing-page",
+      "source": "MengTo/Skills",
+      "platforms": [
+        "web"
+      ],
+      "product_types": [
+        "marketing",
+        "saas",
+        "portfolio"
+      ],
+      "needs": [
+        "landing_structure",
+        "conversion"
+      ],
+      "traits": {
+        "precision": 3,
+        "minimal": 3,
+        "editorial": 3,
+        "playful": 2,
+        "warmth": 2,
+        "motion": 2
+      },
+      "avoid": [
+        "native_app"
+      ]
+    },
+    {
+      "id": "build-awwwards-quality-sites",
+      "source": "MengTo/Skills",
+      "platforms": [
+        "web"
+      ],
+      "product_types": [
+        "marketing",
+        "portfolio",
+        "brand_campaign"
+      ],
+      "needs": [
+        "premium",
+        "cinematic",
+        "art_direction"
+      ],
+      "traits": {
+        "precision": 3,
+        "minimal": 2,
+        "editorial": 4,
+        "playful": 3,
+        "warmth": 2,
+        "motion": 5
+      },
+      "avoid": [
+        "internal_tool",
+        "data_dense",
+        "low_motion"
+      ]
+    },
+    {
+      "id": "clean-minimal-beige-light-mode",
+      "source": "MengTo/Skills",
+      "platforms": [
+        "web"
+      ],
+      "product_types": [
+        "consumer_app",
+        "marketing",
+        "portfolio",
+        "lifestyle"
+      ],
+      "needs": [
+        "minimal",
+        "warm",
+        "light_mode"
+      ],
+      "traits": {
+        "precision": 3,
+        "minimal": 5,
+        "editorial": 3,
+        "playful": 2,
+        "warmth": 5,
+        "motion": 1
+      },
+      "avoid": [
+        "cyber",
+        "high_density"
+      ]
+    },
+    {
+      "id": "framed-tech-dark-border-gradient",
+      "source": "MengTo/Skills",
+      "platforms": [
+        "web"
+      ],
+      "product_types": [
+        "developer_tool",
+        "technical_product",
+        "saas"
+      ],
+      "needs": [
+        "technical",
+        "dark_mode",
+        "structured"
+      ],
+      "traits": {
+        "precision": 5,
+        "minimal": 4,
+        "editorial": 3,
+        "playful": 1,
+        "warmth": 1,
+        "motion": 2
+      },
+      "avoid": [
+        "kids",
+        "soft_lifestyle"
+      ]
+    },
+    {
+      "id": "editorial-tech",
+      "source": "MengTo/Skills",
+      "platforms": [
+        "web"
+      ],
+      "product_types": [
+        "developer_tool",
+        "technical_product",
+        "portfolio",
+        "data_product"
+      ],
+      "needs": [
+        "technical",
+        "editorial",
+        "typography"
+      ],
+      "traits": {
+        "precision": 5,
+        "minimal": 4,
+        "editorial": 5,
+        "playful": 1,
+        "warmth": 2,
+        "motion": 1
+      },
+      "avoid": [
+        "kids",
+        "playful_social"
+      ]
+    },
+    {
+      "id": "dark-glass-clean-layout",
+      "source": "MengTo/Skills",
+      "platforms": [
+        "web"
+      ],
+      "product_types": [
+        "saas",
+        "developer_tool",
+        "marketing"
+      ],
+      "needs": [
+        "dark_mode",
+        "glass",
+        "clean"
+      ],
+      "traits": {
+        "precision": 4,
+        "minimal": 4,
+        "editorial": 2,
+        "playful": 2,
+        "warmth": 1,
+        "motion": 2
+      },
+      "avoid": [
+        "high_readability_text",
+        "soft_lifestyle"
+      ]
+    },
+    {
+      "id": "agency-grid-layout-minimal",
+      "source": "MengTo/Skills",
+      "platforms": [
+        "web"
+      ],
+      "product_types": [
+        "portfolio",
+        "marketing",
+        "agency",
+        "technical_product"
+      ],
+      "needs": [
+        "grid",
+        "minimal",
+        "structured"
+      ],
+      "traits": {
+        "precision": 4,
+        "minimal": 5,
+        "editorial": 4,
+        "playful": 1,
+        "warmth": 2,
+        "motion": 1
+      },
+      "avoid": [
+        "playful_social"
+      ]
+    },
+    {
+      "id": "cinematic-scroll-storytelling",
+      "source": "MengTo/Skills",
+      "platforms": [
+        "web"
+      ],
+      "product_types": [
+        "marketing",
+        "brand_campaign",
+        "portfolio"
+      ],
+      "needs": [
+        "storytelling",
+        "scroll_narrative",
+        "cinematic"
+      ],
+      "traits": {
+        "precision": 3,
+        "minimal": 2,
+        "editorial": 4,
+        "playful": 3,
+        "warmth": 2,
+        "motion": 5
+      },
+      "avoid": [
+        "internal_tool",
+        "low_motion",
+        "accessibility_sensitive"
+      ]
+    },
+    {
+      "id": "gsap-scrolltrigger-storytelling",
+      "source": "MengTo/Skills",
+      "platforms": [
+        "web"
+      ],
+      "product_types": [
+        "marketing",
+        "brand_campaign",
+        "portfolio"
+      ],
+      "needs": [
+        "scroll_narrative",
+        "gsap"
+      ],
+      "traits": {
+        "precision": 3,
+        "minimal": 2,
+        "editorial": 3,
+        "playful": 3,
+        "warmth": 2,
+        "motion": 5
+      },
+      "avoid": [
+        "no_new_dependency",
+        "native_app",
+        "low_motion"
+      ]
+    },
+    {
+      "id": "product-proof-saas",
+      "source": "MengTo/Skills",
+      "platforms": [
+        "web"
+      ],
+      "product_types": [
+        "saas",
+        "technical_product",
+        "marketing"
+      ],
+      "needs": [
+        "proof",
+        "conversion",
+        "product_explanation"
+      ],
+      "traits": {
+        "precision": 4,
+        "minimal": 3,
+        "editorial": 3,
+        "playful": 1,
+        "warmth": 2,
+        "motion": 1
+      },
+      "avoid": [
+        "no_claims_available"
+      ]
+    },
+    {
+      "id": "stitched-full-page-capture",
+      "source": "MengTo/Skills",
+      "platforms": [
+        "web"
+      ],
+      "product_types": [
+        "marketing",
+        "saas",
+        "portfolio",
+        "developer_tool"
+      ],
+      "needs": [
+        "visual_evidence",
+        "full_page_capture"
+      ],
+      "traits": {
+        "precision": 5,
+        "minimal": 3,
+        "editorial": 2,
+        "playful": 1,
+        "warmth": 1,
+        "motion": 2
+      },
+      "avoid": []
+    },
+    {
+      "id": "audit-reference-originality",
+      "source": "MengTo/Skills",
+      "platforms": [
+        "web",
+        "mobile"
+      ],
+      "product_types": [
+        "marketing",
+        "saas",
+        "portfolio",
+        "consumer_app",
+        "developer_tool"
+      ],
+      "needs": [
+        "originality",
+        "reference_audit"
+      ],
+      "traits": {
+        "precision": 5,
+        "minimal": 3,
+        "editorial": 3,
+        "playful": 1,
+        "warmth": 1,
+        "motion": 1
+      },
+      "avoid": []
+    }
+  ]
+}
