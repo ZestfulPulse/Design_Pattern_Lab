@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ZestfulPulse/Design_Pattern_Lab/schemas/exploration-board.schema.json",
+  "title": "DPL Exploration Board",
+  "type": "object",
+  "required": [
+    "version",
+    "task",
+    "directions",
+    "selection"
+  ],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "task": {
+      "type": "object",
+      "required": [
+        "tier",
+        "product",
+        "surface",
+        "goal"
+      ],
+      "properties": {
+        "tier": {
+          "enum": [
+            "minor",
+            "new_screen",
+            "major_redesign",
+            "brand_defining"
+          ]
+        },
+        "product": {
+          "type": "string"
+        },
+        "surface": {
+          "type": "string"
+        },
+        "goal": {
+          "type": "string"
+        }
+      }
+    },
+    "product_truth": {
+      "type": "object"
+    },
+    "directions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "thesis",
+          "scores"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "thesis": {
+            "type": "string"
+          },
+          "candidate_patterns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "scores": {
+            "type": "object",
+            "required": [
+              "philosophy_fit",
+              "task_clarity",
+              "differentiation",
+              "accessibility_risk",
+              "implementation_cost",
+              "maintainability"
+            ]
+          }
+        }
+      }
+    },
+    "selection": {
+      "type": "object",
+      "required": [
+        "selected",
+        "rationale",
+        "user_choice_required"
+      ],
+      "properties": {
+        "selected": {
+          "type": "string"
+        },
+        "rationale": {
+          "type": "string"
+        },
+        "user_choice_required": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}
