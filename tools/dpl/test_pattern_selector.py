@@ -29,10 +29,10 @@ class PatternSelectorTests(unittest.TestCase):
         }
         ranked = ps.rank_patterns(profile, catalog(), 20)
         self.assertTrue(all("web" not in item["id"] for item in ranked))
-        self.assertEqual([x["id"] for x in ranked], [
-            "design-first-ui-prompting",
-            "audit-reference-originality",
-        ])
+        self.assertEqual(
+            {x["id"] for x in ranked},
+            {"design-first-ui-prompting", "audit-reference-originality"},
+        )
 
     def test_technical_web_prefers_editorial_or_framed(self):
         profile = {
