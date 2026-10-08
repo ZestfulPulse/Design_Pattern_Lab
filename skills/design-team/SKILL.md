@@ -39,6 +39,10 @@ Design Team
   ↓
 Inspect active product + product philosophy
   ↓
+Explore materially different directions when the change tier warrants it
+  ↓
+Rank relevant implementation patterns
+  ↓
 Route to relevant available specialists
   ↓
 Synthesize one direction
@@ -66,6 +70,15 @@ Potential specialist sources include:
 Do not call every engine for every task. Route selectively.
 
 Never claim that a specialist repository, CLI, skill, or agent ran unless it is actually available in the active environment and was actually invoked.
+
+## P0 orchestration modules
+
+Two internal modules strengthen design creation before implementation:
+
+- **Design Exploration Board** — prevents premature convergence by generating 2–3 structurally different directions for new, major, or brand-defining work. Minor repairs skip it by default. See [Design Exploration Board](references/DESIGN_EXPLORATION.md).
+- **Pattern Selector** — ranks inspected implementation patterns against platform, product type, needs, and product traits. It only narrows which references are worth reading; it never overrides product truth. See [Pattern Selector](references/PATTERN_SELECTOR.md).
+
+These modules are part of Design Team and are not separate user-facing skills.
 
 ## Default mode
 
@@ -122,9 +135,24 @@ Check:
 
 Choose the few changes with the highest user impact.
 
-### 3. Route to specialists and core capabilities
+### 3. Explore when the change tier warrants it
 
-Consult [Design engine routing](references/DESIGN_ENGINES.md) and [DPL core capabilities](references/CORE_CAPABILITIES.md).
+Consult [Design Exploration Board](references/DESIGN_EXPLORATION.md).
+
+- minor repair / polish → skip exploration by default;
+- new screen or materially new surface → create 2 directions;
+- major redesign → create 3 directions;
+- brand-defining or new-product surface → create 3 directions and prototype the strongest candidates when practical.
+
+Directions must differ structurally, not just by color or decoration. If product truth already determines the direction, record why exploration was narrowed or skipped.
+
+### 4. Rank patterns and route to specialists
+
+When implementation-pattern libraries are relevant, consult [Pattern Selector](references/PATTERN_SELECTOR.md). Build a small product profile and use `tools/dpl/pattern_selector.py` when deterministic ranking will materially reduce source sprawl.
+
+Pattern ranking is advisory. Product philosophy and current product behavior remain authoritative.
+
+Then consult [Design engine routing](references/DESIGN_ENGINES.md) and [DPL core capabilities](references/CORE_CAPABILITIES.md).
 
 Select only engines and built-in capabilities relevant to the task. The five DPL core capabilities are internal decision modules, not separate user-facing skills. Do not run all of them by default.
 
@@ -141,7 +169,7 @@ Examples:
 
 The Design Team owns synthesis. Never average conflicting design systems. Resolve conflicts against product philosophy.
 
-### 4. Set one direction
+### 5. Set one direction
 
 Before editing, form one concise direction covering:
 
@@ -155,7 +183,7 @@ Before editing, form one concise direction covering:
 
 Offer alternatives only when materially different product directions remain unresolved.
 
-### 5. Implement
+### 6. Implement
 
 Modify the smallest coherent set of files needed.
 
@@ -167,7 +195,7 @@ For web, preserve responsive behavior.
 For native/mobile, respect platform conventions and actual device constraints.
 For data-heavy products, make data hierarchy more legible rather than merely decorative.
 
-### 6. Verify
+### 7. Verify
 
 Use **Visual Release Review** for meaningful design implementation and **Accessibility Gate** when the changed surface warrants it. Run relevant lint, build, typecheck, tests, preview, or device checks.
 
@@ -181,7 +209,7 @@ Never state visual QA passed without rendered evidence. Build success is not vis
 
 When structured DPL evidence is available, consult [Evidence and verdict contract](references/EVIDENCE_AND_VERDICT.md). Run `tools/dpl/verdict_gate.py` when applicable and never report a verdict higher than its computed verdict. If the gate reports `overclaim: true`, include that fact and preserve the gate reasons without softening them.
 
-### 7. Iterate
+### 8. Iterate
 
 Treat user feedback as the next design pass.
 
