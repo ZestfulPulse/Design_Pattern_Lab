@@ -60,6 +60,7 @@ Potential specialist sources include:
 - visual-inspiration-research for free/public reference research when relevant
 - Component Gallery for component-state and design-system comparison when relevant
 - 21st.dev for approved React/Tailwind implementation reference when relevant
+- MengTo Web Pattern Pack for concrete web layout, visual-language, motion, proof, and capture patterns after product direction is set
 - Product-local design docs, tokens, screenshots, and implementation patterns
 
 Do not call every engine for every task. Route selectively.
@@ -135,7 +136,8 @@ Examples:
 - dense explanatory information or dashboards → Infographic tooling;
 - reference research → visual-inspiration-research using accessible public sources;
 - component-state comparison → Component Gallery when real design-system examples materially help;
-- approved React/Tailwind implementation → 21st.dev as an optional implementation reference, never as product authority.
+- approved React/Tailwind implementation → 21st.dev as an optional implementation reference, never as product authority;
+- concrete web composition or interaction implementation → consult the curated [MengTo Web Pattern Pack](references/MENGTO_WEB_PATTERNS.md) only after one product-specific direction is established.
 
 The Design Team owns synthesis. Never average conflicting design systems. Resolve conflicts against product philosophy.
 
