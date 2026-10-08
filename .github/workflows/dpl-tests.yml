@@ -6,12 +6,14 @@ on:
       - "tools/dpl/**"
       - "skills/design-team/schemas/**"
       - "skills/design-team/patterns/**"
+      - "skills/design-team/templates/**"
       - ".github/workflows/dpl-tests.yml"
   pull_request:
     paths:
       - "tools/dpl/**"
       - "skills/design-team/schemas/**"
       - "skills/design-team/patterns/**"
+      - "skills/design-team/templates/**"
       - ".github/workflows/dpl-tests.yml"
 
 jobs:
