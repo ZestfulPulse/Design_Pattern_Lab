@@ -200,6 +200,7 @@ DPL은 작업에 실제 도움이 될 때만 외부 도구와 레퍼런스를 �
 | **Component Gallery** | 컴포넌트 상태, 의미 구조, 성숙한 디자인 시스템 사례 비교 |
 | **21st.dev** | 디자인 방향이 승인된 뒤 React/Tailwind 구현 참고에 선택적으로 사용 |
 | **MengTo Web Pattern Pack** | 제품 방향 결정 후에만 사용하는 웹 레이아웃·시각 스타일·모션·증거·캡처 구현 패턴 묶음 |
+| **Native / SwiftUI Pattern Pack** | Apple HIG를 플랫폼 권위로 두고 SwiftUI 구조·상태·적응형 레이아웃·접근성·시각 방향을 선택적으로 라우팅 |
 | **제품 내부 디자인 문서** | 제품 철학이 이미 정의되어 있다면 가장 중요한 소스 |
 
 여러 엔진을 많이 쓰는 것이 목표가 아닙니다.
@@ -210,58 +211,69 @@ DPL은 작업에 실제 도움이 될 때만 외부 도구와 레퍼런스를 �
 
 ---
 
-## Showcase 01 · Legs of Steel
+## Showcase 02 · Legs of Steel · Controlled Native Study
 
-**제품:** 정밀 러닝 분석 및 코칭 앱  
-**디자인 개입:** 홈 화면 정보 위계  
-**결과:** `PASS_WITH_WARNING`  
-**증거 경고:** After 캡처는 Goal이 첫 번째라는 사실은 확인하지만, 전체 Goal → Workout → Month 순서를 시각적으로 증명하지는 못합니다. Before/After의 활동 데이터도 서로 달랐습니다.
-
-제품 철학에서 의도한 순서는 다음과 같습니다.
+**목적:** 현재 DPL의 전체 사고 흐름을 동일한 Before/After 데이터로 명확하게 보여주는 대표 사례  
+**결과:** controlled showcase 범위에서 `PASS`  
+**중요:** 아래 이미지는 실제 운영 앱 스크린샷이 아니라, 같은 fixture를 사용해 만든 재현 가능한 vector render입니다.
 
 ```text
-목표 격차
-→ 오늘의 훈련과 안전
-→ 보조 통계
+제품 철학
+→ Philosophy-to-Design Contract
+→ Design Exploration Board
+→ Native Pattern Selector
+→ 목표 중심 Native 구조
+→ controlled rendered evidence
 ```
 
-기존 홈 순서는:
+Before와 After는 정확히 같은 데이터를 사용합니다.
 
-```text
-이번 달
-→ 오늘의 워크아웃
-→ 목표까지
-```
-
-디자인 패스에서는 기존 비주얼 시스템, 비즈니스 로직, 데이터 흐름을 유지하면서 **목표 진행 정보를 첫 번째 위치로 이동**했습니다.
+- 월간 거리 24.0 km
+- 활동 5회
+- 월간 시간 2h 41m
+- Sub-4 marathon 목표
+- 예상 기록 4:12:00
+- 목표 격차 12분
+- 오늘 훈련 Easy aerobic 45 min
+- Safety status: Normal
 
 <table>
   <tr>
-    <th width="50%">Before</th>
-    <th width="50%">After</th>
+    <th width="50%">Before · 통계 우선</th>
+    <th width="50%">After · 제품 철학 우선</th>
   </tr>
   <tr>
-    <td><img src="showcase/01-legs-of-steel/before.png" alt="Design Team 정보 위계 변경 전 Legs of Steel Home"></td>
-    <td><img src="showcase/01-legs-of-steel/after.png" alt="Design Team 정보 위계 변경 후 Legs of Steel Home"></td>
+    <td><img src="showcase/02-legs-of-steel-controlled-native/before.svg" alt="월간 통계가 먼저 보이는 controlled Before fixture"></td>
+    <td><img src="showcase/02-legs-of-steel-controlled-native/after.svg" alt="목표 격차, 오늘 훈련과 안전, 보조 통계 순으로 보이는 controlled After fixture"></td>
   </tr>
 </table>
 
-### 이 사례가 보여주는 것
+디자인 결정은 철학 원칙까지 추적할 수 있습니다.
 
-이 사례는 여러 디자인 엔진을 한 화면에 쏟아붓는 것을 보여주기 위한 사례가 아닙니다.
+```text
+P-01  목표 격차가 보조 통계보다 먼저
+P-02  오늘 훈련과 안전은 하나의 코칭 단위
+        ↓
+D-01  Goal gap을 첫 카드로
+D-02  Training + Safety를 두 번째 코칭 카드로
+D-03  월간 합계를 Supporting Statistics로 이동
+```
 
-실제로 사용한 소스는:
+이 사례는 기존 Showcase 01의 두 가지 증거 약점을 제거합니다.
 
-- LoS 제품 철학
-- 기존 LoS 디자인 토큰
-- Design Team의 product-first 및 rendered-evidence 원칙
+1. Before/After 데이터가 달라지는 문제 없음
+2. 목표 → 훈련+안전 → 보조 통계의 전체 구조가 두 이미지에서 모두 확인됨
 
-원래 LoS 변경을 만들 때 **DPL, Huashu, UI UX Pro Max, Hallmark, Refero는 사용하지 않았습니다.**
+→ [Showcase 02 전체 보기](showcase/02-legs-of-steel-controlled-native/README.md)
 
-필요하지 않은 개입을 하지 않는 것 역시 Design Team의 능력입니다.
+### Historical Showcase 01
 
-→ [Legs of Steel 전체 사례](showcase/01-legs-of-steel/README.md)
+기존 [Showcase 01](showcase/01-legs-of-steel/README.md)은 실제 simulator 기반의 역사적 검증 사례로 그대로 남깁니다. Before/After 데이터가 달랐고 After 첫 화면에서 전체 Goal → Workout → Month 순서를 증명하지 못했기 때문에 `PASS_WITH_WARNING` 판정도 그대로 보존합니다.
 
+두 사례를 함께 남기는 이유는 분명합니다.
+
+- **Showcase 01:** 실제 앱 변경 증거와 그 한계를 숨기지 않는 사례
+- **Showcase 02:** 동일 데이터에서 현재 DPL의 철학 → 구조 → Native 선택 → 결과 흐름을 재현 가능하게 보여주는 사례
 ---
 
 ## 사용법
@@ -426,27 +438,30 @@ Design_Pattern_Lab/
 │  ├─ WINDOWS_SETUP.md
 │  └─ MAC_SETUP.md
 ├─ showcase/
-│  └─ 01-legs-of-steel/
+│  ├─ 01-legs-of-steel/
+│  └─ 02-legs-of-steel-controlled-native/
 ├─ tools/dpl/
+│  ├─ intent_guard.py
+│  ├─ pattern_selector.py
 │  ├─ verdict_gate.py
 │  ├─ checks_runner.py
-│  ├─ test_dpl.py
-│  └─ philosophy.checks.sample.yaml
+│  └─ test_*.py
 ├─ evals/
 │  └─ README.md
 └─ skills/design-team/
    ├─ SKILL.md
    ├─ agents/
+   ├─ patterns/
+   │  ├─ web-patterns.json
+   │  └─ native-patterns.json
    ├─ schemas/
-   │  ├─ evidence.schema.json
-   │  ├─ ledger.schema.json
-   │  └─ philosophy-checks.schema.json
    ├─ references/
-   │  ├─ CORE_CAPABILITIES.md
-   │  ├─ DESIGN_ENGINES.md
-   │  ├─ EVIDENCE_AND_VERDICT.md
-   │  ├─ PHILOSOPHY_CHECKS.md
-   │  └─ SOURCE_ATTRIBUTION.md
+   │  ├─ PHILOSOPHY_TO_DESIGN.md
+   │  ├─ DESIGN_EXPLORATION.md
+   │  ├─ PATTERN_SELECTOR.md
+   │  ├─ NATIVE_SWIFTUI_PATTERNS.md
+   │  ├─ MENGTO_WEB_PATTERNS.md
+   │  └─ CORE_CAPABILITIES.md
    └─ templates/
 ```
 
