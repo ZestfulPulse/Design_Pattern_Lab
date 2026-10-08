@@ -6,7 +6,6 @@ This is a candidate-reading aid, not a design authority.
 """
 import argparse
 import json
-import math
 
 CATALOG_SCHEMA = "dpl.pattern-catalog/1"
 
@@ -19,7 +18,10 @@ def _clamp_trait(value):
 def score_pattern(profile, pattern):
     platform = profile.get("platform")
     platforms = set(pattern.get("platforms", []))
-    if platform and platform not in platforms:
+    compatible = not platform or platform in platforms
+    if platform in {"ios", "android"} and "mobile" in platforms:
+        compatible = True
+    if not compatible:
         return None
 
     score = 0.0
