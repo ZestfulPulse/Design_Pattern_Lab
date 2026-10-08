@@ -4,6 +4,18 @@ Pattern Selector is a deterministic helper used by Design Team after product dir
 
 It reduces source sprawl by ranking candidate implementation patterns against a small product profile.
 
+## Product Intent integration
+
+The preferred input is the derived `pattern_profile` from `.dpl/product-intent.yaml`.
+
+Generate/validate that profile with:
+
+```bash
+python tools/dpl/intent_guard.py --intent .dpl/product-intent.yaml --profile
+```
+
+Then pass the emitted profile to Pattern Selector. This keeps pattern ranking downstream of product philosophy instead of inventing style traits independently.
+
 ## Input
 
 A product profile may include:
