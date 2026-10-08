@@ -61,6 +61,18 @@ npx skills add https://github.com/Eldergenix/Codex-Design --skill visual-inspira
 
 If `refero-design` is not installed, the remove command may simply report that there is nothing to remove. Use public/free sources by default. Paid or partly paid galleries mentioned upstream are optional, not DPL dependencies.
 
+## MengTo Web Pattern Pack
+
+DPL uses a curated subset of MengTo/Skills as an optional implementation-pattern library after product direction is decided.
+
+```bash
+cd ~/projects/Design_Pattern_Lab
+git pull --ff-only
+bash scripts/install-mengto-pack.sh
+```
+
+The pack installs only the curated skills listed in `skills/design-team/references/MENGTO_WEB_PATTERNS.md`, not all upstream skills.
+
 ## UI UX Pro Max
 
 If `uipro` is not already available on the Mac user that runs Codex:
@@ -92,6 +104,7 @@ DPL orchestration
   ├─ Huashu Design
   ├─ UI UX Pro Max
   ├─ visual-inspiration-research
+  ├─ MengTo Web Pattern Pack
   ├─ Hallmark-inspired checks
   ├─ Infographic tooling
   └─ other available design references
