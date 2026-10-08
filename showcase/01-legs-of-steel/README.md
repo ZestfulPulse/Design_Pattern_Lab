@@ -1,5 +1,8 @@
 # Showcase 01 — Legs of Steel
 
+> **Historical evidence case.** This case is intentionally preserved with its original evidence limitations. For the current DPL pipeline demonstrated with identical Before/After data, see [Showcase 02 — Controlled Native Study](../02-legs-of-steel-controlled-native/README.md).
+
+
 **Case status:** `PASS_WITH_WARNING`<br>
 **Unresolved evidence warning:** the After capture confirms Goal is first, but does not visually prove the full Goal → Workout → Month order; the Before/After activity datasets also differ.<br>
 **Viewport:** iPhone 17 Pro · iOS 26.5 · 1206 × 2622 px
