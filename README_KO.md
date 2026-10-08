@@ -83,6 +83,35 @@ PASS / PASS_WITH_WARNING / FAIL / NOT_VERIFIED
 
 ---
 
+## 철학을 실제 디자인 결정으로 번역합니다
+
+큰 작업에서는 제품 철학을 읽고 바로 스타일을 고르지 않습니다. 먼저 **Philosophy-to-Design Contract**로 번역합니다.
+
+```text
+제품 철학
+  ↓
+출처가 있는 명시 원칙 / 추론 원칙
+  ↓
+구조 원칙
+시각 언어
+인터랙션
+콘텐츠
+  ↓
+Pattern Selector용 제품 프로필
+  ↓
+탐색 / 구현
+  ↓
+각 디자인 결정이 어떤 철학 원칙을 지지하는지 추적
+```
+
+따라서 “프리미엄”, “기술적”, “미니멀” 같은 단어가 근거 없이 dark glass, monospace, 큰 여백 같은 유행 스타일로 직행하는 것을 막습니다.
+
+`tools/dpl/intent_guard.py`는 추론된 강제 규칙, 미해결 철학 충돌, 존재하지 않는 원칙 참조, 철학 근거가 없는 디자인 결정을 검출합니다.
+
+→ [Philosophy-to-Design Contract](skills/design-team/references/PHILOSOPHY_TO_DESIGN.md)
+
+---
+
 ## 첫 번째 답으로 바로 수렴하지 않습니다
 
 큰 디자인 작업에서는 이제 첫 번째 그럴듯한 안을 바로 구현하지 않고, 작업 규모에 따라 구조적으로 다른 방향을 먼저 탐색할 수 있습니다.
@@ -464,7 +493,7 @@ DPL은 몇 가지 원칙에 대해서는 분명한 입장을 가집니다.
 **DPL v1 기준선**
 
 - 하나의 전역 Design Team
-- P0 제작/오케스트레이션 모듈 2개: Design Exploration Board + Pattern Selector
+- P0 제작/오케스트레이션 모듈 3개: Philosophy-to-Design Contract + Design Exploration Board + Pattern Selector
 - 5개의 내장 핵심 능력
 - 선택적 전문 소스 라우팅
 - 명시적인 출처 관리
