@@ -79,6 +79,37 @@ The user should not have to choose between five overlapping design agents.
 
 ---
 
+## From philosophy to design consequences
+
+DPL now uses a **Philosophy-to-Design Contract** for substantial or identity-sensitive work.
+
+It translates authoritative product sources into:
+
+```text
+Product philosophy
+  ↓
+explicit / inferred principles with provenance
+  ↓
+structure implications
+visual-language implications
+interaction implications
+content implications
+  ↓
+derived product profile
+  ↓
+Exploration + Pattern Selector
+  ↓
+implementation decisions traced back to principle IDs
+```
+
+The contract prevents adjectives such as “premium”, “technical”, or “minimal” from being converted directly into trendy visual styles without product evidence.
+
+`tools/dpl/intent_guard.py` validates traceability, flags inferred must-rules, unresolved tensions, unknown principle references, and ungrounded design decisions.
+
+→ [Philosophy-to-Design Contract](skills/design-team/references/PHILOSOPHY_TO_DESIGN.md)
+
+---
+
 ## Exploration before convergence
 
 For substantial new design work, DPL can now explore multiple structurally different directions before implementation instead of jumping to the first plausible answer.
@@ -439,7 +470,7 @@ A successful build does not prove a successful design.
 **DPL v1 baseline**
 
 - One global Design Team
-- Two P0 creation/orchestration modules: Design Exploration Board + Pattern Selector
+- Three P0 creation/orchestration modules: Philosophy-to-Design Contract + Design Exploration Board + Pattern Selector
 - Five built-in capabilities
 - Selective specialist routing
 - Explicit source attribution
