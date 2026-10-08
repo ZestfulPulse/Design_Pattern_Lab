@@ -5,11 +5,13 @@ on:
     paths:
       - "tools/dpl/**"
       - "skills/design-team/schemas/**"
+      - "skills/design-team/patterns/**"
       - ".github/workflows/dpl-tests.yml"
   pull_request:
     paths:
       - "tools/dpl/**"
       - "skills/design-team/schemas/**"
+      - "skills/design-team/patterns/**"
       - ".github/workflows/dpl-tests.yml"
 
 jobs:
@@ -24,4 +26,4 @@ jobs:
         run: python -m pip install -r tools/dpl/requirements.txt
       - name: Run DPL verifier tests
         working-directory: tools/dpl
-        run: python -m unittest test_dpl
+        run: python -m unittest discover -p 'test_*.py'
