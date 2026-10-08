@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/ZestfulPulse/Design_Pattern_Lab/schemas/product-intent.schema.json",
+  "title": "DPL Product Intent Contract",
+  "type": "object",
+  "required": [
+    "version",
+    "product",
+    "source_docs",
+    "principles",
+    "tensions",
+    "must_preserve",
+    "pattern_profile",
+    "decisions"
+  ],
+  "properties": {
+    "version": {
+      "const": 1
+    },
+    "product": {
+      "type": "object",
+      "required": [
+        "name",
+        "platform",
+        "product_type",
+        "audience",
+        "job_to_be_done",
+        "identity_statement",
+        "success_definition"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "platform": {
+          "type": "string"
+        },
+        "product_type": {
+          "type": "string"
+        },
+        "audience": {
+          "type": "string"
+        },
+        "job_to_be_done": {
+          "type": "string"
+        },
+        "identity_statement": {
+          "type": "string"
+        },
+        "success_definition": {
+          "type": "string"
+        }
+      }
+    },
+    "source_docs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "path",
+          "sha256"
+        ],
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "sha256": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "principles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "statement",
+          "source_ref",
+          "provenance",
+          "strength",
+          "implications"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "statement": {
+            "type": "string"
+          },
+          "source_ref": {
+            "type": "string"
+          },
+          "provenance": {
+            "enum": [
+              "explicit",
+              "inferred",
+              "approved_assumption"
+            ]
+          },
+          "strength": {
+            "enum": [
+              "must",
+              "prefer",
+              "avoid"
+            ]
+          },
+          "implications": {
+            "type": "object",
+            "required": [
+              "structure",
+              "visual",
+              "interaction",
+              "content"
+            ],
+            "properties": {
+              "structure": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "visual": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "interaction": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "content": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "tensions": {
+      "type": "array"
+    },
+    "must_preserve": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "pattern_profile": {
+      "type": "object",
+      "required": [
+        "platform",
+        "product_type",
+        "needs",
+        "traits"
+      ]
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "change",
+          "supports",
+          "rationale"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "change": {
+            "type": "string"
+          },
+          "supports": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "rationale": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
