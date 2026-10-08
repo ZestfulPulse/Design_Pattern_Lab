@@ -79,6 +79,22 @@ The user should not have to choose between five overlapping design agents.
 
 ---
 
+## Exploration before convergence
+
+For substantial new design work, DPL can now explore multiple structurally different directions before implementation instead of jumping to the first plausible answer.
+
+- minor repair → usually no exploration
+- new surface → 2 directions
+- major redesign → 3 directions
+- brand-defining work → 3 directions plus lightweight prototypes when useful
+
+DPL also includes a deterministic **Pattern Selector** that ranks inspected pattern libraries by platform, product type, needs, and product traits. The ranking narrows what to inspect; it never decides product identity.
+
+→ [Design Exploration Board](skills/design-team/references/DESIGN_EXPLORATION.md)  
+→ [Pattern Selector](skills/design-team/references/PATTERN_SELECTOR.md)
+
+---
+
 ## Five focused capabilities
 
 DPL deliberately keeps its internal capability set small.
@@ -423,6 +439,7 @@ A successful build does not prove a successful design.
 **DPL v1 baseline**
 
 - One global Design Team
+- Two P0 creation/orchestration modules: Design Exploration Board + Pattern Selector
 - Five built-in capabilities
 - Selective specialist routing
 - Explicit source attribution
