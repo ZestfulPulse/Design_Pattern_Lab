@@ -1,0 +1,74 @@
+version: 1
+product:
+  name: "Legs of Steel"
+  platform: ios
+  product_type: fitness
+  audience: "runners who want precise personal performance analysis"
+  job_to_be_done: "understand the gap to a running goal and what to do today"
+  identity_statement: "precise personal running analysis, not a generic fitness app"
+  success_definition: "the runner sees goal gap first, then today's actionable training and safety context, then supporting statistics"
+source_docs:
+  - path: "showcase/01-legs-of-steel/README.md"
+    sha256: "historical-showcase-reference"
+principles:
+  - id: P-01
+    statement: "Goal gap precedes supporting statistics."
+    source_ref: "showcase/01-legs-of-steel/README.md#product-intent"
+    provenance: explicit
+    strength: must
+    implications:
+      structure:
+        - "Place goal gap before monthly summary."
+      visual:
+        - "Give the goal gap the strongest hierarchy on Home."
+      interaction: []
+      content:
+        - "Express the gap concretely rather than as generic motivation."
+  - id: P-02
+    statement: "Today's training and safety belong together before retrospective statistics."
+    source_ref: "showcase/01-legs-of-steel/README.md#design-problem"
+    provenance: explicit
+    strength: must
+    implications:
+      structure:
+        - "Keep today's workout and safety adjacent."
+      visual:
+        - "Treat recommendation as actionable content, not decoration."
+      interaction:
+        - "Feedback should be direct and instrumental."
+      content:
+        - "Use concise evidence-oriented coaching language."
+tensions: []
+must_preserve:
+  - "Same fixture data before and after"
+  - "No changes to business logic or data meaning"
+pattern_profile:
+  platform: ios
+  product_type: fitness
+  needs:
+    - swiftui
+    - native_structure
+    - adaptive_layout
+    - accessibility
+    - state_stability
+  traits:
+    native_fidelity: 5
+    interaction_rigor: 5
+    accessibility: 5
+    adaptability: 4
+    visual_expression: 2
+    motion_intensity: 1
+    information_density: 4
+decisions:
+  - id: D-01
+    change: "Move goal gap to the first card."
+    supports: [P-01]
+    rationale: "The primary product question is the gap to the runner's goal."
+  - id: D-02
+    change: "Keep today's workout and safety together in the second card."
+    supports: [P-02]
+    rationale: "Action and safety context should be understood as one coaching unit."
+  - id: D-03
+    change: "Move monthly totals into a supporting statistics card."
+    supports: [P-01, P-02]
+    rationale: "Retrospective totals support, but should not lead, the coaching hierarchy."
