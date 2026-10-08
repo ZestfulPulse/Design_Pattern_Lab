@@ -341,6 +341,37 @@ npx skills add https://github.com/Eldergenix/Codex-Design --skill visual-inspira
 
 DPL should prefer publicly accessible reference sources. Paid or partly paid galleries mentioned by the upstream skill are optional and must not become a dependency.
 
+### Native / SwiftUI Pattern Pack
+
+For Apple-platform work, DPL now has a separate native pack rather than reusing web design patterns.
+
+```text
+Product Intent
+→ Apple HIG / SDK constraints
+→ Native Pattern Selector
+→ SwiftUI correctness
+→ native visual direction when useful
+→ simulator/device verification
+```
+
+Install the curated specialist skills:
+
+**Windows**
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\install-native-pack.ps1
+```
+
+**Mac / Linux**
+
+```bash
+bash scripts/install-native-pack.sh
+```
+
+The installed skills are `design-swiftui-interfaces` and `swift-ui-design`. SwiftUI Catalog remains reference-only.
+
+→ [Native / SwiftUI Pattern Pack](skills/design-team/references/NATIVE_SWIFTUI_PATTERNS.md)
+
 ### MengTo Web Pattern Pack
 
 DPL can selectively route to a curated subset of [MengTo/Skills](https://github.com/MengTo/Skills) for concrete web implementation patterns. The upstream repository is MIT licensed.
