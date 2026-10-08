@@ -1,0 +1,64 @@
+version: 1
+task:
+  tier: major_redesign
+  product: "Legs of Steel"
+  surface: "Home controlled fixture"
+  goal: "Make product philosophy visible in information hierarchy without changing data."
+product_truth:
+  source_docs:
+    - "product-intent.yaml"
+  must_preserve:
+    - "same data"
+    - "goal/training/statistics meaning"
+directions:
+  - id: A
+    thesis: "Summary-first dashboard"
+    philosophy_fit: "Low. Familiar fitness dashboard, but hides the goal gap."
+    hierarchy: "Monthly totals → workout → goal"
+    typography: "Metric-led"
+    color_material: "Neutral dark cards"
+    layout_composition: "Three equal-weight cards"
+    interaction_motion: "None"
+    candidate_patterns: []
+    strengths:
+      - "Familiar"
+    risks:
+      - "Generic fitness-app hierarchy"
+    implementation_cost: low
+    scores:
+      philosophy_fit: 1
+      task_clarity: 3
+      differentiation: 1
+      accessibility_risk: 1
+      implementation_cost: 1
+      maintainability: 5
+  - id: B
+    thesis: "Goal-led coaching instrument"
+    philosophy_fit: "High. Goal gap leads, then action+safety, then supporting totals."
+    hierarchy: "Goal gap → training+safety → supporting statistics"
+    typography: "Precise, restrained, evidence-led"
+    color_material: "Quiet native dark surfaces"
+    layout_composition: "Priority-weighted cards"
+    interaction_motion: "Low-motion, causal only"
+    candidate_patterns:
+      - apple-hig
+      - design-swiftui-interfaces
+    strengths:
+      - "Direct expression of product philosophy"
+      - "Actionable scan order"
+    risks:
+      - "Requires discipline not to over-style"
+    implementation_cost: low
+    scores:
+      philosophy_fit: 5
+      task_clarity: 5
+      differentiation: 4
+      accessibility_risk: 1
+      implementation_cost: 1
+      maintainability: 5
+selection:
+  selected: B
+  rationale: "B directly traces to P-01/P-02 and preserves the same underlying data."
+  rejected:
+    - A
+  user_choice_required: false
