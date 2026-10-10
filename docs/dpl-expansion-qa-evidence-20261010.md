@@ -55,11 +55,13 @@ Mobile:
 Desktop:
 
 - Web compilation: `PASS`
+- macOS Flutter actual launch: `PASS` (`MYOK` process, VM service, runtime identity, workspace visible)
 - Actual desktop capture: user-provided screenshot, `PASS`
 - Human visual inspection: no clipping or overlapping elements, `PASS`
 - Chrome Flutter launch reached debug-service connection, then Dart compiler exited
 - Browser DOM inspection: unavailable because the Browser Use Chromium runtime was not installed
 - Automated vision inspection: unavailable (`404` for local image path)
+- macOS Accessibility tree inspection: blocked by assistive-access permission (`-25211`)
 - Visual QA result: `PASS_WITH_WARNING`
 
 ## Accessibility and Motion
