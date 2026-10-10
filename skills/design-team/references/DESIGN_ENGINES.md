@@ -211,6 +211,36 @@ Reference research should answer a concrete design question, such as:
 | Native app screen | DPL built-in capabilities + Native / SwiftUI Pattern Pack + UI UX Pro Max when useful, no Hallmark macrostructure |
 | Brand-heavy marketing page | DPL built-in capabilities + visual-inspiration-research + Huashu + one relevant MengTo web pattern + Hallmark |
 | Dense explanatory page | DPL built-in capabilities + Infographic + Hallmark |
+
+### Operational Situation Board mode
+
+For operations consoles, service health, incidents, deployments, queues, and
+admin monitoring, Design Team may use the conditional Operational Situation
+Board mode documented in the main skill. Its reference pattern is the live
+`ops.zestfulpulse.com` composition: status-first hierarchy, command-summary
+metrics, dense scannable rows, semantic state labels, and explicit measured vs
+unmeasured state.
+
+Recommended routing:
+
+```text
+Product Philosophy / operational task
+→ Reference Lock
+→ Operational Situation Board mode
+→ Component State Auditor
+→ Accessibility Gate
+→ Infographic (only for dense relationships/totals)
+→ Taste Critic / Anti-Slop Gate
+→ Actual Render
+→ Visual Release Review
+```
+
+The mode is not permission to copy the Ops page or to add military decoration.
+Reject fake telemetry, invented metrics, alarmist red treatment, decorative
+radar/target/map imagery, and unreadable micro-text. Preserve the product's own
+tokens, content, controls, and platform conventions. A status must expose its
+measurement state and a user must be able to identify the next action without
+depending on color alone.
 | React/Tailwind component implementation | Product-local system first + 21st.dev when concrete implementation reference is useful |
 
 ## Conflict resolution

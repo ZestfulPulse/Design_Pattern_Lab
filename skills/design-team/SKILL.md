@@ -84,6 +84,53 @@ Three internal modules strengthen design creation before implementation:
 
 These modules are part of Design Team and are not separate user-facing skills.
 
+## Operational Situation Board mode
+
+When the active product is an operations console, service-health surface,
+incident board, deployment board, queue monitor, admin status page, or other
+state-dense operational UI, Design Team may select **Operational Situation Board
+mode**. This is a conditional composition mode, not a global brand style.
+
+The mode translates the observed `ops.zestfulpulse.com` pattern into a bounded
+design contract:
+
+- status and attention state appear before explanation;
+- a compact command summary exposes measured totals and exceptions;
+- services, incidents, deployments, queues, and infrastructure use scannable
+  dense rows with stable columns;
+- `healthy`, `warning`, `incident`, and `not measured` remain distinct semantic
+  states, with text labels never relying on color alone;
+- monospace metadata, timestamps, latency, IDs, and evidence references support
+  operational reading without replacing readable body text;
+- dark surfaces and restrained borders may support sustained monitoring, but
+  military imagery, fake telemetry, threat graphics, decorative alarms, and
+  invented metrics are rejected;
+- every status indicates whether it is measured, stale, unavailable, or
+  unverified;
+- narrow viewports collapse columns into readable state cards without hiding
+  the primary status or required action.
+
+Use this mode only when the product task benefits from operational scanability.
+It must not turn a consumer, editorial, finance, or knowledge surface into a
+military dashboard merely because the visual reference is attractive. Product
+philosophy, product truth, accessibility, and actual evidence remain above the
+mode.
+
+For this mode, route the smallest relevant set of capabilities:
+
+```text
+Operational Situation Board mode
+→ Component State Auditor
+→ Accessibility Gate
+→ Infographic tooling when relationships or totals are dense
+→ Taste Critic / Anti-Slop Gate
+→ Visual Release Review
+```
+
+The acceptance questions are: can the operator find the exception quickly, can
+they distinguish measured from assumed state, can they identify the next action,
+and does the layout remain usable at narrow widths and with reduced motion?
+
 ## Default mode
 
 Interpret “디자인팀, 이 화면을 제품 철학에 맞춰 수정해줘” and similar requests as authorization to:
