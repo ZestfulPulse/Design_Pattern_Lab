@@ -55,9 +55,12 @@ Mobile:
 Desktop:
 
 - Web compilation: `PASS`
+- Actual desktop capture: user-provided screenshot, `PASS`
+- Human visual inspection: no clipping or overlapping elements, `PASS`
 - Chrome Flutter launch reached debug-service connection, then Dart compiler exited
 - Browser DOM inspection: unavailable because the Browser Use Chromium runtime was not installed
-- Desktop screenshot: not captured
+- Automated vision inspection: unavailable (`404` for local image path)
+- Visual QA result: `PASS_WITH_WARNING`
 
 ## Accessibility and Motion
 
@@ -79,10 +82,13 @@ Velora automatic usage prohibition: PASS
 Heroicons semantic-motion policy: PASS
 OpenDots excluded: PASS
 DPL regression: PASS
-Mobile actual render: PASS (captured; visual service inspection unavailable)
-Desktop actual render: NOT_VERIFIED
-Overall DPL: NOT_VERIFIED
+Mobile actual render: PASS (captured; user/human review and automated checks)
+Desktop actual render: PASS_WITH_WARNING (human review; automated vision unavailable)
+Visual inspection: PASS_WITH_WARNING
+Overall DPL: PASS_WITH_WARNING
 ```
 
-A build or simulator launch is not treated as a complete DPL visual PASS. Desktop
-actual-render evidence and visual accessibility inspection remain required.
+Automated vision inspection was unavailable, but the user inspected the actual
+ desktop capture and confirmed no clipping or overlapping elements. Physical
+ accessibility inspection remains `NOT_VERIFIED`, so the final result is not a
+ strict `PASS`.
