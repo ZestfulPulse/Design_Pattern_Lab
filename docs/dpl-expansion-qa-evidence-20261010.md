@@ -61,7 +61,12 @@ Desktop:
 - Chrome Flutter launch reached debug-service connection, then Dart compiler exited
 - Browser DOM inspection: unavailable because the Browser Use Chromium runtime was not installed
 - Automated vision inspection: unavailable (`404` for local image path)
-- macOS Accessibility tree inspection: blocked by assistive-access permission (`-25211`)
+- macOS Accessibility tree inspection: GUI Terminal verification succeeded
+- macOS Accessibility window probe: `true, 1, MYOK`
+- macOS Accessibility roles observed: `AXGroup`, `AXButton` × 3, `AXStaticText`, `AXText`, window controls
+- macOS focused element API: reachable; initial focus reported as `AXGroup`
+- macOS Tab traversal probe: 5 consecutive probes remained `AXGroup | missing value`
+- macOS individual-control focus order: `NOT_VERIFIED`
 - Visual QA result: `PASS_WITH_WARNING`
 
 ## Accessibility and Motion
@@ -71,7 +76,10 @@ Desktop:
 - Largest supported Dynamic Type checks: `PASS`
 - Reduced Motion transition check: `PASS`
 - Automated semantic label duplication check: `PASS`
-- Physical accessibility inspection: `NOT_VERIFIED`
+- macOS Accessibility tree reachability: `PASS`
+- macOS window/role inspection: `PASS`
+- macOS individual-control keyboard focus traversal: `NOT_VERIFIED`
+- Physical accessibility inspection: `PASS_WITH_WARNING`
 
 ## Verdict
 
@@ -91,6 +99,7 @@ Overall DPL: PASS_WITH_WARNING
 ```
 
 Automated vision inspection was unavailable, but the user inspected the actual
- desktop capture and confirmed no clipping or overlapping elements. Physical
- accessibility inspection remains `NOT_VERIFIED`, so the final result is not a
- strict `PASS`.
+ desktop capture and confirmed no clipping or overlapping elements. macOS
+Accessibility tree reachability and window/role inspection are now verified. The
+individual-control keyboard focus order remains `NOT_VERIFIED`, so the final
+result is not a strict `PASS`.
