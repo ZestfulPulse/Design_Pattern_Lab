@@ -8,6 +8,41 @@ class PhaseAContractTests(unittest.TestCase):
         self.assertNotIn("opendots", ce.DPL_SOURCE_REGISTRY)
         self.assertEqual(ce.DPL_SOURCE_REGISTRY["refs_gallery"]["scope"], "site-level")
 
+    def test_refero_is_optional_disabled_and_not_a_default_input(self):
+        self.assertEqual(
+            ce.DPL_SOURCE_REGISTRY["refero"]["status"], "OPTIONAL_DISABLED"
+        )
+        research = ce.build_reference_research()
+        self.assertNotIn("refero", research)
+        self.assertNotIn("refero", research["sources"])
+
+    def test_approved_reference_source_buckets_are_separate(self):
+        research = ce.build_reference_research(
+            plain_text=["Use editorial pacing."],
+            refs_gallery=["https://refs.gallery/projects/example"],
+            user_supplied_urls=["https://example.com/reference"],
+            public_free_references=["https://www.w3.org/WAI/"],
+        )
+        self.assertEqual(
+            set(research["sources"]),
+            {"plain_text", "refs_gallery", "user_supplied_urls", "public_free_references"},
+        )
+        self.assertEqual(research["sources"]["plain_text"][0]["scope"], "plain-text")
+        self.assertEqual(
+            research["sources"]["user_supplied_urls"][0]["role"],
+            "explicit reference input",
+        )
+        self.assertEqual(
+            research["sources"]["public_free_references"][0]["scope"],
+            "public/free",
+        )
+
+    def test_legacy_refero_argument_is_quarantined(self):
+        research = ce.build_reference_research(refero=["screen:settings/preferences"])
+        self.assertNotIn("refero", research["sources"])
+        self.assertEqual(research["optional_disabled"]["source"], "refero")
+        self.assertEqual(research["optional_disabled"]["references"], [])
+
     def test_reference_lock_requires_all_translation_fields(self):
         lock = ce.make_reference_lock(
             primary_reference="refs.gallery/project/example",
@@ -28,15 +63,12 @@ class PhaseAContractTests(unittest.TestCase):
         )
         self.assertTrue(ce.validate_reference_lock(lock).valid)
 
-    def test_reference_research_separates_site_and_screen_roles(self):
+    def test_reference_research_preserves_site_level_role(self):
         research = ce.build_reference_research(
             refs_gallery=["https://refs.gallery/projects/example"],
-            refero=["screen:settings/preferences"],
-            user_supplied=[],
         )
-        self.assertEqual(research["refs_gallery"][0]["scope"], "site-level")
-        self.assertEqual(research["refero"][0]["scope"], "screen-level")
-        self.assertNotEqual(research["refs_gallery"][0]["scope"], research["refero"][0]["scope"])
+        self.assertEqual(research["sources"]["refs_gallery"][0]["scope"], "site-level")
+        self.assertNotIn("refero", research["sources"])
 
     def test_taste_reject_blocks_implementation(self):
         review = ce.evaluate_taste(

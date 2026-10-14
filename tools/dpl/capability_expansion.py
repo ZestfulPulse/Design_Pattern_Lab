@@ -5,7 +5,7 @@ research, Taste gate, and implementation-admission decisions.
 """
 
 from dataclasses import dataclass
-from typing import Any
+from typing import Any, List, Optional
 
 
 REFERENCE_LOCK_FIELDS = (
@@ -32,6 +32,8 @@ DPL_SOURCE_REGISTRY = {
         "scope": "site-level",
     },
     "refero": {
+        "status": "OPTIONAL_DISABLED",
+        "enabled_by_default": False,
         "role": "screen-level-reference-research",
         "scope": "screen-level",
     },
@@ -57,9 +59,9 @@ class ValidationResult:
 def make_reference_lock(
     *,
     primary_reference: str,
-    preserve_traits: list[str],
-    borrowed_details: list[str],
-    rejected_patterns: list[str],
+    preserve_traits: List[str],
+    borrowed_details: List[str],
+    rejected_patterns: List[str],
     product_translation: str,
 ) -> dict[str, Any]:
     return {
@@ -86,22 +88,49 @@ def validate_reference_lock(lock: dict[str, Any]) -> ValidationResult:
     return ValidationResult(not errors, tuple(errors))
 
 
-def _reference_items(values: list[str], scope: str, role: str) -> list[dict[str, str]]:
+def _reference_items(values: List[str], scope: str, role: str) -> List[dict[str, str]]:
     return [{"reference": value, "scope": scope, "role": role} for value in values]
 
 
 def build_reference_research(
-    *, refs_gallery: list[str], refero: list[str], user_supplied: list[str]
-) -> dict[str, list[dict[str, str]]]:
-    return {
+    *,
+    plain_text: Optional[List[str]] = None,
+    refs_gallery: Optional[List[str]] = None,
+    user_supplied_urls: Optional[List[str]] = None,
+    public_free_references: Optional[List[str]] = None,
+    # Legacy parameters remain accepted, but Refero is quarantined and never
+    # becomes a research bucket or a default input.
+    refero: Optional[List[str]] = None,
+    user_supplied: Optional[List[str]] = None,
+) -> dict[str, Any]:
+    if user_supplied_urls is None:
+        user_supplied_urls = user_supplied or []
+    sources = {
+        "plain_text": _reference_items(plain_text or [], "plain-text", "user-provided research brief"),
         "refs_gallery": _reference_items(
-            refs_gallery, "site-level", "visual direction/storytelling/interaction/typography/composition"
+            refs_gallery or [],
+            "site-level",
+            "visual direction/storytelling/interaction/typography/composition",
         ),
-        "refero": _reference_items(
-            refero, "screen-level", "component/UX pattern/interaction state/flow"
+        "user_supplied_urls": _reference_items(
+            user_supplied_urls, "user-supplied", "explicit reference input"
         ),
-        "user_supplied": _reference_items(user_supplied, "user-supplied", "explicit reference input"),
+        "public_free_references": _reference_items(
+            public_free_references or [], "public/free", "public or freely available reference"
+        ),
     }
+    result = {
+        "sources": sources,
+        "optional_disabled": {
+            "source": "refero",
+            "status": DPL_SOURCE_REGISTRY["refero"]["status"],
+            "references": [],
+        },
+    }
+    # Keep the prior direct-bucket access pattern for approved inputs only.
+    result.update(sources)
+    result["user_supplied"] = sources["user_supplied_urls"]
+    return result
 
 
 def evaluate_taste(observations: dict[str, Any]) -> dict[str, Any]:

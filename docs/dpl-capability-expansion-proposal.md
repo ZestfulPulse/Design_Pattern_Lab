@@ -12,9 +12,10 @@ Extend Design Pattern Lab through small, auditable contracts. Do not vendor or m
 Product Philosophy / Product SSOT
   ↓
 Reference Research
-  ├─ Refero: screen/component/UX pattern/interaction state/flow
+  ├─ Plain text: user-provided research brief
   ├─ Refs Gallery: site-level visual direction/storytelling/interaction/type/composition
-  └─ user supplied references
+  ├─ user-supplied URLs
+  └─ public/free reference sources
   ↓
 Reference Lock
   ↓
@@ -38,6 +39,16 @@ Actual Render
 Visual Release Review
 ```
 
+Refero remains registered only as `OPTIONAL_DISABLED` metadata. It is not a
+default Reference Research input. A future activation would require a separate
+approval; this Phase A contract does not invoke or depend on it.
+
+The DPL contract and Product SSOT remain the authorities for product truth,
+design decisions, implementation admission, and verdicts. Reference sources
+provide evidence and methodology only; they do not become a clone engine,
+design system, runtime, or acceptance authority. No external repository is
+vendored or copied into DPL.
+
 OpenDots is explicitly outside this architecture. It receives no dependency, source copy, adapter, registry entry, or runtime route in DPL. Any future review belongs in a separate TOPIA/SPRAY proposal.
 
 ## Ownership and authority
@@ -45,7 +56,7 @@ OpenDots is explicitly outside this architecture. It receives no dependency, sou
 | Layer | DPL owner | External source role | Must not own |
 |---|---|---|---|
 | Product truth | Product repo / Product SSOT | none | external style rules |
-| Reference research | DPL Reference Research | Refero, Refs Gallery, user refs | implementation decision |
+| Reference research | DPL Reference Research | plain text, Refs Gallery, user URLs, public/free refs | implementation decision |
 | Reference Lock | DPL | evidence from references | copied site direction |
 | Taste gate | DPL Taste Critic adapter | Taste Skill principles | final design authority |
 | Orchestration | DPL Design Team | approved specialist inputs | product truth |
@@ -95,7 +106,9 @@ REJECTED_PATTERNS
 PRODUCT_TRANSLATION
 ```
 
-A single site cannot be the complete design direction. Refero remains the screen-level source and is not replaced.
+A single site cannot be the complete design direction. Refero is retained only
+as disabled compatibility metadata and is not part of the Phase A research
+pipeline.
 
 ### Velora UI
 
@@ -113,6 +126,7 @@ DPL design decision
 ```
 
 The contract rejects automatic use and records why an interaction serves the product. Candidates must be checked for reduced motion, keyboard, touch/mobile behavior, and accessibility.
+Velora remains opt-in and never becomes a default source or authority.
 
 ### Heroicons Animated
 
@@ -123,12 +137,12 @@ Registered only as a Micro Interaction Asset. Allowed meanings are action feedba
 
 ## Phase sequence
 
-### Phase A — Taste + Refs Gallery
+### Phase A — Reference Research + Taste
 
 Add the smallest contract for:
 
 ```text
-Reference Research
+Plain text / Refs Gallery / user-supplied URLs / public-free references
 → Reference Lock
 → Taste Gate
 ```
@@ -136,7 +150,8 @@ Reference Research
 Acceptance:
 
 - Reference Lock schema is explicit.
-- Refero and Refs Gallery roles cannot be conflated.
+- approved Reference Research source buckets remain separated;
+- Refero is `OPTIONAL_DISABLED` and absent from default research;
 - Taste outputs exactly the three allowed verdicts.
 - `TASTE_REJECT` blocks implementation in the contract test.
 - No external repository is installed or copied.
@@ -169,13 +184,13 @@ Acceptance:
 Use `MYOK` first if the repository and runnable render path are available, otherwise use `Enough` or `blog`. Compare the existing path with the expanded path. The expanded path must demonstrate:
 
 ```text
-Refs Gallery research
-+ Refero
+approved Reference Research inputs
 + Taste Critic
-+ selective Velora
++ selectively opted-in Velora candidate (if approved)
 ```
 
-No visual PASS is possible without inspected desktop and mobile actual renders, interaction QA, accessibility, and motion evidence.
+No visual PASS is possible without inspected desktop and mobile actual renders,
+render comparison QA, interaction QA, accessibility, and motion evidence.
 
 ## Verification contract
 
@@ -202,6 +217,7 @@ Required final evidence:
 - OpenDots excluded;
 - existing DPL tests pass;
 - real project actual render inspected;
+- render comparison QA gate passed;
 - desktop PASS;
 - mobile PASS;
 - accessibility/motion PASS;
