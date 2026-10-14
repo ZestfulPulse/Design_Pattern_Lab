@@ -199,6 +199,14 @@ Reference research should answer a concrete design question, such as:
 - how premium running apps express performance data;
 - how mobile creation tools handle layered editing.
 
+## Awesome DESIGN.md — optional design-language reference
+
+Source: [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) (MIT).
+
+Use as a **reference collection** inside the existing Design System Ingestor, not as a new engine or automatic replacement for product tokens. Select a small number of relevant examples only after product intent is clear. Inspect the full selected DESIGN.md, classify concrete rules as KEEP / ADAPT / REJECT, and trace accepted decisions to product principles. No upstream style is preapproved; never claim an example was inspected if only its index was viewed. No live synchronization or automatic installation is configured.
+
+→ [DPL Awesome DESIGN.md reference pack](AWESOME_DESIGN_MD.md)
+
 ## Suggested routing examples
 
 | Task | Primary sources |
