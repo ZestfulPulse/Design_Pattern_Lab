@@ -28,6 +28,21 @@ The active Codex session may run on Windows, on a Mac mini reached through SSH, 
 
 Signing-specific work remains a macOS responsibility. Supabase, Cloudflare, backend, deployment, security, routes, package dependencies, and data contracts are outside a design request unless the user includes them.
 
+## Automatic invocation (G1)
+
+Do not require the exact phrase "디자인팀" for work that clearly changes visual UI,
+mobile/desktop layouts, UX navigation, interactions, motion, or accessibility.
+When installed in the active product Codex environment, treat those requests as
+Design Team work. For ambiguous mixed engineering changes inspect the diff first;
+for backend-only changes do not invoke Design Team. The conservative reference
+classifier and integration contract are in
+[Automatic routing G1](../../docs/AUTO_ROUTING_G1.md).
+
+Routing is not permission to alter product philosophy, security, data flows,
+credentials, release settings, or deploy. Record whether Design Team was actually
+available and invoked; classification alone is not execution proof. Apply the
+existing rendered-evidence quality gate, never a router-only PASS.
+
 ## Global command-center model
 
 Use this operating model:
